@@ -48,6 +48,7 @@
     <Compile Include="Concrete\BayiAdres.cs" />
     <Compile Include="Concrete\Calisan.cs" />
     <Compile Include="Concrete\Defo.cs" />
+    <Compile Include="Concrete\DepoEkleUrun.cs" />
     <Compile Include="Concrete\EkBilgi.cs" />
     <Compile Include="Concrete\Firma.cs" />
     <Compile Include="Concrete\Fis.cs" />

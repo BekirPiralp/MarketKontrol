@@ -55,6 +55,7 @@
     <Compile Include="Abstract\IBayiDal.cs" />
     <Compile Include="Abstract\ICalisanDal.cs" />
     <Compile Include="Abstract\IDefoDal.cs" />
+    <Compile Include="Abstract\IDepoEkleUrunDal.cs" />
     <Compile Include="Abstract\IEkBilgiDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\IFirmaDal.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="Abstract\IUlkeDal.cs" />
     <Compile Include="Abstract\IUrunDal.cs" />
     <Compile Include="Abstract\IYoneticiDal.cs" />
+    <Compile Include="Concrete\LochalMarket\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\LochalMarket\EntityFramework\LochalMarketContext.cs" />
     <Compile Include="Concrete\UzakMarket\EntityFramework\EfBayiAdresDal.cs" />
     <Compile Include="Concrete\UzakMarket\EntityFramework\EfBayiDal.cs" />
     <Compile Include="Concrete\UzakMarket\EntityFramework\EfCalisanDal.cs" />
@@ -96,9 +99,7 @@
     <Compile Include="Concrete\UzakMarket\EntityFramework\UzakMarketContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\LochalMarket\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">
       <Project>{f28a7fb4-d798-4d55-ae81-18160c3f20cc}</Project>
