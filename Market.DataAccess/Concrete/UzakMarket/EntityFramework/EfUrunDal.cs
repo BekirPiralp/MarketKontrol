@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
+namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
-    public class EfFotografDal : EfEntityRepositoryBase<Fotograf,UzakMarketContext>,IFotografDal
+    public class EfUrunDal : EfEntityRepositoryBase<Urun,UzakMarketContext>,IUrunDal
     {
     }
 }

@@ -72,32 +72,32 @@
     <Compile Include="Abstract\IUlkeDal.cs" />
     <Compile Include="Abstract\IUrunDal.cs" />
     <Compile Include="Abstract\IYoneticiDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfBayiAdresDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfBayiDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfCalisanDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfDefoDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfEkBilgiDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfEntityRepositoryBase.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfFirmaDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfFisDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfFotografDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfIadeDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfIlceDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfIlDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfMudurDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfPersonelAdresDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfPersonelDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfPersonelSifreDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfPersonelSilDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfSatisDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfUlkeDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfUrunDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\EfYoneticiDal.cs" />
-    <Compile Include="Concrete\LochalMarket\EntityFramework\UzakMarketContext.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfBayiAdresDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfBayiDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfCalisanDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfDefoDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfEkBilgiDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfFirmaDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfFisDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfFotografDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfIadeDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfIlceDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfIlDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfMudurDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfPersonelAdresDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfPersonelDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfPersonelSifreDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfPersonelSilDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfSatisDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfUlkeDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfUrunDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\EfYoneticiDal.cs" />
+    <Compile Include="Concrete\UzakMarket\EntityFramework\UzakMarketContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Concrete\UzakMarket\" />
+    <Folder Include="Concrete\LochalMarket\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">

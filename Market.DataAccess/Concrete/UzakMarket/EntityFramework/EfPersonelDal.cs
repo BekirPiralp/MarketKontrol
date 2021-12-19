@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
+namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
-    public class EfBayiAdresDal: EfEntityRepositoryBase<BayiAdres,UzakMarketContext>,IBayiAdresDal
+    public class EfPersonelDal : EfEntityRepositoryBase<Personel,UzakMarketContext>,IPersonelDal
     {
     }
 }
