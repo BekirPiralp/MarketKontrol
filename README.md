@@ -1,3 +1,3 @@
 # MarketKontrol
 
-Bu proşe Market Sayış projesinin geliştirilmiş versilyonudur
+Bu proje Market Satış projesinin geliştirilmiş versilyonudur...
