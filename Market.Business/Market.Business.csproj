@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CE96D72-E92A-4AE6-BF46-ABBCA8202DAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Market.Business</RootNamespace>
+    <AssemblyName>Market.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.0.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IBayiAdresService.cs" />
+    <Compile Include="Abstract\IBayiService.cs" />
+    <Compile Include="Abstract\IBusinessRepositoryBase.cs" />
+    <Compile Include="Abstract\ICalisanService.cs" />
+    <Compile Include="Abstract\IDefoService.cs" />
+    <Compile Include="Abstract\IDepoEkleUrunService.cs" />
+    <Compile Include="Abstract\IEkBilgiService.cs" />
+    <Compile Include="Abstract\IFirmaService.cs" />
+    <Compile Include="Abstract\IFisService.cs" />
+    <Compile Include="Abstract\IFotografService.cs" />
+    <Compile Include="Abstract\IIadeService.cs" />
+    <Compile Include="Abstract\IIlceService.cs" />
+    <Compile Include="Abstract\IIlService.cs" />
+    <Compile Include="Abstract\IMudurService.cs" />
+    <Compile Include="Abstract\IUlkeService.cs" />
+    <Compile Include="Abstract\IPersonelAdresService.cs" />
+    <Compile Include="Abstract\IPersonelService.cs" />
+    <Compile Include="Abstract\IPersonelSifreService.cs" />
+    <Compile Include="Abstract\IPersonelSilService.cs" />
+    <Compile Include="Abstract\ISatisService.cs" />
+    <Compile Include="Abstract\IUrunService.cs" />
+    <Compile Include="Abstract\IYoneticiService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMBayiService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMDefoService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMDepoEkleUrun.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMEkBilgiService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMFirmaService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMFisService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMIadeService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMPersonelService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMPersonelSifreService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMSatisService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMUrunService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMUrunService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMCalisanservice.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMBayiAdresService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMBayiService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMDefoService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMEkBilgiService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMFirmaService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMFisService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMFotografService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMIadeService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMIlceService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMIlService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMMudurService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMPersonelAdresService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMPersonelService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMPersonelSifreService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMPersonelSilService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMSatisService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMUlkeService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMYoneticiService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMBayiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\UzakMarket\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Market.DataAccess\Market.DataAccess.csproj">
+      <Project>{a8f6e4b2-2414-4913-b079-e8ea5db885b8}</Project>
+      <Name>Market.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">
+      <Project>{F28A7FB4-D798-4D55-AE81-18160C3F20CC}</Project>
+      <Name>Market.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Restriction\Market.Restriction.csproj">
+      <Project>{B63E900D-E9F5-4B62-BD65-B42BE3D3904F}</Project>
+      <Name>Market.Restriction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
