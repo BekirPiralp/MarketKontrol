@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ValidationTool.cs" />
+    <Compile Include="ValidationRules\FluentValidation\Filters.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMBayiValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMDefoValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMDepoEkleUrunValidator.cs" />
@@ -72,6 +73,15 @@
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMIadeValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMIlceValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMIlValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMMudurValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMPersonelAdresValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMPersonelSifreValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMPersonelSilvalidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMPersonelValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMSatisValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMUlkeValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMUrunValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMYoneticiValidator.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

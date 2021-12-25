@@ -1,22 +1,24 @@
 ﻿using FluentValidation;
 using Market.Entity.Concrete;
 
-
-namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
+namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class LMUrunValidator:AbstractValidator<Urun>
+    public class UMUrunValidator :AbstractValidator<Urun>
     {
-        public LMUrunValidator()
+        public UMUrunValidator()
         {
-            RuleFor(p => p.Id).NotEmpty();//uzak serverdan gelecek
+            RuleFor(p => p.Id).NotEmpty();
             RuleFor(p => p.Firma).NotEmpty();
             RuleFor(p => p.Bayi).NotEmpty();
             RuleFor(p => p.Ad).NotEmpty();
+            RuleFor(p => p.Barkod).NotEmpty();
             RuleFor(p => p.Marka).NotEmpty();
             RuleFor(p => p.UretimYeri).NotEmpty();
+            RuleFor(p => p.Aciklama).NotEmpty();
+            RuleFor(p => p.Adet).GreaterThanOrEqualTo(0);
+            RuleFor(p => p.Resim).NotEmpty();
             RuleFor(p => p.Indirim).Must(Filters.Indirim).WithMessage(Filters.messageIndirim);
             RuleFor(p => p.Fiyat).GreaterThan(0);
-            RuleFor(p => p.Barkod).NotEmpty();
         }
     }
 }
