@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMPersonelSifreDal:IPersonelSifreDal,IUMEntityRepository<PersonelSifre>
+    public interface IUMPersonelSifreDal :IPersonelSifreDal,IUMEntityRepository<PersonelSifre>
     {
     }
 }

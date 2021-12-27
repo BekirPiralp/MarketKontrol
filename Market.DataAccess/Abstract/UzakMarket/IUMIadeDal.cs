@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMIadeDal: IIadeDal,IUMEntityRepository<Iade>
+    public interface IUMIadeDal : IIadeDal,IUMEntityRepository<Iade>
     {
     }
 }

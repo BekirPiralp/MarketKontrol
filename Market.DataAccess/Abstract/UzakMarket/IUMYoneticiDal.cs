@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMYoneticiDal:IYoneticiDal,IUMEntityRepository<Yonetici>
+    public interface IUMYoneticiDal:IYoneticiDal,IUMEntityRepository<Yonetici>
     {
     }
 }

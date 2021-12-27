@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMMudurDal: IMudurDal,IUMEntityRepository<Mudur>
+    public interface IUMMudurDal : IMudurDal,IUMEntityRepository<Mudur>
     {
     }
 }

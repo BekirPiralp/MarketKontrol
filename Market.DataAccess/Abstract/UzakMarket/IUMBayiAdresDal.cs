@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMBayiAdresDal : IBayiAdresDal, IUMEntityRepository<BayiAdres>
+    public interface IUMBayiAdresDal : IBayiAdresDal, IUMEntityRepository<BayiAdres>
     {
     }
 }

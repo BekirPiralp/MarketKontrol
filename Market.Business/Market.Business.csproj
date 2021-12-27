@@ -132,7 +132,27 @@
     <Compile Include="Concrete\LochalMarket\LMPersonelSifreService.cs" />
     <Compile Include="Concrete\LochalMarket\LMSatisService.cs" />
     <Compile Include="Concrete\LochalMarket\LMUrunService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMBayiAdresService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMBayiService.cs" />
     <Compile Include="Concrete\UzakMarket\UMBusinessRepositoryBaseService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMCalisanService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMDefoService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMEkBilgiService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMFirmaService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMFisService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMFotografService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMIadeService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMIlceService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMIlService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMMudurService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMPersonelAdresService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMPersonelService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMPersonelSifreService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMPersonelSilService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMSatisService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMUlkeService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMUrunService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMYoneticiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

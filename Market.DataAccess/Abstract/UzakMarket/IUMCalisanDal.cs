@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMCalisanDal : ICalisanDal, IUMEntityRepository<Calisan>
+    public interface IUMCalisanDal : ICalisanDal, IUMEntityRepository<Calisan>
     {
     }
 }

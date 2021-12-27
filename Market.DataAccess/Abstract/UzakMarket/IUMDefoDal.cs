@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMDefoDal:IDefoDal,IUMEntityRepository<Defo>
+    public interface IUMDefoDal :IDefoDal,IUMEntityRepository<Defo>
     {
     }
 }

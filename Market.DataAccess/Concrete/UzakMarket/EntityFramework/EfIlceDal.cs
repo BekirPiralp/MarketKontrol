@@ -1,13 +1,8 @@
-﻿using Market.DataAccess.Abstract;
+﻿using Market.DataAccess.Abstract.UzakMarket;
 using Market.Entity.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
-    public class EfIlceDal : EfEntityRepositoryBase<Ilce,UzakMarketContext>,IIlceDal
+    public class EfIlceDal : EfEntityRepositoryBase<Ilce, UzakMarketContext>, IUMIlceDal
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMSatisDal:ISatisDal,IUMEntityRepository<Satis>
+    public interface IUMSatisDal :ISatisDal,IUMEntityRepository<Satis>
     {
     }
 }

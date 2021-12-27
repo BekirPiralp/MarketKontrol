@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMEkBilgiDal:IEkBilgiDal,IUMEntityRepository<EkBilgi>
+    public interface IUMEkBilgiDal :IEkBilgiDal,IUMEntityRepository<EkBilgi>
     {
     }
 }

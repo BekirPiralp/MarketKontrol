@@ -2,7 +2,7 @@
 
 namespace Market.DataAccess.Abstract.UzakMarket
 {
-    interface IUMFotografDal:IFotografDal,IUMEntityRepository<Fotograf>
+    public interface IUMFotografDal :IFotografDal,IUMEntityRepository<Fotograf>
     {
     }
 }
