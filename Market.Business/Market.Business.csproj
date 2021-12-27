@@ -67,7 +67,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IBayiAdresService.cs" />
     <Compile Include="Abstract\IBayiService.cs" />
-    <Compile Include="Abstract\IBusinessRepositoryBase.cs" />
+    <Compile Include="Abstract\IBusinessRepositoryBaseService.cs" />
     <Compile Include="Abstract\ICalisanService.cs" />
     <Compile Include="Abstract\IDefoService.cs" />
     <Compile Include="Abstract\IDepoEkleUrunService.cs" />
@@ -88,8 +88,9 @@
     <Compile Include="Abstract\IUrunService.cs" />
     <Compile Include="Abstract\IYoneticiService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMBayiService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMBusinessRepositoryBaseService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMDefoService.cs" />
-    <Compile Include="Abstract\LochalMarket\ILMDepoEkleUrun.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMDepoEkleUrunService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMEkBilgiService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMFirmaService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMFisService.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Abstract\LochalMarket\ILMPersonelSifreService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMSatisService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMUrunService.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMBusinessRepositoryBaseService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMUrunService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMCalisanservice.cs" />
     <Compile Include="Abstract\UzakMarket\IUMBayiAdresService.cs" />
@@ -119,11 +121,21 @@
     <Compile Include="Abstract\UzakMarket\IUMUlkeService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMYoneticiService.cs" />
     <Compile Include="Concrete\LochalMarket\LMBayiService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMBusinessRepositoryBaseService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMDefoService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMDepoEkleUrunService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMEkBilgiService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMFirmaService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMFisService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMIadeService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMPersonelService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMPersonelSifreService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMSatisService.cs" />
+    <Compile Include="Concrete\LochalMarket\LMUrunService.cs" />
+    <Compile Include="Concrete\UzakMarket\UMBusinessRepositoryBaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concrete\UzakMarket\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Market.DataAccess\Market.DataAccess.csproj">
       <Project>{a8f6e4b2-2414-4913-b079-e8ea5db885b8}</Project>

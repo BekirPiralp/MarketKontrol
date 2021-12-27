@@ -1,13 +1,8 @@
-﻿using Market.DataAccess.Abstract;
+﻿using Market.DataAccess.Abstract.LochalMarket;
 using Market.Entity.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
 {
-    public class EfUrunDal : EfEntityRepositoryBase<Urun,LochalMarketContext>,IUrunDal
+    public class EfUrunDal : EfEntityRepositoryBase<Urun,LochalMarketContext>,ILMUrunDal
     {
     }
 }

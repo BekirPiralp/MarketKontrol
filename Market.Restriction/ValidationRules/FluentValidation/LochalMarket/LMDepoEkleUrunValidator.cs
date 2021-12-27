@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMDepoEkleUrunValidator: AbstractValidator<DepoEkleUrun>
+    public class LMDepoEkleUrunValidator: LMEntityValidatorBase<DepoEkleUrun>
     {
         public LMDepoEkleUrunValidator()
         {

@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMFisValidator: AbstractValidator<Fis>
+    public class LMFisValidator: LMEntityValidatorBase<Fis>
     {
         public LMFisValidator()
         {

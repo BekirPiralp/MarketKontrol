@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMDefoValidator :AbstractValidator<Defo>
+    public class UMDefoValidator : UMEntityValidatorBase<Defo>
     {
         public UMDefoValidator()
         {

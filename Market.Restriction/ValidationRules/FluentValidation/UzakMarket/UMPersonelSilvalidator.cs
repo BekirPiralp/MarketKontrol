@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMPersonelSilvalidator :AbstractValidator<PersonelSil>
+    public class UMPersonelSilvalidator : UMEntityValidatorBase<PersonelSil>
     {
         public UMPersonelSilvalidator()
         {

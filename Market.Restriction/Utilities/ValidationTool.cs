@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,14 @@ namespace Market.Restriction.Utilities
             var result = validator.Validate(entity);
             if (result.Errors.Count > 0)
                 throw new ValidationException(result.Errors);
+        }
+        public static void Validate<TValidator>(List<object> entitys)
+            where TValidator : IValidator, new()
+        {
+            for (int i = 0; i < entitys.Count; i++)
+            {
+                Validate<TValidator>(entitys[i]);
+            }                      
         }
     }
 }

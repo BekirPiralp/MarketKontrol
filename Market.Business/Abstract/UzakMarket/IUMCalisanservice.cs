@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Market.Entity.Concrete;
 
 namespace Market.Business.Abstract.UzakMarket
 {
-    public interface IUMCalisanservice : ICalisanService
+    public interface IUMCalisanservice : ICalisanService,IUMBusinessRepositoryBaseService<Calisan>
     {
     }
 }

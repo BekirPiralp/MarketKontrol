@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMUlkeValidator :AbstractValidator<Ulke>
+    public class UMUlkeValidator : UMEntityValidatorBase<Ulke>
     {
         public UMUlkeValidator()
         {

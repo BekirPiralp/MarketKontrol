@@ -1,15 +1,9 @@
-﻿using Market.Entity.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Market.Entity.Concrete
 {
-    public class BayiAdres : IEntity
+    public class BayiAdres : EntityBase
     {
-        public int Id { get; set; }
         public int Firma { get; set; }
         public int Bayi { get; set; }
         public Int16 Ilce { get; set; }

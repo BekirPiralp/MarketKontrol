@@ -50,6 +50,7 @@
     <Compile Include="Concrete\Defo.cs" />
     <Compile Include="Concrete\DepoEkleUrun.cs" />
     <Compile Include="Concrete\EkBilgi.cs" />
+    <Compile Include="Concrete\EntityBase.cs" />
     <Compile Include="Concrete\Firma.cs" />
     <Compile Include="Concrete\Fis.cs" />
     <Compile Include="Concrete\Fotograf.cs" />

@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMFotografValidator : AbstractValidator<Fotograf>
+    public class UMFotografValidator : UMEntityValidatorBase<Fotograf>
     {
         public UMFotografValidator()
         {

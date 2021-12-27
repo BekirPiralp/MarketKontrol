@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMSatisValidator : AbstractValidator<Satis>
+    public class LMSatisValidator : LMEntityValidatorBase<Satis>
     {
         public LMSatisValidator()
         {

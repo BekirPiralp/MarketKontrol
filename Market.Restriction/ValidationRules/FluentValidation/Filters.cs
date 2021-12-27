@@ -6,9 +6,6 @@ namespace Market.Restriction.ValidationRules.FluentValidation
     public static class Filters
     {
         private const int _uzunlukTc = 11;
-        public const string messageTc = "TC Kimlik numarası 11 hane ve sadece sayı olmalıdır.";
-        public const string messageCinsiyet = "Cinsiyeti Belirtiniz";
-        public const string messageIndirim = "İndidrim %0 - %100 arası olabilir.";
 
         public static bool Cinsiyet(char arg)
         {

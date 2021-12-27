@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMBayiValidator :AbstractValidator<Bayi>
+    public class UMBayiValidator : UMEntityValidatorBase<Bayi>
     {
         public UMBayiValidator()
         {

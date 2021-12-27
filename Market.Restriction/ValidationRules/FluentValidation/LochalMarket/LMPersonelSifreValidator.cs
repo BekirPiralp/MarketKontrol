@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMPersonelSifreValidator:AbstractValidator<PersonelSifre>
+    public class LMPersonelSifreValidator: LMEntityValidatorBase<PersonelSifre>
     {
         public LMPersonelSifreValidator()
         {

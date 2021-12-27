@@ -56,6 +56,7 @@
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMDefoValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMDepoEkleUrunValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMEkBilgiValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMEntityValidatorBase.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMFirmaValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMFisValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMIadeValidator.cs" />
@@ -63,10 +64,12 @@
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMPersonelValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMSatisValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\LochalMarket\LMUrunValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\Messages.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMBayiAdresValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMBayiValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMDefoValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMEkBilgiValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMEntityValidatorBase.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMFirmaValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMFisValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMFotografValidator.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMUlkeValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMUrunValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\UzakMarket\UMYoneticiValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\Validators.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

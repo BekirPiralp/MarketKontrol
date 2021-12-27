@@ -8,5 +8,6 @@ namespace Market.Entity.Abstract
 {
     public interface IEntity
     {
+        
     }
 }

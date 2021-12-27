@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IMudurService : IBusinessRepositoryBase<Mudur>
+    public interface IMudurService : ILMBusinessRepositoryBase<Mudur>
     {
     }
 }

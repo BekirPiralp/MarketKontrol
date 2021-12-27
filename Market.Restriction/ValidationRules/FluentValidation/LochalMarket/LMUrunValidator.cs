@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMUrunValidator:AbstractValidator<Urun>
+    public class LMUrunValidator: LMEntityValidatorBase<Urun>
     {
         public LMUrunValidator()
         {
@@ -14,7 +14,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
             RuleFor(p => p.Ad).NotEmpty();
             RuleFor(p => p.Marka).NotEmpty();
             RuleFor(p => p.UretimYeri).NotEmpty();
-            RuleFor(p => p.Indirim).Must(Filters.Indirim).WithMessage(Filters.messageIndirim);
+            RuleFor(p => p.Indirim).Must(Filters.Indirim).WithMessage(Messages.Indirim);
             RuleFor(p => p.Fiyat).GreaterThan(0);
             RuleFor(p => p.Barkod).NotEmpty();
         }

@@ -1,17 +1,16 @@
-﻿using Market.DataAccess.Abstract;
+﻿using Market.DataAccess.Abstract.LochalMarket;
 using Market.Entity.Abstract;
+using Market.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
 {
-    public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
-        where TEntity : class, IEntity, new()
+    public class EfEntityRepositoryBase<TEntity, TContext> : ILMEntityRepository<TEntity>
+        where TEntity : EntityBase, IEntity, new()
         where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
@@ -20,6 +19,18 @@ namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
             {
                 context.Entry(entity).State = EntityState.Added;
                 context.SaveChanges();
+            }
+        }
+        
+        public void Add(List<TEntity> entities)
+        {
+            using (TContext context = new TContext())
+            {
+                for (int i = 0; i < entities.Count; i++)
+                {
+                    context.Entry(entities[i]).State = EntityState.Added;
+                    context.SaveChanges();
+                }                
             }
         }
 

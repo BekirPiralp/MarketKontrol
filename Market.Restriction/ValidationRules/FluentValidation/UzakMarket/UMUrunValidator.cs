@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMUrunValidator :AbstractValidator<Urun>
+    public class UMUrunValidator : UMEntityValidatorBase<Urun>
     {
         public UMUrunValidator()
         {
@@ -17,7 +17,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
             RuleFor(p => p.Aciklama).NotEmpty();
             RuleFor(p => p.Adet).GreaterThanOrEqualTo(0);
             RuleFor(p => p.Resim).NotEmpty();
-            RuleFor(p => p.Indirim).Must(Filters.Indirim).WithMessage(Filters.messageIndirim);
+            RuleFor(p => p.Indirim).Must(Filters.Indirim).WithMessage(Messages.Indirim);
             RuleFor(p => p.Fiyat).GreaterThan(0);
         }
     }

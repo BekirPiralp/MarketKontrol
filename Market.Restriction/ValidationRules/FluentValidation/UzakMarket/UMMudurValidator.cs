@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMMudurValidator : AbstractValidator<Mudur>
+    public class UMMudurValidator : UMEntityValidatorBase<Mudur>
     {
         public UMMudurValidator()
         {

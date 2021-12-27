@@ -10,5 +10,6 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
     public class EfBayiDal : EfEntityRepositoryBase<Bayi,UzakMarketContext>,IBayiDal
     {
+        
     }
 }

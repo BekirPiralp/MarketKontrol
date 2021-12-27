@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IEkBilgiService : IBusinessRepositoryBase<EkBilgi>
+    public interface IEkBilgiService : ILMBusinessRepositoryBase<EkBilgi>
     {
     }
 }

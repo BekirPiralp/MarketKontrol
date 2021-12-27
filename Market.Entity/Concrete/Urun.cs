@@ -1,16 +1,9 @@
-﻿using Market.Entity.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace Market.Entity.Concrete
 {
-    public class Urun : IEntity
+    public class Urun : EntityBase
     {
-        public int Id { get; set; }
         public int Firma { get; set; }
         public int Bayi { get; set; }
         public string Barkod { get; set; }

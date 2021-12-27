@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IBusinessRepositoryBase<TEntity> where TEntity: class,IEntity,new()
+    public interface IBusinessRepositoryBaseService<TEntity> where TEntity: class,IEntity,new()
     {
         /*Temel olarak bütün sınıflarda gerekli olan methodlar...*/
         List<TEntity> GetAll();

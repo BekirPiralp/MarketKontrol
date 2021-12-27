@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
 {
-    public class LMEkBilgiValidator : AbstractValidator<EkBilgi>
+    public class LMEkBilgiValidator : LMEntityValidatorBase<EkBilgi>
     {
         public LMEkBilgiValidator()
         {

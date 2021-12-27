@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMIlceValidator :AbstractValidator<Ilce>
+    public class UMIlceValidator : UMEntityValidatorBase<Ilce>
     {
         public UMIlceValidator()
         {

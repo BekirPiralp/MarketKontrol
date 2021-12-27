@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IBayiAdresService : IBusinessRepositoryBase<BayiAdres>
+    public interface IBayiAdresService : ILMBusinessRepositoryBase<BayiAdres>
     {
     }
 }

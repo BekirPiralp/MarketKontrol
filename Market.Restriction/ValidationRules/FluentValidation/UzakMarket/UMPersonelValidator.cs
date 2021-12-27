@@ -4,7 +4,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMPersonelValidator :AbstractValidator<Personel>
+    public class UMPersonelValidator : UMEntityValidatorBase<Personel>
     {
         public UMPersonelValidator()
         {
@@ -12,8 +12,8 @@ namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
             RuleFor(p => p.Firma).NotEmpty();
             RuleFor(p => p.Ad).NotEmpty();
             RuleFor(p => p.Soyad).NotEmpty();
-            RuleFor(p => p.Tc).Must(Filters.Tc).WithMessage(Filters.messageTc);
-            RuleFor(p => p.Cinsiyet).Must(Filters.Cinsiyet).WithMessage(Filters.messageCinsiyet);
+            RuleFor(p => p.Tc).Must(Filters.Tc).WithMessage(Messages.Tc);
+            RuleFor(p => p.Cinsiyet).Must(Filters.Cinsiyet).WithMessage(Messages.Cinsiyet);
         }
     }
 }

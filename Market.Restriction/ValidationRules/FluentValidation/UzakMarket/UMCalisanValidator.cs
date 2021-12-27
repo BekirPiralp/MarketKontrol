@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMCalisanValidator:AbstractValidator<Calisan>
+    public class UMCalisanValidator: UMEntityValidatorBase<Calisan>
     {
         public UMCalisanValidator()
         {

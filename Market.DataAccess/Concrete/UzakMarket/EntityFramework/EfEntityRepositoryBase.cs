@@ -1,17 +1,16 @@
-﻿using Market.DataAccess.Abstract;
+﻿using Market.DataAccess.Abstract.UzakMarket;
 using Market.Entity.Abstract;
+using Market.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
-    public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
-        where TEntity : class, IEntity, new()
+    public class EfEntityRepositoryBase<TEntity, TContext> : IUMEntityRepository<TEntity>
+        where TEntity : EntityBase, IEntity, new()
         where TContext : DbContext, new()
     {
         public async void Add(TEntity entity)

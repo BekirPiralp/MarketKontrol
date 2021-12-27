@@ -3,7 +3,7 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMBayiAdresValidator: AbstractValidator<BayiAdres>
+    public class UMBayiAdresValidator: UMEntityValidatorBase<BayiAdres>
     {
         public UMBayiAdresValidator()
         {
