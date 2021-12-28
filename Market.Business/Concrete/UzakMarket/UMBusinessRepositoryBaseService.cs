@@ -12,10 +12,10 @@ using System.Collections.Generic;
 
 namespace Market.Business.Concrete.UzakMarket
 {
-    public class UMBusinessRepositoryBaseService<TEntity,IUMEntityDal,UMEntityValidator> : IUMBusinessRepositoryBaseService<TEntity>,IBusinessRepositoryBaseService<TEntity>
-        where TEntity: EntityBase,IEntity,new()
-        where IUMEntityDal:class,IUMEntityRepository<TEntity>
-        where UMEntityValidator:UMEntityValidatorBase<TEntity>,IValidator,new()
+    public class UMBusinessRepositoryBaseService<TEntity, IUMEntityDal, UMEntityValidator> : IUMBusinessRepositoryBaseService<TEntity>, IBusinessRepositoryBaseService<TEntity>
+        where TEntity : EntityBase, IEntity, new()
+        where IUMEntityDal : class, IUMEntityRepository<TEntity>
+        where UMEntityValidator : UMEntityValidatorBase<TEntity>, IValidator, new()
     {
         private IUMEntityDal _entityDal;
         public UMBusinessRepositoryBaseService(IUMEntityDal entityDal)

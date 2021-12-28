@@ -3,9 +3,9 @@ using Market.Entity.Concrete;
 
 namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
 {
-    public class UMPersonelSilvalidator : UMEntityValidatorBase<PersonelSil>
+    public class UMPersonelSilValidator : UMEntityValidatorBase<PersonelSil>
     {
-        public UMPersonelSilvalidator()
+        public UMPersonelSilValidator()
         {
             RuleFor(p => p.Id).NotEmpty();
             RuleFor(p => p.Firma).NotEmpty();

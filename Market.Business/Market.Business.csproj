@@ -101,7 +101,7 @@
     <Compile Include="Abstract\LochalMarket\ILMUrunService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMBusinessRepositoryBaseService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMUrunService.cs" />
-    <Compile Include="Abstract\UzakMarket\IUMCalisanservice.cs" />
+    <Compile Include="Abstract\UzakMarket\IUMCalisanService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMBayiAdresService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMBayiService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMDefoService.cs" />

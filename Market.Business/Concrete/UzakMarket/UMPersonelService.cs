@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Market.Business.Abstract;
+using Market.DataAccess.Abstract.UzakMarket;
+using Market.Entity.Concrete;
+using Market.Restriction.ValidationRules.FluentValidation.UzakMarket;
 
 namespace Market.Business.Concrete.UzakMarket
 {
-    class UMPersonelService
+    public class UMPersonelService : UMBusinessRepositoryBaseService<Personel, IUMPersonelDal, UMPersonelValidator>, IPersonelService
     {
+        public UMPersonelService(IUMPersonelDal personelDal):base(personelDal)
+        {
+
+        }
     }
 }

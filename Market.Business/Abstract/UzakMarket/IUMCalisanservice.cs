@@ -2,7 +2,7 @@
 
 namespace Market.Business.Abstract.UzakMarket
 {
-    public interface IUMCalisanservice : ICalisanService,IUMBusinessRepositoryBaseService<Calisan>
+    public interface IUMCalisanService : ICalisanService,IUMBusinessRepositoryBaseService<Calisan>
     {
     }
 }
