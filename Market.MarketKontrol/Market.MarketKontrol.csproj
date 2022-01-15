@@ -64,16 +64,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ayarlar\FormTasi.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personel\FrmDefo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmDefo.Designer.cs">
+      <DependentUpon>FrmDefo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmHakkinda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmHakkinda.Designer.cs">
+      <DependentUpon>FrmHakkinda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmIade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmIade.Designer.cs">
+      <DependentUpon>FrmIade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmPersonel.Designer.cs">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmProfil.Designer.cs">
+      <DependentUpon>FrmProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmSatis.Designer.cs">
+      <DependentUpon>FrmSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmUrun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmUrun.Designer.cs">
+      <DependentUpon>FrmUrun.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemaRenk.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmDefo.resx">
+      <DependentUpon>FrmDefo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmHakkinda.resx">
+      <DependentUpon>FrmHakkinda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmIade.resx">
+      <DependentUpon>FrmIade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmPersonel.resx">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmProfil.resx">
+      <DependentUpon>FrmProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmSatis.resx">
+      <DependentUpon>FrmSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmUrun.resx">
+      <DependentUpon>FrmUrun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +166,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Amblem ve ekran.ico" />
+    <None Include="ResimLogo\saveData.png" />
+    <None Include="ResimLogo\cancel.png" />
+    <None Include="ResimLogo\fiseEkle.png" />
+    <None Include="ResimLogo\fistenCikar.png" />
+    <None Include="ResimLogo\SatisIptal.png" />
+    <None Include="ResimLogo\sat.png" />
+    <None Include="ResimLogo\userAdd.png" />
+    <None Include="ResimLogo\userRemove.png" />
+    <None Include="ResimLogo\defectiveProduct.png" />
+    <None Include="ResimLogo\urun.jpg" />
+    <None Include="ResimLogo\about.png" />
+    <None Include="ResimLogo\selcuk_universitesi_logo.png" />
+    <None Include="ResimLogo\products.png" />
+    <None Include="ResimLogo\DefoVeIade.png" />
+    <None Include="ResimLogo\profil.png" />
+    <None Include="ResimLogo\userSetting.png" />
+    <None Include="ResimLogo\shop.png" />
+    <None Include="ResimLogo\gif\icons8-shopping-bag.gif" />
+    <None Include="ResimLogo\maximizing.png" />
+    <None Include="ResimLogo\KapiTiklatma.jpg" />
+    <None Include="ResimLogo\linkedin.png" />
+    <None Include="ResimLogo\instagram.png" />
+    <None Include="ResimLogo\gmail.png" />
+    <None Include="ResimLogo\github.png" />
+    <None Include="ResimLogo\facebook.png" />
+    <None Include="ResimLogo\settings.png" />
+    <None Include="ResimLogo\userBoss.png" />
+    <None Include="ResimLogo\userEmployee.png" />
     <None Include="ResimLogo\passwordShow.png" />
     <None Include="ResimLogo\passwordHide.png" />
     <None Include="ResimLogo\pasword.png" />
@@ -112,7 +205,9 @@
     <None Include="ResimLogo\Amblem ve ekran.ico" />
     <None Include="ResimLogo\AmblemVeEkran_600x600.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Yonetici\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

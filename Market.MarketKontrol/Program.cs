@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,9 +15,20 @@ namespace Market.MarketKontrol
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            /* Uygulamanın Tek bir adet açılması için kod */
+            bool acikKontrol = false;
+            Mutex mutex = new Mutex(true, "Program", out acikKontrol);
+            if (acikKontrol)
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Personel.FrmPersonel());//frmGiris());
+            }
+            else
+            {
+                MessageBox.Show("Program Zaten Açık", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
