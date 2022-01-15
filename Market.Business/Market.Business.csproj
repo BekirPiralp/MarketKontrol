@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\DigerIslemler\IVeriEsitle.cs" />
     <Compile Include="Abstract\IBayiAdresService.cs" />
     <Compile Include="Abstract\IBayiService.cs" />
     <Compile Include="Abstract\IBusinessRepositoryBaseService.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Abstract\UzakMarket\IUMSatisService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMUlkeService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMYoneticiService.cs" />
+    <Compile Include="Concrete\DigerIslemler\VeriEsitle.cs" />
     <Compile Include="Concrete\LochalMarket\LMBayiService.cs" />
     <Compile Include="Concrete\LochalMarket\LMBusinessRepositoryBaseService.cs" />
     <Compile Include="Concrete\LochalMarket\LMDefoService.cs" />
