@@ -101,6 +101,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Amblem ve ekran.ico" />
+    <None Include="ResimLogo\KapiTiklatma.jpg" />
+    <None Include="ResimLogo\linkedin.png" />
+    <None Include="ResimLogo\instagram.png" />
+    <None Include="ResimLogo\gmail.png" />
+    <None Include="ResimLogo\github.png" />
+    <None Include="ResimLogo\facebook.png" />
+    <None Include="ResimLogo\settings.png" />
+    <None Include="ResimLogo\userBoss.png" />
+    <None Include="ResimLogo\userEmployee.png" />
     <None Include="ResimLogo\passwordShow.png" />
     <None Include="ResimLogo\passwordHide.png" />
     <None Include="ResimLogo\pasword.png" />
