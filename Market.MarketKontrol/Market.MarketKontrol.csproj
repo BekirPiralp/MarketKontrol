@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Amblem ve ekran.ico" />
+    <None Include="ResimLogo\settings1.png" />
     <None Include="ResimLogo\saveData.png" />
     <None Include="ResimLogo\cancel.png" />
     <None Include="ResimLogo\fiseEkle.png" />
