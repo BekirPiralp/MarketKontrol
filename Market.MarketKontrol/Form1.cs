@@ -80,24 +80,24 @@ namespace Market.MarketKontrol
             Process.Start("https://github.com/BekirPiralp");
         }
 
-        /* Yönetici ve Çalışan giriş*/
-        private bool yonetici = false;
+        /* Müdür ve Çalışan giriş*/
+        private bool mudur = false;
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            if (yonetici)
+            if (mudur)
             {
                 btnBoss.FlatAppearance.BorderSize = 0;
                 btnEmployee.FlatAppearance.BorderSize = 2;
-                yonetici = false;
+                mudur = false;
             }
         }
 
         private void btnBoss_Click(object sender, EventArgs e)
         {
-            if (!yonetici){
+            if (!mudur){
                 btnBoss.FlatAppearance.BorderSize = 2;
                 btnEmployee.FlatAppearance.BorderSize = 0;
-                yonetici = true;
+                mudur = true;
             }
         }
     }

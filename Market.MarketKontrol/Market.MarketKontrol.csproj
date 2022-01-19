@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ayarlar\FormTasi.cs" />
+    <Compile Include="ayarlar\GirisPersonelTut.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,7 +217,7 @@
     <None Include="ResimLogo\AmblemVeEkran_600x600.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Yonetici\" />
+    <Folder Include="Mudur\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -229,6 +230,24 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Market.Business\Market.Business.csproj">
+      <Project>{3ce96d72-e92a-4ae6-bf46-abbca8202daa}</Project>
+      <Name>Market.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.DataAccess\Market.DataAccess.csproj">
+      <Project>{a8f6e4b2-2414-4913-b079-e8ea5db885b8}</Project>
+      <Name>Market.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">
+      <Project>{f28a7fb4-d798-4d55-ae81-18160c3f20cc}</Project>
+      <Name>Market.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Restriction\Market.Restriction.csproj">
+      <Project>{b63e900d-e9f5-4b62-bd65-b42be3d3904f}</Project>
+      <Name>Market.Restriction</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

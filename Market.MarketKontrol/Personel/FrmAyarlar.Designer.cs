@@ -34,8 +34,8 @@ namespace Market.MarketKontrol.Personel
             this.tbxYenisSifre2 = new System.Windows.Forms.TextBox();
             this.tbxYeniSifre = new System.Windows.Forms.TextBox();
             this.tbxEskiSifre = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSifreIptal = new System.Windows.Forms.Button();
+            this.btnSifreKaydet = new System.Windows.Forms.Button();
             this.pnlAdresVeEkBilgi = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbxEkBilgi = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@ namespace Market.MarketKontrol.Personel
             this.cbxIlce = new System.Windows.Forms.ComboBox();
             this.cbxIl = new System.Windows.Forms.ComboBox();
             this.cbxUlke = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdresIptal = new System.Windows.Forms.Button();
+            this.btnAdresKaydet = new System.Windows.Forms.Button();
             this.pnlResim = new System.Windows.Forms.Panel();
             this.pbxUser = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnResimIptal = new System.Windows.Forms.Button();
+            this.btnResimKaydet = new System.Windows.Forms.Button();
             this.ofdUser = new System.Windows.Forms.OpenFileDialog();
             this.pnlSifre.SuspendLayout();
             this.pnlAdresVeEkBilgi.SuspendLayout();
@@ -65,8 +65,8 @@ namespace Market.MarketKontrol.Personel
             this.pnlSifre.Controls.Add(this.tbxYenisSifre2);
             this.pnlSifre.Controls.Add(this.tbxYeniSifre);
             this.pnlSifre.Controls.Add(this.tbxEskiSifre);
-            this.pnlSifre.Controls.Add(this.button2);
-            this.pnlSifre.Controls.Add(this.button1);
+            this.pnlSifre.Controls.Add(this.btnSifreIptal);
+            this.pnlSifre.Controls.Add(this.btnSifreKaydet);
             this.pnlSifre.Location = new System.Drawing.Point(180, 0);
             this.pnlSifre.Name = "pnlSifre";
             this.pnlSifre.Size = new System.Drawing.Size(400, 214);
@@ -113,23 +113,23 @@ namespace Market.MarketKontrol.Personel
             this.tbxEskiSifre.TabIndex = 1;
             this.tbxEskiSifre.Text = "Eski Şifre";
             // 
-            // button2
+            // btnSifreIptal
             // 
-            this.button2.Location = new System.Drawing.Point(301, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 38);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "iptal";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSifreIptal.Location = new System.Drawing.Point(301, 152);
+            this.btnSifreIptal.Name = "btnSifreIptal";
+            this.btnSifreIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnSifreIptal.TabIndex = 0;
+            this.btnSifreIptal.Text = "iptal";
+            this.btnSifreIptal.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSifreKaydet
             // 
-            this.button1.Location = new System.Drawing.Point(208, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Kaydet";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSifreKaydet.Location = new System.Drawing.Point(208, 152);
+            this.btnSifreKaydet.Name = "btnSifreKaydet";
+            this.btnSifreKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnSifreKaydet.TabIndex = 0;
+            this.btnSifreKaydet.Text = "Kaydet";
+            this.btnSifreKaydet.UseVisualStyleBackColor = true;
             // 
             // pnlAdresVeEkBilgi
             // 
@@ -140,8 +140,8 @@ namespace Market.MarketKontrol.Personel
             this.pnlAdresVeEkBilgi.Controls.Add(this.cbxIlce);
             this.pnlAdresVeEkBilgi.Controls.Add(this.cbxIl);
             this.pnlAdresVeEkBilgi.Controls.Add(this.cbxUlke);
-            this.pnlAdresVeEkBilgi.Controls.Add(this.button4);
-            this.pnlAdresVeEkBilgi.Controls.Add(this.button3);
+            this.pnlAdresVeEkBilgi.Controls.Add(this.btnAdresIptal);
+            this.pnlAdresVeEkBilgi.Controls.Add(this.btnAdresKaydet);
             this.pnlAdresVeEkBilgi.Location = new System.Drawing.Point(180, 214);
             this.pnlAdresVeEkBilgi.Name = "pnlAdresVeEkBilgi";
             this.pnlAdresVeEkBilgi.Size = new System.Drawing.Size(400, 214);
@@ -217,25 +217,25 @@ namespace Market.MarketKontrol.Personel
             this.cbxUlke.TabIndex = 1;
             this.cbxUlke.Text = "Ülke";
             // 
-            // button4
+            // btnAdresIptal
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(315, 167);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 38);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "iptal";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAdresIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdresIptal.Location = new System.Drawing.Point(315, 167);
+            this.btnAdresIptal.Name = "btnAdresIptal";
+            this.btnAdresIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnAdresIptal.TabIndex = 0;
+            this.btnAdresIptal.Text = "iptal";
+            this.btnAdresIptal.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAdresKaydet
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(222, 167);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 38);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Kaydet";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdresKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdresKaydet.Location = new System.Drawing.Point(222, 167);
+            this.btnAdresKaydet.Name = "btnAdresKaydet";
+            this.btnAdresKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnAdresKaydet.TabIndex = 0;
+            this.btnAdresKaydet.Text = "Kaydet";
+            this.btnAdresKaydet.UseVisualStyleBackColor = true;
             // 
             // pnlResim
             // 
@@ -243,8 +243,8 @@ namespace Market.MarketKontrol.Personel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlResim.Controls.Add(this.pbxUser);
-            this.pnlResim.Controls.Add(this.button6);
-            this.pnlResim.Controls.Add(this.button5);
+            this.pnlResim.Controls.Add(this.btnResimIptal);
+            this.pnlResim.Controls.Add(this.btnResimKaydet);
             this.pnlResim.Location = new System.Drawing.Point(0, 0);
             this.pnlResim.Name = "pnlResim";
             this.pnlResim.Size = new System.Drawing.Size(180, 428);
@@ -266,25 +266,25 @@ namespace Market.MarketKontrol.Personel
             this.pbxUser.TabStop = false;
             this.pbxUser.Click += new System.EventHandler(this.pbxUser_Click);
             // 
-            // button6
+            // btnResimIptal
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.Location = new System.Drawing.Point(96, 296);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 38);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "iptal";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnResimIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResimIptal.Location = new System.Drawing.Point(96, 296);
+            this.btnResimIptal.Name = "btnResimIptal";
+            this.btnResimIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnResimIptal.TabIndex = 0;
+            this.btnResimIptal.Text = "iptal";
+            this.btnResimIptal.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnResimKaydet
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Location = new System.Drawing.Point(8, 296);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 38);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Kaydet";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnResimKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResimKaydet.Location = new System.Drawing.Point(8, 296);
+            this.btnResimKaydet.Name = "btnResimKaydet";
+            this.btnResimKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnResimKaydet.TabIndex = 0;
+            this.btnResimKaydet.Text = "Kaydet";
+            this.btnResimKaydet.UseVisualStyleBackColor = true;
             // 
             // ofdUser
             // 
@@ -317,14 +317,14 @@ namespace Market.MarketKontrol.Personel
         #endregion
 
         private System.Windows.Forms.Panel pnlSifre;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSifreIptal;
+        private System.Windows.Forms.Button btnSifreKaydet;
         private System.Windows.Forms.Panel pnlAdresVeEkBilgi;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdresIptal;
+        private System.Windows.Forms.Button btnAdresKaydet;
         private System.Windows.Forms.Panel pnlResim;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnResimIptal;
+        private System.Windows.Forms.Button btnResimKaydet;
         private System.Windows.Forms.TextBox tbxYenisSifre2;
         private System.Windows.Forms.TextBox tbxYeniSifre;
         private System.Windows.Forms.TextBox tbxEskiSifre;

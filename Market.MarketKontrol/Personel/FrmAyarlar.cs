@@ -52,5 +52,7 @@ namespace Market.MarketKontrol.Personel
                 pbxUser.Image = Properties.Resources.user;
             }
         }
+
+       
     }
 }
