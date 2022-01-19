@@ -320,7 +320,6 @@ namespace Market.MarketKontrol
             this.Controls.Add(this.tbxTc);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnQuit);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "frmGiris";
