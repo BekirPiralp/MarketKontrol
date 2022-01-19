@@ -133,7 +133,7 @@ namespace Market.MarketKontrol.Personel
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            btnAktif(sender);
+            OpenForm(new FrmAyarlar(), sender);
         }
 
         private void btnHakkinda_Click(object sender, EventArgs e)
