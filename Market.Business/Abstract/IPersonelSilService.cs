@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IPersonelSilService : ILMBusinessRepositoryBase<PersonelSil>
+    public interface IPersonelSilService : IBusinessRepositoryBaseService<PersonelSil>, IPersonelServicesSettings<PersonelSil>
     {
     }
 }

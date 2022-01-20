@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IFisService : ILMBusinessRepositoryBase<Fis>
+    public interface IFisService : IBusinessRepositoryBaseService<Fis>
     {
     }
 }

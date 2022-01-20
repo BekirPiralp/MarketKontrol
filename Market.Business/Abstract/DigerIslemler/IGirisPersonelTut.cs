@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market.Business.Abstract
+namespace Market.Business.Abstract.DigerIslemler
 {
-    public interface IBayiAdresService : IBusinessRepositoryBaseService<BayiAdres>
+    public interface IGirisPersonelTut
     {
+        void SetPersonel(Personel personel);           
     }
 }

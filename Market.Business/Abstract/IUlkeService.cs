@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IUlkeService : ILMBusinessRepositoryBase<Ulke>
+    public interface IUlkeService : IBusinessRepositoryBaseService<Ulke>
     {
     }
 }

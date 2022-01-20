@@ -65,12 +65,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ayarlar\FormTasi.cs" />
-    <Compile Include="ayarlar\GirisPersonelTut.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mudur\FrmMudur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mudur\FrmMudur.Designer.cs">
+      <DependentUpon>FrmMudur.cs</DependentUpon>
     </Compile>
     <Compile Include="Personel\FrmAyarlar.cs">
       <SubType>Form</SubType>
@@ -216,9 +221,7 @@
     <None Include="ResimLogo\Amblem ve ekran.ico" />
     <None Include="ResimLogo\AmblemVeEkran_600x600.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mudur\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

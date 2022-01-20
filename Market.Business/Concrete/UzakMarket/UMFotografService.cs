@@ -11,5 +11,10 @@ namespace Market.Business.Concrete.UzakMarket
         {
 
         }
+
+        public Fotograf GetByPersonelId(int Id)
+        {
+            return this._entityDal.Get(p => p.Personel == Id);
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface IPersonelService : ILMBusinessRepositoryBase<Personel>
+    public interface IPersonelService : IBusinessRepositoryBaseService<Personel>
     {
     }
 }

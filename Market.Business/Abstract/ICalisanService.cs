@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface ICalisanService : ILMBusinessRepositoryBase<Calisan>
+    public interface ICalisanService : IBusinessRepositoryBaseService<Calisan>, IPersonelServicesSettings<Calisan>
     {
     }
 }

@@ -16,5 +16,10 @@ namespace Market.Business.Concrete.UzakMarket
         {
 
         }
+
+        public PersonelSil GetByPersonelId(int Id)
+        {
+            return this._entityDal.Get(p => p.Personel == Id);
+        }
     }
 }

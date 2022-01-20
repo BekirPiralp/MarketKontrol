@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IBayiService : ILMBusinessRepositoryBase<Bayi>
+    public interface IBayiService : IBusinessRepositoryBaseService<Bayi>
     {
     }
 }

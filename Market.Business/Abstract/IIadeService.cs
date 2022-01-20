@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface IIadeService : ILMBusinessRepositoryBase<Iade>
+    public interface IIadeService : IBusinessRepositoryBaseService<Iade>
     {
     }
 }

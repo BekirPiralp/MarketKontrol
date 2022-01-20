@@ -17,7 +17,7 @@ namespace Market.Business.Concrete.UzakMarket
         where IUMEntityDal : class, IUMEntityRepository<TEntity>
         where UMEntityValidator : UMEntityValidatorBase<TEntity>, IValidator, new()
     {
-        private IUMEntityDal _entityDal;
+        internal IUMEntityDal _entityDal;
         public UMBusinessRepositoryBaseService(IUMEntityDal entityDal)
         {
             _entityDal = entityDal;

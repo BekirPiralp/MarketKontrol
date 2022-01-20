@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface ISatisService : ILMBusinessRepositoryBase<Satis>
+    public interface ISatisService : IBusinessRepositoryBaseService<Satis>
     {
     }
 }

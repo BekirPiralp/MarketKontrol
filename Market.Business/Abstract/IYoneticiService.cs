@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface IYoneticiService : ILMBusinessRepositoryBase<Yonetici>
+    public interface IYoneticiService : IBusinessRepositoryBaseService<Yonetici>, IPersonelServicesSettings<Yonetici>
     {
     }
 }

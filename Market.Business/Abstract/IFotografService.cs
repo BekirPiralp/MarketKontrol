@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Market.Business.Abstract
 {
-    public interface IFotografService : ILMBusinessRepositoryBase<Fotograf>
+    public interface IFotografService : IBusinessRepositoryBaseService<Fotograf>, IPersonelServicesSettings<Fotograf>
     {
     }
 }

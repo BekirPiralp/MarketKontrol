@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface IDefoService : ILMBusinessRepositoryBase<Defo>
+    public interface IDefoService : IBusinessRepositoryBaseService<Defo>
     {
     }
 }

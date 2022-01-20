@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Market.Business.Abstract
 {
-    public interface IPersonelSifreService : ILMBusinessRepositoryBase<PersonelSifre>
+    public interface IPersonelSifreService : IBusinessRepositoryBaseService<PersonelSifre>,IPersonelServicesSettings<PersonelSifre>
     {
+        
     }
 }

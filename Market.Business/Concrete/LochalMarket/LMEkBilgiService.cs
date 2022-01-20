@@ -11,5 +11,10 @@ namespace Market.Business.Concrete.LochalMarket
         {
                 
         }
+
+        public EkBilgi GetByPersonelId(int Id)
+        {
+            return this._entityDal.Get(p => p.Personel == Id);
+        }
     }
 }
