@@ -100,5 +100,20 @@ namespace Market.MarketKontrol
                 mudur = true;
             }
         }
+        private bool Yonetici = false;
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            if (Yonetici)
+            {
+                btnSettings.FlatAppearance.BorderSize = 0;
+                Yonetici = false;
+
+            }
+            else
+            {
+                btnSettings.FlatAppearance.BorderSize = 2;
+                Yonetici = true;
+            }
+        }
     }
 }

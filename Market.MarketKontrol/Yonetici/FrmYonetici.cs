@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market.MarketKontrol.Personel
+namespace Market.MarketKontrol.Yonetici
 {
-    public partial class FrmProfil : Form
+    public partial class FrmYonetici : Form
     {
-        public FrmProfil()
+        public FrmYonetici()
         {
             InitializeComponent();
         }

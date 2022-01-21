@@ -1,5 +1,5 @@
 ﻿
-namespace Market.MarketKontrol.Personel
+namespace Market.MarketKontrol.Ortak
 {
     partial class FrmProfil
     {

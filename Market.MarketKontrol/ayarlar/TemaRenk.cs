@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market.MarketKontrol
+namespace Market.MarketKontrol.ayarlar
 {
     public static class TemaRenk
     {

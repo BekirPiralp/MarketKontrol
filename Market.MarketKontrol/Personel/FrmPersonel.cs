@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Market.MarketKontrol.ayarlar;
+using Market.MarketKontrol.Ortak;
 
 namespace Market.MarketKontrol.Personel
 {

@@ -143,6 +143,7 @@ namespace Market.MarketKontrol
             this.btnSettings.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.settings;
             this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -151,6 +152,7 @@ namespace Market.MarketKontrol
             this.btnSettings.Size = new System.Drawing.Size(47, 35);
             this.btnSettings.TabIndex = 8;
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnPassword
             // 
@@ -320,6 +322,7 @@ namespace Market.MarketKontrol
             this.Controls.Add(this.tbxTc);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnQuit);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "frmGiris";

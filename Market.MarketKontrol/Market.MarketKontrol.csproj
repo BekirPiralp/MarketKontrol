@@ -53,6 +53,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,16 +72,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mudur\FrmHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mudur\FrmHomepage.Designer.cs">
+      <DependentUpon>FrmHomepage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mudur\FrmMudur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mudur\FrmMudur.Designer.cs">
       <DependentUpon>FrmMudur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personel\FrmAyarlar.cs">
+    <Compile Include="Mudur\FrmPersonelIslemleri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personel\FrmAyarlar.Designer.cs">
+    <Compile Include="Mudur\FrmPersonelIslemleri.Designer.cs">
+      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ortak\FrmAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ortak\FrmAyarlar.Designer.cs">
       <DependentUpon>FrmAyarlar.cs</DependentUpon>
     </Compile>
     <Compile Include="Personel\FrmDefo.cs">
@@ -89,10 +102,10 @@
     <Compile Include="Personel\FrmDefo.Designer.cs">
       <DependentUpon>FrmDefo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personel\FrmHakkinda.cs">
+    <Compile Include="Ortak\FrmHakkinda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personel\FrmHakkinda.Designer.cs">
+    <Compile Include="Ortak\FrmHakkinda.Designer.cs">
       <DependentUpon>FrmHakkinda.cs</DependentUpon>
     </Compile>
     <Compile Include="Personel\FrmIade.cs">
@@ -107,10 +120,10 @@
     <Compile Include="Personel\FrmPersonel.Designer.cs">
       <DependentUpon>FrmPersonel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personel\FrmProfil.cs">
+    <Compile Include="Ortak\FrmProfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personel\FrmProfil.Designer.cs">
+    <Compile Include="Ortak\FrmProfil.Designer.cs">
       <DependentUpon>FrmProfil.cs</DependentUpon>
     </Compile>
     <Compile Include="Personel\FrmSatis.cs">
@@ -127,17 +140,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TemaRenk.cs" />
+    <Compile Include="ayarlar\TemaRenk.cs" />
+    <Compile Include="Yonetici\FrmYonetici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yonetici\FrmYonetici.Designer.cs">
+      <DependentUpon>FrmYonetici.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personel\FrmAyarlar.resx">
+    <EmbeddedResource Include="Mudur\FrmHomepage.resx">
+      <DependentUpon>FrmHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mudur\FrmMudur.resx">
+      <DependentUpon>FrmMudur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mudur\FrmPersonelIslemleri.resx">
+      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ortak\FrmAyarlar.resx">
       <DependentUpon>FrmAyarlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personel\FrmDefo.resx">
       <DependentUpon>FrmDefo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personel\FrmHakkinda.resx">
+    <EmbeddedResource Include="Ortak\FrmHakkinda.resx">
       <DependentUpon>FrmHakkinda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personel\FrmIade.resx">
@@ -146,7 +174,7 @@
     <EmbeddedResource Include="Personel\FrmPersonel.resx">
       <DependentUpon>FrmPersonel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personel\FrmProfil.resx">
+    <EmbeddedResource Include="Ortak\FrmProfil.resx">
       <DependentUpon>FrmProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personel\FrmSatis.resx">
@@ -181,6 +209,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Amblem ve ekran.ico" />
+    <None Include="ResimLogo\office-furniture.png" />
+    <None Include="ResimLogo\homepage.png" />
     <None Include="ResimLogo\settings1.png" />
     <None Include="ResimLogo\saveData.png" />
     <None Include="ResimLogo\cancel.png" />

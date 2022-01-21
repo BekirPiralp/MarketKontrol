@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market.MarketKontrol.Personel
+namespace Market.MarketKontrol.Ortak
 {
     public partial class FrmHakkinda : Form
     {
