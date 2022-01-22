@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9686977-F34C-44C0-9228-48496E0CBC5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Market.FirmaSahibi</RootNamespace>
+    <AssemblyName>Market.FirmaSahibi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FirmaSahibi\FrmBayi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmBayi.Designer.cs">
+      <DependentUpon>FrmBayi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmMudur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmMudur.Designer.cs">
+      <DependentUpon>FrmMudur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmPersonelIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmPersonelIslemleri.Designer.cs">
+      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmSahibi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSahibi\FrmSahibi.Designer.cs">
+      <DependentUpon>FrmSahibi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaSahibi\Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSahibi\Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FirmaSahibi\FrmBayi.resx">
+      <DependentUpon>FrmBayi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaSahibi\FrmMudur.resx">
+      <DependentUpon>FrmMudur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaSahibi\FrmPersonelIslemleri.resx">
+      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaSahibi\FrmSahibi.resx">
+      <DependentUpon>FrmSahibi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaSahibi\Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Market.Business\Market.Business.csproj">
+      <Project>{3ce96d72-e92a-4ae6-bf46-abbca8202daa}</Project>
+      <Name>Market.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.DataAccess\Market.DataAccess.csproj">
+      <Project>{a8f6e4b2-2414-4913-b079-e8ea5db885b8}</Project>
+      <Name>Market.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">
+      <Project>{f28a7fb4-d798-4d55-ae81-18160c3f20cc}</Project>
+      <Name>Market.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.MarketKontrol\Market.MarketKontrol.csproj">
+      <Project>{3a80baeb-7d19-4ccc-a286-32424bc5a082}</Project>
+      <Name>Market.MarketKontrol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.Restriction\Market.Restriction.csproj">
+      <Project>{b63e900d-e9f5-4b62-bd65-b42be3d3904f}</Project>
+      <Name>Market.Restriction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-furniture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userRemove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SatisIptal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fistenCikar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fiseEkle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defectiveProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefoVeIade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KapiTiklatma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userBoss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordHide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordShow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pasword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AmblemVeEkran_600x600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amblem ve ekran.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AmblemVeEkran_800x800.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\urun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selcuk_universitesi_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bayi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

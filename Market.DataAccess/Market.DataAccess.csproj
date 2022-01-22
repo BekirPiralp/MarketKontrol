@@ -64,6 +64,7 @@
     <Compile Include="Abstract\IIadeDal.cs" />
     <Compile Include="Abstract\IIlceDal.cs" />
     <Compile Include="Abstract\IIlDal.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMBaglantiSitringiDal.cs" />
     <Compile Include="Abstract\LochalMarket\ILMEntityRepository.cs" />
     <Compile Include="Abstract\IMudurDal.cs" />
     <Compile Include="Abstract\IPersonelAdresDal.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Abstract\UzakMarket\IUMUlkeDal.cs" />
     <Compile Include="Abstract\UzakMarket\IUMUrunDal.cs" />
     <Compile Include="Abstract\UzakMarket\IUMYoneticiDal.cs" />
+    <Compile Include="Concrete\LochalMarket\BaglantiStringiDal.cs" />
     <Compile Include="Concrete\LochalMarket\EntityFramework\EfBayiDal.cs" />
     <Compile Include="Concrete\LochalMarket\EntityFramework\EfDefoDal.cs" />
     <Compile Include="Concrete\LochalMarket\EntityFramework\EfDepoEkleUrunDal.cs" />

@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Market.MarketKontrol.ayarlar;
 
-namespace Market.MarketKontrol
+namespace Market.Yonet
 {
-    public partial class frmGiris : Form
+    public partial class Form1 : Form
     {
-        public frmGiris()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -51,12 +51,12 @@ namespace Market.MarketKontrol
             if (tbxPassword.PasswordChar == '\0')
             {
                 tbxPassword.PasswordChar = '*';
-                btnPassword.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.passwordHide;
+                btnPassword.BackgroundImage = global::Market.Yonet.Properties.Resources.passwordHide;
             }
             else
             {
                 tbxPassword.PasswordChar = '\0';
-                btnPassword.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.passwordShow;
+                btnPassword.BackgroundImage = global::Market.Yonet.Properties.Resources.passwordShow;
             }
         }
 
@@ -78,28 +78,6 @@ namespace Market.MarketKontrol
         private void btnGithub_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/BekirPiralp");
-        }
-
-        /* Müdür ve Çalışan giriş*/
-        private bool mudur = false;
-        private void btnEmployee_Click(object sender, EventArgs e)
-        {
-            if (mudur)
-            {
-                btnBoss.FlatAppearance.BorderSize = 0;
-                btnEmployee.FlatAppearance.BorderSize = 2;
-                mudur = false;
-            }
-        }
-
-        private void btnBoss_Click(object sender, EventArgs e)
-        {
-            if (!mudur){
-                btnBoss.FlatAppearance.BorderSize = 2;
-                btnEmployee.FlatAppearance.BorderSize = 0;
-                mudur = true;
-            }
-        }
-        
+        }        
     }
 }

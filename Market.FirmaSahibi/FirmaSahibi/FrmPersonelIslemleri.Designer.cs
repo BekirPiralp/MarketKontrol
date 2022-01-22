@@ -1,6 +1,7 @@
 ﻿
-namespace Market.MarketKontrol.Mudur
-{
+namespace Market.FirmaSahibi.FirmaSahibi 
+{ 
+
     partial class FrmPersonelIslemleri
     {
         /// <summary>
@@ -52,6 +53,7 @@ namespace Market.MarketKontrol.Mudur
             this.btnSfreKaydet = new System.Windows.Forms.Button();
             this.tbxYeniSifre = new System.Windows.Forms.TextBox();
             this.tbxSifreTC = new System.Windows.Forms.TextBox();
+            this.cbxBayi = new System.Windows.Forms.ComboBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwPersonel)).BeginInit();
             this.pnlPrsnlDuzenle.SuspendLayout();
@@ -76,6 +78,7 @@ namespace Market.MarketKontrol.Mudur
             this.pnlPrsnlDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPrsnlDuzenle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlPrsnlDuzenle.Controls.Add(this.cbxBayi);
             this.pnlPrsnlDuzenle.Controls.Add(this.gbxCinsiyet);
             this.pnlPrsnlDuzenle.Controls.Add(this.btnPrsnlSil);
             this.pnlPrsnlDuzenle.Controls.Add(this.btnPrsnlTemizle);
@@ -104,7 +107,7 @@ namespace Market.MarketKontrol.Mudur
             this.gbxCinsiyet.Controls.Add(this.rbtnKadin);
             this.gbxCinsiyet.Controls.Add(this.rbtnErkek);
             this.gbxCinsiyet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbxCinsiyet.Location = new System.Drawing.Point(198, 107);
+            this.gbxCinsiyet.Location = new System.Drawing.Point(198, 92);
             this.gbxCinsiyet.Name = "gbxCinsiyet";
             this.gbxCinsiyet.Size = new System.Drawing.Size(130, 28);
             this.gbxCinsiyet.TabIndex = 6;
@@ -125,7 +128,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.rbtnErkek.AutoSize = true;
             this.rbtnErkek.Checked = true;
-            this.rbtnErkek.Location = new System.Drawing.Point(2, 7);
+            this.rbtnErkek.Location = new System.Drawing.Point(3, 7);
             this.rbtnErkek.Name = "rbtnErkek";
             this.rbtnErkek.Size = new System.Drawing.Size(53, 17);
             this.rbtnErkek.TabIndex = 1;
@@ -136,7 +139,7 @@ namespace Market.MarketKontrol.Mudur
             // btnPrsnlSil
             // 
             this.btnPrsnlSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlSil.Location = new System.Drawing.Point(332, 104);
+            this.btnPrsnlSil.Location = new System.Drawing.Point(332, 108);
             this.btnPrsnlSil.Name = "btnPrsnlSil";
             this.btnPrsnlSil.Size = new System.Drawing.Size(69, 31);
             this.btnPrsnlSil.TabIndex = 5;
@@ -146,7 +149,7 @@ namespace Market.MarketKontrol.Mudur
             // btnPrsnlTemizle
             // 
             this.btnPrsnlTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlTemizle.Location = new System.Drawing.Point(332, 73);
+            this.btnPrsnlTemizle.Location = new System.Drawing.Point(332, 75);
             this.btnPrsnlTemizle.Name = "btnPrsnlTemizle";
             this.btnPrsnlTemizle.Size = new System.Drawing.Size(69, 31);
             this.btnPrsnlTemizle.TabIndex = 5;
@@ -167,7 +170,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(280, 138);
+            this.comboBox3.Location = new System.Drawing.Point(280, 146);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 4;
@@ -177,7 +180,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 138);
+            this.comboBox2.Location = new System.Drawing.Point(140, 146);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 4;
@@ -187,7 +190,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 139);
+            this.comboBox1.Location = new System.Drawing.Point(9, 147);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
@@ -197,7 +200,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(9, 220);
+            this.textBox6.Location = new System.Drawing.Point(9, 223);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(394, 45);
@@ -208,7 +211,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(9, 169);
+            this.textBox5.Location = new System.Drawing.Point(9, 173);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(394, 45);
@@ -218,7 +221,7 @@ namespace Market.MarketKontrol.Mudur
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.user;
+            this.pictureBox1.BackgroundImage = global::Market.FirmaSahibi.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Name = "pictureBox1";
@@ -230,7 +233,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(198, 87);
+            this.textBox4.Location = new System.Drawing.Point(198, 71);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(130, 20);
             this.textBox4.TabIndex = 0;
@@ -241,7 +244,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(198, 61);
+            this.textBox3.Location = new System.Drawing.Point(198, 48);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(130, 20);
             this.textBox3.TabIndex = 0;
@@ -252,7 +255,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(198, 35);
+            this.textBox2.Location = new System.Drawing.Point(198, 25);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(130, 20);
             this.textBox2.TabIndex = 0;
@@ -263,7 +266,7 @@ namespace Market.MarketKontrol.Mudur
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(198, 9);
+            this.textBox1.Location = new System.Drawing.Point(198, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 0;
@@ -278,9 +281,9 @@ namespace Market.MarketKontrol.Mudur
             this.pnlPrsnlSifreAta.Controls.Add(this.btnSfreKaydet);
             this.pnlPrsnlSifreAta.Controls.Add(this.tbxYeniSifre);
             this.pnlPrsnlSifreAta.Controls.Add(this.tbxSifreTC);
-            this.pnlPrsnlSifreAta.Location = new System.Drawing.Point(412, 153);
+            this.pnlPrsnlSifreAta.Location = new System.Drawing.Point(407, 153);
             this.pnlPrsnlSifreAta.Name = "pnlPrsnlSifreAta";
-            this.pnlPrsnlSifreAta.Size = new System.Drawing.Size(168, 275);
+            this.pnlPrsnlSifreAta.Size = new System.Drawing.Size(173, 275);
             this.pnlPrsnlSifreAta.TabIndex = 1;
             // 
             // btnSfreTemizle
@@ -320,10 +323,19 @@ namespace Market.MarketKontrol.Mudur
             this.tbxSifreTC.Text = "TC";
             this.tbxSifreTC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // cbxBayi
+            // 
+            this.cbxBayi.FormattingEnabled = true;
+            this.cbxBayi.Location = new System.Drawing.Point(198, 122);
+            this.cbxBayi.Name = "cbxBayi";
+            this.cbxBayi.Size = new System.Drawing.Size(130, 21);
+            this.cbxBayi.TabIndex = 7;
+            this.cbxBayi.Text = "Bayi";
+            // 
             // btnGuncelle
             // 
             this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuncelle.Location = new System.Drawing.Point(332, 40);
+            this.btnGuncelle.Location = new System.Drawing.Point(332, 41);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(69, 31);
             this.btnGuncelle.TabIndex = 5;
@@ -379,6 +391,7 @@ namespace Market.MarketKontrol.Mudur
         private System.Windows.Forms.TextBox tbxSifreTC;
         private System.Windows.Forms.Button btnPrsnlSil;
         private System.Windows.Forms.GroupBox gbxCinsiyet;
-        private System.Windows.Forms.Button btnGuncelle;
-    }
+    private System.Windows.Forms.ComboBox cbxBayi;
+    private System.Windows.Forms.Button btnGuncelle;
+}
 }

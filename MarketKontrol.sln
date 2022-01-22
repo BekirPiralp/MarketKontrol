@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Restriction", "Marke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.MarketKontrol", "Market.MarketKontrol\Market.MarketKontrol.csproj", "{3A80BAEB-7D19-4CCC-A286-32424BC5A082}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.FirmaSahibi", "Market.FirmaSahibi\Market.FirmaSahibi.csproj", "{D9686977-F34C-44C0-9228-48496E0CBC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Yonet", "Market.Yonet\Market.Yonet.csproj", "{5745CBED-E20A-487B-A4EA-D78C224AADA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3A80BAEB-7D19-4CCC-A286-32424BC5A082}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A80BAEB-7D19-4CCC-A286-32424BC5A082}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A80BAEB-7D19-4CCC-A286-32424BC5A082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9686977-F34C-44C0-9228-48496E0CBC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9686977-F34C-44C0-9228-48496E0CBC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9686977-F34C-44C0-9228-48496E0CBC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9686977-F34C-44C0-9228-48496E0CBC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5745CBED-E20A-487B-A4EA-D78C224AADA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5745CBED-E20A-487B-A4EA-D78C224AADA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5745CBED-E20A-487B-A4EA-D78C224AADA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5745CBED-E20A-487B-A4EA-D78C224AADA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
