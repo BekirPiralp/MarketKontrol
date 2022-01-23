@@ -130,6 +130,9 @@
   <data name="Amblem_ve_ekran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\Amblem ve ekran.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +141,12 @@
   </data>
   <data name="DefoVeIade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\DefoVeIade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delivery_date" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\delivery-date.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dust" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\dust.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +190,12 @@
   <data name="pasword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\pasword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="products" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -207,6 +222,9 @@
   </data>
   <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="updated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ResimLogo\updated.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="urun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ResimLogo\urun.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -152,6 +152,7 @@ namespace Market.MarketKontrol
             this.btnSettings.Size = new System.Drawing.Size(47, 35);
             this.btnSettings.TabIndex = 8;
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnPassword
             // 

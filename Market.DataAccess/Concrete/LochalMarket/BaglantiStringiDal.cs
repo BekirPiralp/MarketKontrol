@@ -16,33 +16,38 @@ namespace Market.DataAccess.Concrete.LochalMarket
         {
             BaglantiStringi baglanti = null;
             String al;
-            FileStream fileStream = new FileStream(_dosyaYolu, FileMode.Open, FileAccess.Read);
-            using(StreamReader okuyucu = new StreamReader(fileStream, Encoding.UTF8))
+            try
             {
-                try
+                FileStream fileStream = new FileStream(_dosyaYolu, FileMode.Open, FileAccess.Read);
+                using (StreamReader okuyucu = new StreamReader(fileStream, Encoding.UTF8))
                 {
-                    al = okuyucu.ReadToEnd();
+                    try
+                    {
+                        al = okuyucu.ReadToEnd();
+                    }
+                    catch
+                    {
+                        al = "";
+                    }
+                    finally
+                    {
+                        okuyucu.Close();
+                        fileStream.Close();
+                    }
                 }
-                catch 
+                if (al.Trim() != "")
                 {
-                    al = "";
+                    baglanti = new BaglantiStringi { ConnetionString = al };
                 }
-                finally
-                {
-                    okuyucu.Close();
-                    fileStream.Close();
-                }                                
-            }
-            if (al.Trim() != "")
+            }catch
             {
-                baglanti = new BaglantiStringi { ConnetionString = al };
+                baglanti = null;
             }
             return baglanti;
-        }
-        
+        }        
         public void Set(BaglantiStringi baglanti)
         {
-            FileStream fileStream = new FileStream(_dosyaYolu, FileMode.OpenOrCreate,FileAccess.Write);
+            FileStream fileStream = new FileStream(_dosyaYolu, FileMode.Create,FileAccess.Write);
             using (StreamWriter yazıcı = new StreamWriter(fileStream,Encoding.UTF8))
             {
                 yazıcı.Write(@baglanti.ConnetionString.Trim());

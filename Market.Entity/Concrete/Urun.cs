@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using Market.Entity.Ayar;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace Market.Entity.Concrete
 {
@@ -14,6 +17,14 @@ namespace Market.Entity.Concrete
         public float Indirim { get; set; }
         public int Adet { get; set; }
         public string Aciklama { get; set; }
-        public Image Resim { get; set; }
+        public byte[] Resim { get; set; }
+        public Image ResimGet()
+        {
+            return ResimConvert.ToImage(Resim);
+        }
+        public void ResimSet(Image resim)
+        {
+            Resim = ResimConvert.ToByte(resim);
+        }
     }
 }

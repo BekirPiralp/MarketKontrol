@@ -28,6 +28,10 @@ namespace Market.DataAccess.Concrete.LochalMarket.EntityFramework
             {
                 context.Database.Connection.ConnectionString = baglanti.ConnetionString;
             }
+            else
+            {
+                baglantiStringiDal.Set(new BaglantiStringi { ConnetionString = context.Database.Connection.ConnectionString });
+            }
         }
 
         public void Add(TEntity entity)

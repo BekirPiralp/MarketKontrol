@@ -103,6 +103,16 @@ namespace Market.MarketKontrol.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap box {
+            get {
+                object obj = ResourceManager.GetObject("box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -126,6 +136,26 @@ namespace Market.MarketKontrol.Properties {
         internal static System.Drawing.Bitmap DefoVeIade {
             get {
                 object obj = ResourceManager.GetObject("DefoVeIade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap delivery_date {
+            get {
+                object obj = ResourceManager.GetObject("delivery_date", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap dust {
+            get {
+                object obj = ResourceManager.GetObject("dust", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +303,26 @@ namespace Market.MarketKontrol.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap product {
+            get {
+                object obj = ResourceManager.GetObject("product", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap products {
             get {
                 object obj = ResourceManager.GetObject("products", resourceCulture);
@@ -356,6 +406,16 @@ namespace Market.MarketKontrol.Properties {
         internal static System.Drawing.Bitmap shop {
             get {
                 object obj = ResourceManager.GetObject("shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap updated {
+            get {
+                object obj = ResourceManager.GetObject("updated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\DigerIslemler\IBaglantiKontrol.cs" />
     <Compile Include="Abstract\DigerIslemler\IGirisPersonelTut.cs" />
     <Compile Include="Abstract\DigerIslemler\IVeriEsitle.cs" />
     <Compile Include="Abstract\IBayiAdresService.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Abstract\ISatisService.cs" />
     <Compile Include="Abstract\IUrunService.cs" />
     <Compile Include="Abstract\IYoneticiService.cs" />
+    <Compile Include="Abstract\LochalMarket\ILMBaglantiStringiService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMBayiService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMBusinessRepositoryBaseService.cs" />
     <Compile Include="Abstract\LochalMarket\ILMDefoService.cs" />
@@ -123,8 +125,11 @@
     <Compile Include="Abstract\UzakMarket\IUMSatisService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMUlkeService.cs" />
     <Compile Include="Abstract\UzakMarket\IUMYoneticiService.cs" />
+    <Compile Include="Concrete\DigerIslemler\BaglantiKontrol.cs" />
+    <Compile Include="Concrete\DigerIslemler\DerinKopyala.cs" />
     <Compile Include="Concrete\DigerIslemler\GirisPersonelTut.cs" />
     <Compile Include="Concrete\DigerIslemler\VeriEsitle.cs" />
+    <Compile Include="Concrete\LochalMarket\LMBaglantiStringiService.cs" />
     <Compile Include="Concrete\LochalMarket\LMBayiService.cs" />
     <Compile Include="Concrete\LochalMarket\LMBusinessRepositoryBaseService.cs" />
     <Compile Include="Concrete\LochalMarket\LMDefoService.cs" />

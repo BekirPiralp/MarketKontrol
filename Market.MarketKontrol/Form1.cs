@@ -100,6 +100,12 @@ namespace Market.MarketKontrol
                 mudur = true;
             }
         }
-        
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            
+            (new KontrolAyarları.Giris()).ShowDialog();
+            
+        }
     }
 }
