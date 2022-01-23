@@ -128,7 +128,7 @@ namespace Market.MarketKontrol.Personel
             this.lblToplamFiyat.Name = "lblToplamFiyat";
             this.lblToplamFiyat.Size = new System.Drawing.Size(45, 19);
             this.lblToplamFiyat.TabIndex = 6;
-            this.lblToplamFiyat.Text = "18.20";
+            this.lblToplamFiyat.Text = "00.00";
             // 
             // tbxBarkod
             // 
@@ -138,7 +138,6 @@ namespace Market.MarketKontrol.Personel
             this.tbxBarkod.Name = "tbxBarkod";
             this.tbxBarkod.Size = new System.Drawing.Size(196, 22);
             this.tbxBarkod.TabIndex = 7;
-            this.tbxBarkod.Text = "101010";
             this.tbxBarkod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxBarkod.TextChanged += new System.EventHandler(this.textBoxBarkod_TextChanged);
             this.tbxBarkod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBarkod_KeyPress);
@@ -192,7 +191,7 @@ namespace Market.MarketKontrol.Personel
             this.lblFiyat.Name = "lblFiyat";
             this.lblFiyat.Size = new System.Drawing.Size(165, 22);
             this.lblFiyat.TabIndex = 10;
-            this.lblFiyat.Text = "10.0 ";
+            this.lblFiyat.Text = "00.00";
             this.lblFiyat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -280,7 +279,7 @@ namespace Market.MarketKontrol.Personel
             this.lblindirim.Name = "lblindirim";
             this.lblindirim.Size = new System.Drawing.Size(165, 22);
             this.lblindirim.TabIndex = 10;
-            this.lblindirim.Text = "18";
+            this.lblindirim.Text = "0";
             this.lblindirim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
@@ -306,7 +305,7 @@ namespace Market.MarketKontrol.Personel
             this.btnEkle.TabIndex = 13;
             this.btnEkle.Text = "Fişe Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
-            this.btnEkle.Click += new System.EventHandler(this.buttonEkle_Click);
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnCikar
             // 
@@ -319,7 +318,7 @@ namespace Market.MarketKontrol.Personel
             this.btnCikar.TabIndex = 14;
             this.btnCikar.Text = "Fişten Çikar";
             this.btnCikar.UseVisualStyleBackColor = true;
-            this.btnCikar.Click += new System.EventHandler(this.buttonCikar_Click);
+            this.btnCikar.Click += new System.EventHandler(this.btnCikar_Click);
             // 
             // btnSat
             // 
@@ -369,19 +368,19 @@ namespace Market.MarketKontrol.Personel
             this.lblTarihSaat.Name = "lblTarihSaat";
             this.lblTarihSaat.Size = new System.Drawing.Size(104, 15);
             this.lblTarihSaat.TabIndex = 17;
-            this.lblTarihSaat.Text = "19.04.2021 21:03";
+            this.lblTarihSaat.Text = "23.01.2022 15:46";
             // 
             // pbxUrun
             // 
             this.pbxUrun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pbxUrun.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.urun;
             this.pbxUrun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxUrun.Image = global::Market.MarketKontrol.Properties.Resources.urun;
             this.pbxUrun.Location = new System.Drawing.Point(0, 0);
             this.pbxUrun.Margin = new System.Windows.Forms.Padding(4);
             this.pbxUrun.Name = "pbxUrun";
             this.pbxUrun.Size = new System.Drawing.Size(290, 150);
-            this.pbxUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUrun.TabIndex = 18;
             this.pbxUrun.TabStop = false;
             // 
@@ -481,7 +480,7 @@ namespace Market.MarketKontrol.Personel
             this.pnlPersonel.Size = new System.Drawing.Size(290, 71);
             this.pnlPersonel.TabIndex = 21;
             // 
-            // Satis
+            // FrmSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -496,9 +495,10 @@ namespace Market.MarketKontrol.Personel
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(580, 428);
-            this.Name = "Satis";
+            this.Name = "FrmSatis";
             this.ShowIcon = false;
             this.Text = "Satış";
+            this.Load += new System.EventHandler(this.FrmSatis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numAdet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrun)).EndInit();
             this.pnlbtnFis.ResumeLayout(false);

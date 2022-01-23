@@ -22,6 +22,7 @@ namespace Market.Business.Concrete.UzakMarket
             return uruns;
         }
 
+
         public Urun GetByBarkod(string barkod, Bayi bayi, Firma firma)
         {
             Urun urun= null;
