@@ -35,7 +35,7 @@ namespace Market.MarketKontrol.Personel
             this.numAdet = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxAciklama = new System.Windows.Forms.TextBox();
-            this.btnIptal = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.btnKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAdet)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,8 @@ namespace Market.MarketKontrol.Personel
             this.tbxBarkod.Name = "tbxBarkod";
             this.tbxBarkod.Size = new System.Drawing.Size(201, 20);
             this.tbxBarkod.TabIndex = 1;
+            this.tbxBarkod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxNumKeyPress);
+            this.tbxBarkod.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // label2
             // 
@@ -70,8 +72,8 @@ namespace Market.MarketKontrol.Personel
             // numAdet
             // 
             this.numAdet.Location = new System.Drawing.Point(362, 11);
-            this.numAdet.Maximum = new decimal(new int[] {
-            1000,
+            this.numAdet.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -79,6 +81,11 @@ namespace Market.MarketKontrol.Personel
             this.numAdet.Size = new System.Drawing.Size(201, 20);
             this.numAdet.TabIndex = 3;
             this.numAdet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -101,33 +108,41 @@ namespace Market.MarketKontrol.Personel
             this.tbxAciklama.Size = new System.Drawing.Size(486, 281);
             this.tbxAciklama.TabIndex = 5;
             // 
-            // btnIptal
+            // btnTemizle
             // 
-            this.btnIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIptal.Location = new System.Drawing.Point(474, 363);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(82, 31);
-            this.btnIptal.TabIndex = 6;
-            this.btnIptal.Text = "İptal";
-            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTemizle.Image = global::Market.MarketKontrol.Properties.Resources.dust;
+            this.btnTemizle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTemizle.Location = new System.Drawing.Point(480, 363);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(83, 41);
+            this.btnTemizle.TabIndex = 6;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnKaydet
             // 
             this.btnKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKaydet.Location = new System.Drawing.Point(329, 363);
+            this.btnKaydet.Image = global::Market.MarketKontrol.Properties.Resources.saveData;
+            this.btnKaydet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKaydet.Location = new System.Drawing.Point(339, 363);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(82, 31);
+            this.btnKaydet.Size = new System.Drawing.Size(80, 41);
             this.btnKaydet.TabIndex = 6;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // Defo
+            // FrmDefo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 428);
             this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.btnIptal);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.tbxAciklama);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numAdet);
@@ -136,8 +151,9 @@ namespace Market.MarketKontrol.Personel
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(580, 428);
-            this.Name = "Defo";
+            this.Name = "FrmDefo";
             this.Text = "Defo";
+            this.Load += new System.EventHandler(this.FrmDefo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numAdet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +167,7 @@ namespace Market.MarketKontrol.Personel
         private System.Windows.Forms.NumericUpDown numAdet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxAciklama;
-        private System.Windows.Forms.Button btnIptal;
+        private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.Button btnKaydet;
     }
 }

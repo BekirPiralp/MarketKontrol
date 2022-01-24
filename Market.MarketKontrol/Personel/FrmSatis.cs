@@ -145,7 +145,7 @@ namespace Market.MarketKontrol.Personel
 
         private void textBoxBarkod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) ? true : false;
+            KlavyeOlay.NumKeyPress(e);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -295,7 +295,8 @@ namespace Market.MarketKontrol.Personel
                         {
                             _uMFisService.Add(fis);
                             fis = _uMFisService.GetByDateTime(_personel.firma, _personel.bayi, _personel.personel, tarihSaat);
-
+                            if (fis == null)
+                                throw new Exception("Fis olusturma sırasında bir hata ile karşılaşıldı.");
                             foreach (var item in _satisListesi)
                             {
                                 satis = new Satis
@@ -319,7 +320,8 @@ namespace Market.MarketKontrol.Personel
                         {
                             _lMFisService.Add(fis);
                             fis = _lMFisService.GetByDateTime(_personel.firma, _personel.bayi, _personel.personel, tarihSaat);
-
+                            if (fis == null)
+                                throw new Exception("Fis olusturma sırasında bir hata ile karşılaşıldı.");
                             foreach (var item in _satisListesi)
                             {
                                 satis = new Satis

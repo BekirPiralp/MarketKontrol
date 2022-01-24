@@ -8,5 +8,6 @@ namespace Market.Business.Abstract
 {
     public interface ISatisService : IBusinessRepositoryBaseService<Satis>
     {
+        Satis GetByBarkodFisKod(Bayi bayi,Firma firma, Urun urun, Fis fis);
     }
 }

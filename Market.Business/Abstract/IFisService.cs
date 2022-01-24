@@ -10,5 +10,6 @@ namespace Market.Business.Abstract
     public interface IFisService : IBusinessRepositoryBaseService<Fis>
     {
         Fis GetByDateTime(Firma firma, Bayi bayi, Personel personel, DateTime dateTime);
+        Fis GetByFisKod(string FisKod);
     }
 }

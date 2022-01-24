@@ -32,5 +32,22 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return fis;
         }
+
+        public Fis GetByFisKod(string FisKod)
+        {
+            Fis fis = null;
+            try
+            {
+                if (FisKod.Trim() != "")
+                {
+                    fis = _entityDal.Get(p => (p.Kod.Trim().Equals(FisKod.Trim())));
+                }
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Fis getirme sırasında hata ile karşılaşıldı. Hata : \n" + hata.Message);
+            }
+            return fis;
+        }
     }
 }

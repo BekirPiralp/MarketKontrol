@@ -8,5 +8,6 @@ namespace Market.Business.Abstract
 {
     public interface IIadeService : IBusinessRepositoryBaseService<Iade>
     {
+        Iade GetByFisSatis(Firma firma, Bayi bayi, Fis fis, Satis satis);
     }
 }

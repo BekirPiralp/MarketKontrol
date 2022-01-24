@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ayarlar\FormTasi.cs" />
+    <Compile Include="ayarlar\KlavyeOlay.cs" />
     <Compile Include="ayarlar\MouseOlay.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

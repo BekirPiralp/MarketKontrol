@@ -61,8 +61,8 @@ namespace Market.MarketKontrol.Ortak
             // 
             // pbxUser
             // 
-            this.pbxUser.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.user;
             this.pbxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbxUser.Image = global::Market.MarketKontrol.Properties.Resources.user;
             this.pbxUser.Location = new System.Drawing.Point(12, 12);
             this.pbxUser.Name = "pbxUser";
             this.pbxUser.Size = new System.Drawing.Size(232, 175);
@@ -216,7 +216,7 @@ namespace Market.MarketKontrol.Ortak
             this.lblYetki.Text = "Personel";
             this.lblYetki.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Profil
+            // FrmProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,8 +236,9 @@ namespace Market.MarketKontrol.Ortak
             this.Controls.Add(this.pbxUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(580, 428);
-            this.Name = "Profil";
+            this.Name = "FrmProfil";
             this.Text = "Profil";
+            this.Load += new System.EventHandler(this.FrmProfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).EndInit();
             this.gbxAdres.ResumeLayout(false);
             this.gbxEkBilgi.ResumeLayout(false);
