@@ -37,7 +37,7 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
             using (TContext context = new TContext())
             {
                 TEntity result;
-                result = context.Set<TEntity>().Where(filter).FirstOrDefault(); // ilk olanı veya varsayılan veri gelecek
+                result = context.Set<TEntity>().Where(filter).LastOrDefault(); // son olanı veya varsayılan veri gelecek
                 return result;
             }
         }

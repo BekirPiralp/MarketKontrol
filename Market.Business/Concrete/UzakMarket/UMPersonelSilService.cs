@@ -19,7 +19,36 @@ namespace Market.Business.Concrete.UzakMarket
 
         public PersonelSil GetByPersonelId(int Id)
         {
-            return this._entityDal.Get(p => p.Personel == Id);
+            PersonelSil result = null;
+            try
+            {
+                if (Id > 0)
+                    result = _entityDal.Get(p => p.Personel == Id);
+                else
+                    throw new Exception("Lütfen Verileri eksiksiz giriniz");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Veriler getirilirken hata oluştu. Hata: \n" + hata.Message);
+            }
+            return result;
+        }
+
+        public PersonelSil GetByPersonelId(int Id, int FirmaId)
+        {
+            PersonelSil result = null;
+            try
+            {
+                if (Id > 0 && FirmaId > 0)
+                    result = _entityDal.Get(p => p.Personel == Id && p.Firma == FirmaId);
+                else
+                    throw new Exception("Lütfen Verileri eksiksiz giriniz");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Veriler getirilirken hata oluştu. Hata: \n" + hata.Message);
+            }
+            return result;
         }
     }
 }

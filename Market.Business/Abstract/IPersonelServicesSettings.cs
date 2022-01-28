@@ -10,5 +10,6 @@ namespace Market.Business.Abstract
     public interface IPersonelServicesSettings<Entity> where Entity:class,IEntity,new()
     {
         Entity GetByPersonelId(int Id);
+        Entity GetByPersonelId(int Id,int FirmaId);
     }
 }

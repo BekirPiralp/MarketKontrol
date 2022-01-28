@@ -38,7 +38,6 @@ namespace Market.MarketKontrol.Ortak
             this.btnSifreKaydet = new System.Windows.Forms.Button();
             this.pnlAdresVeEkBilgi = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbxEkBilgi = new System.Windows.Forms.TextBox();
             this.tbxTarif = new System.Windows.Forms.TextBox();
             this.cbxIlce = new System.Windows.Forms.ComboBox();
             this.cbxIl = new System.Windows.Forms.ComboBox();
@@ -121,6 +120,7 @@ namespace Market.MarketKontrol.Ortak
             this.btnSifreIptal.TabIndex = 0;
             this.btnSifreIptal.Text = "iptal";
             this.btnSifreIptal.UseVisualStyleBackColor = true;
+            this.btnSifreIptal.Click += new System.EventHandler(this.btnSifreIptal_Click);
             // 
             // btnSifreKaydet
             // 
@@ -130,6 +130,7 @@ namespace Market.MarketKontrol.Ortak
             this.btnSifreKaydet.TabIndex = 0;
             this.btnSifreKaydet.Text = "Kaydet";
             this.btnSifreKaydet.UseVisualStyleBackColor = true;
+            this.btnSifreKaydet.Click += new System.EventHandler(this.btnSifreKaydet_Click);
             // 
             // pnlAdresVeEkBilgi
             // 
@@ -152,35 +153,20 @@ namespace Market.MarketKontrol.Ortak
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.tbxEkBilgi);
             this.panel1.Controls.Add(this.tbxTarif);
             this.panel1.Location = new System.Drawing.Point(0, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 125);
             this.panel1.TabIndex = 3;
             // 
-            // tbxEkBilgi
-            // 
-            this.tbxEkBilgi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxEkBilgi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbxEkBilgi.Location = new System.Drawing.Point(0, 58);
-            this.tbxEkBilgi.Multiline = true;
-            this.tbxEkBilgi.Name = "tbxEkBilgi";
-            this.tbxEkBilgi.Size = new System.Drawing.Size(400, 66);
-            this.tbxEkBilgi.TabIndex = 0;
-            this.tbxEkBilgi.Text = "Ek Bilgi";
-            // 
             // tbxTarif
             // 
-            this.tbxTarif.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxTarif.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxTarif.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbxTarif.Location = new System.Drawing.Point(0, 0);
             this.tbxTarif.Multiline = true;
             this.tbxTarif.Name = "tbxTarif";
-            this.tbxTarif.Size = new System.Drawing.Size(400, 56);
+            this.tbxTarif.Size = new System.Drawing.Size(400, 125);
             this.tbxTarif.TabIndex = 0;
             this.tbxTarif.Text = "Tarif";
             // 
@@ -189,7 +175,7 @@ namespace Market.MarketKontrol.Ortak
             this.cbxIlce.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxIlce.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxIlce.FormattingEnabled = true;
-            this.cbxIlce.Location = new System.Drawing.Point(266, 5);
+            this.cbxIlce.Location = new System.Drawing.Point(274, 6);
             this.cbxIlce.Name = "cbxIlce";
             this.cbxIlce.Size = new System.Drawing.Size(116, 28);
             this.cbxIlce.TabIndex = 1;
@@ -200,22 +186,25 @@ namespace Market.MarketKontrol.Ortak
             this.cbxIl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxIl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxIl.FormattingEnabled = true;
-            this.cbxIl.Location = new System.Drawing.Point(144, 5);
+            this.cbxIl.Location = new System.Drawing.Point(143, 6);
             this.cbxIl.Name = "cbxIl";
             this.cbxIl.Size = new System.Drawing.Size(116, 28);
             this.cbxIl.TabIndex = 1;
             this.cbxIl.Text = "İl";
+            this.cbxIl.SelectedIndexChanged += new System.EventHandler(this.cbxIl_SelectedIndexChanged);
+            this.cbxIl.DataSourceChanged += new System.EventHandler(this.cbxIl_DataSourceChanged);
             // 
             // cbxUlke
             // 
             this.cbxUlke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxUlke.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbxUlke.FormattingEnabled = true;
-            this.cbxUlke.Location = new System.Drawing.Point(22, 5);
+            this.cbxUlke.Location = new System.Drawing.Point(7, 6);
             this.cbxUlke.Name = "cbxUlke";
             this.cbxUlke.Size = new System.Drawing.Size(116, 28);
             this.cbxUlke.TabIndex = 1;
             this.cbxUlke.Text = "Ülke";
+            this.cbxUlke.SelectedIndexChanged += new System.EventHandler(this.cbxUlke_SelectedIndexChanged);
             // 
             // btnAdresIptal
             // 
@@ -226,6 +215,7 @@ namespace Market.MarketKontrol.Ortak
             this.btnAdresIptal.TabIndex = 0;
             this.btnAdresIptal.Text = "iptal";
             this.btnAdresIptal.UseVisualStyleBackColor = true;
+            this.btnAdresIptal.Click += new System.EventHandler(this.btnAdresIptal_Click);
             // 
             // btnAdresKaydet
             // 
@@ -236,12 +226,14 @@ namespace Market.MarketKontrol.Ortak
             this.btnAdresKaydet.TabIndex = 0;
             this.btnAdresKaydet.Text = "Kaydet";
             this.btnAdresKaydet.UseVisualStyleBackColor = true;
+            this.btnAdresKaydet.Click += new System.EventHandler(this.btnAdresKaydet_Click);
             // 
             // pnlResim
             // 
             this.pnlResim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlResim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pnlResim.Controls.Add(this.pbxUser);
             this.pnlResim.Controls.Add(this.btnResimIptal);
             this.pnlResim.Controls.Add(this.btnResimKaydet);
@@ -255,9 +247,9 @@ namespace Market.MarketKontrol.Ortak
             this.pbxUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxUser.BackColor = System.Drawing.Color.PaleGreen;
-            this.pbxUser.BackgroundImage = global::Market.MarketKontrol.Properties.Resources.user;
+            this.pbxUser.BackColor = System.Drawing.Color.White;
             this.pbxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxUser.Image = global::Market.MarketKontrol.Properties.Resources.user;
             this.pbxUser.Location = new System.Drawing.Point(0, 0);
             this.pbxUser.Name = "pbxUser";
             this.pbxUser.Size = new System.Drawing.Size(180, 214);
@@ -275,6 +267,7 @@ namespace Market.MarketKontrol.Ortak
             this.btnResimIptal.TabIndex = 0;
             this.btnResimIptal.Text = "iptal";
             this.btnResimIptal.UseVisualStyleBackColor = true;
+            this.btnResimIptal.Click += new System.EventHandler(this.btnResimIptal_Click);
             // 
             // btnResimKaydet
             // 
@@ -285,6 +278,7 @@ namespace Market.MarketKontrol.Ortak
             this.btnResimKaydet.TabIndex = 0;
             this.btnResimKaydet.Text = "Kaydet";
             this.btnResimKaydet.UseVisualStyleBackColor = true;
+            this.btnResimKaydet.Click += new System.EventHandler(this.btnResimKaydet_Click);
             // 
             // ofdUser
             // 
@@ -303,6 +297,7 @@ namespace Market.MarketKontrol.Ortak
             this.MinimumSize = new System.Drawing.Size(580, 428);
             this.Name = "FrmAyarlar";
             this.Text = "Ayarlar";
+            this.Load += new System.EventHandler(this.FrmAyarlar_Load);
             this.pnlSifre.ResumeLayout(false);
             this.pnlSifre.PerformLayout();
             this.pnlAdresVeEkBilgi.ResumeLayout(false);
@@ -333,7 +328,6 @@ namespace Market.MarketKontrol.Ortak
         private System.Windows.Forms.ComboBox cbxUlke;
         private System.Windows.Forms.PictureBox pbxUser;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbxEkBilgi;
         private System.Windows.Forms.TextBox tbxTarif;
         private System.Windows.Forms.Button btnGizle;
         private System.Windows.Forms.OpenFileDialog ofdUser;

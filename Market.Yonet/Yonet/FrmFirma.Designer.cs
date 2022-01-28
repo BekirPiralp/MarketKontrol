@@ -108,13 +108,13 @@ namespace Market.Yonet.Yonet
             this.pnlYoneticiAta.Controls.Add(this.cbxYAtaFirma);
             this.pnlYoneticiAta.Location = new System.Drawing.Point(286, -1);
             this.pnlYoneticiAta.Name = "pnlYoneticiAta";
-            this.pnlYoneticiAta.Size = new System.Drawing.Size(291, 138);
+            this.pnlYoneticiAta.Size = new System.Drawing.Size(296, 138);
             this.pnlYoneticiAta.TabIndex = 1;
             // 
             // btnYAtaTemizle
             // 
             this.btnYAtaTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnYAtaTemizle.Location = new System.Drawing.Point(192, 66);
+            this.btnYAtaTemizle.Location = new System.Drawing.Point(197, 66);
             this.btnYAtaTemizle.Name = "btnYAtaTemizle";
             this.btnYAtaTemizle.Size = new System.Drawing.Size(76, 48);
             this.btnYAtaTemizle.TabIndex = 1;
@@ -127,7 +127,7 @@ namespace Market.Yonet.Yonet
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(24, 40);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
+            this.textBox2.Size = new System.Drawing.Size(249, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Yönetici TC";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -148,7 +148,7 @@ namespace Market.Yonet.Yonet
             this.cbxYAtaFirma.FormattingEnabled = true;
             this.cbxYAtaFirma.Location = new System.Drawing.Point(24, 13);
             this.cbxYAtaFirma.Name = "cbxYAtaFirma";
-            this.cbxYAtaFirma.Size = new System.Drawing.Size(244, 21);
+            this.cbxYAtaFirma.Size = new System.Drawing.Size(249, 21);
             this.cbxYAtaFirma.TabIndex = 0;
             this.cbxYAtaFirma.Text = "Firma";
             // 

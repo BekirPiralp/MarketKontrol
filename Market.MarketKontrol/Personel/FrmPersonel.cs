@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Market.Business.Concrete.DigerIslemler;
 using Market.MarketKontrol.ayarlar;
 using Market.MarketKontrol.Ortak;
 
@@ -8,10 +9,12 @@ namespace Market.MarketKontrol.Personel
 {
     public partial class FrmPersonel : Form
     {
+        private BaglantiKontrol _baglanti;
         public FrmPersonel()
         {
             InitializeComponent();
             random = new Random();
+            _baglanti = BaglantiKontrol.KontrolGet();
             //varsayılan olarak buton satış açık olacak
             btnSatis_Click(btnSatis,new MouseEventArgs(MouseButtons.Left,1,0,0,0));
         }
@@ -19,6 +22,7 @@ namespace Market.MarketKontrol.Personel
         private void btnCikis_Click(object sender, EventArgs e)
         {
             //çıkış
+            _baglanti.Serbesbirak();
             Application.Exit();
         }
 

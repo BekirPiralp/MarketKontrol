@@ -59,7 +59,29 @@ namespace Market.MarketKontrol.Mudur
             this.chartSatis.Location = new System.Drawing.Point(0, 0);
             this.chartSatis.MinimumSize = new System.Drawing.Size(580, 428);
             this.chartSatis.Name = "chartSatis";
-            this.chartSatis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            this.chartSatis.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartSatis.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(87)))), ((int)(((byte)(34))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(136))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(103)))), ((int)(((byte)(108))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(26)))), ((int)(((byte)(74))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(120)))), ((int)(((byte)(139))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(135)))), ((int)(((byte)(144))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(72)))), ((int)(((byte)(51))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(147)))), ((int)(((byte)(126))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(117)))), ((int)(((byte)(33))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(32)))), ((int)(((byte)(89))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(104)))), ((int)(((byte)(129))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(194)))), ((int)(((byte)(64))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(77)))), ((int)(((byte)(91))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(220)))), ((int)(((byte)(91))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(188))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(207)))), ((int)(((byte)(233)))))};
             series1.ChartArea = "GrafikSatislar";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.IsValueShownAsLabel = true;
@@ -74,7 +96,7 @@ namespace Market.MarketKontrol.Mudur
             title1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
             title1.Font = new System.Drawing.Font("Monotype Corsiva", 20F, System.Drawing.FontStyle.Bold);
             title1.Name = "Title1";
-            title1.Text = "Aylık Satış Dağılımı";
+            title1.Text = "Bu Ayki En Çok Satan 20 Ürün";
             this.chartSatis.Titles.Add(title1);
             // 
             // FrmHomepage
@@ -87,6 +109,7 @@ namespace Market.MarketKontrol.Mudur
             this.MinimumSize = new System.Drawing.Size(580, 428);
             this.Name = "FrmHomepage";
             this.Text = "Ana Ekran";
+            this.Load += new System.EventHandler(this.FrmHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartSatis)).EndInit();
             this.ResumeLayout(false);
 

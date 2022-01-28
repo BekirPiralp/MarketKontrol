@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ayarlar\cbxUlkeililce.cs" />
     <Compile Include="ayarlar\FormTasi.cs" />
     <Compile Include="ayarlar\KlavyeOlay.cs" />
     <Compile Include="ayarlar\MouseOlay.cs" />

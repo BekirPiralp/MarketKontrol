@@ -8,5 +8,6 @@ namespace Market.Business.Abstract
 {
     public interface IIlceService : IBusinessRepositoryBaseService<Ilce>
     {
+        List<Ilce> GetByIlId(int il); //ilin veri tabanındaki id sini tuttuğu için...
     }
 }

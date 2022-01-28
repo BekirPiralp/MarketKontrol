@@ -9,6 +9,7 @@ namespace Market.Business.Abstract.DigerIslemler
 {
     public interface IGirisPersonelTut
     {
-        void SetPersonel(Personel personel);           
+        void SetPersonel(Personel personel);
+        void SetPersonel(Personel personel,bool FirmaSahibiMi);
     }
 }

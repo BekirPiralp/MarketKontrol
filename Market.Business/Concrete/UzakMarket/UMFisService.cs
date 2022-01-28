@@ -3,6 +3,7 @@ using Market.DataAccess.Abstract.UzakMarket;
 using Market.Entity.Concrete;
 using Market.Restriction.ValidationRules.FluentValidation.UzakMarket;
 using System;
+using System.Collections.Generic;
 
 namespace Market.Business.Concrete.UzakMarket
 {
@@ -11,6 +12,24 @@ namespace Market.Business.Concrete.UzakMarket
         public UMFisService(IUMFisDal fisDal):base(fisDal)
         {
 
+        }
+
+        public List<Fis> GetAllByMonth(Firma firma, Bayi bayi)
+        {
+            List<Fis> result = null;
+            try
+            {
+                if(firma != null && bayi != null && firma.Id > 0 && bayi.Id > 0)
+                {
+                    result = _entityDal.GetAll(p =>(p.Firma == firma.Id && p.Bayi == bayi.Id 
+                    && p.TarihSaat.Month == DateTime.Now.Month));
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Fiş bulmada hata oluştu. Hata:\n" + e.Message);
+            }
+            return result;
         }
 
         public Fis GetByDateTime(Firma firma, Bayi bayi, Personel personel, DateTime dateTime)
@@ -49,5 +68,7 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return fis;
         }
+
+        
     }
 }

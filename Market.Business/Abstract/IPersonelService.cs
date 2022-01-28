@@ -8,5 +8,6 @@ namespace Market.Business.Abstract
 {
     public interface IPersonelService : IBusinessRepositoryBaseService<Personel>
     {
+        Personel GetByTc(string Tc);
     }
 }

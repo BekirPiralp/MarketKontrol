@@ -3,6 +3,7 @@ using Market.DataAccess.Abstract.UzakMarket;
 using Market.Entity.Concrete;
 using Market.Restriction.ValidationRules.FluentValidation.UzakMarket;
 using System;
+using System.Collections.Generic;
 
 namespace Market.Business.Concrete.UzakMarket
 {
@@ -11,6 +12,29 @@ namespace Market.Business.Concrete.UzakMarket
         public UMSatisService(IUMSatisDal satisDal):base(satisDal)
         {
 
+        }
+
+        public List<Satis> GetAllByFisList(List<Fis> fisler)
+        {
+            List<Satis> result = null;
+            try
+            {
+                if(fisler != null && fisler.Count > 0)
+                {
+                    result = new List<Satis>();
+                    foreach (var fis in fisler)
+                    {
+                        result.AddRange(_entityDal.GetAll(p => p.Fis == fis.Id));
+                    }
+                }
+                if (result.Count <= 0)
+                    result = null;
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Satislar getirmede hata ile karşılaşıldı. Hata :\n" + hata.Message);
+            }
+            return result;
         }
 
         public Satis GetByBarkodFisKod( Bayi bayi, Firma firma, Urun urun, Fis fis)
@@ -31,5 +55,6 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return satis;
         }
+
     }
 }
