@@ -31,5 +31,24 @@ namespace Market.Business.Concrete.UzakMarket
 
             return result;
         }
+
+        public Bayi GetByAd(string Ad,Firma firma)
+        {
+            Bayi result = null;
+            try
+            {
+                if (Ad.Trim() != "" && firma != null && firma.Id > 0)
+                {
+                    result = _entityDal.Get(p => p.BayiAd.Trim().ToLower().Equals(Ad.ToLower().Trim()));
+                }
+                else
+                    throw new Exception("Lütfen gerekli bilgileri tam veriniz.");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Bayi verisi getirilirken hata oluştu. Hata:\n"+hata.Message);
+            }
+            return result;
+        }
     }
 }

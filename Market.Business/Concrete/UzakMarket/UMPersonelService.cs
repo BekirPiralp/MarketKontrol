@@ -47,5 +47,24 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return result;
         }
+
+        public Personel GetByTc(string Tc, Firma firma)
+        {
+            Personel result = null;
+            try
+            {
+                if (Tc.Trim().Length == 11 && firma != null && firma.Id > 0)
+                {
+                    result = _entityDal.Get(p => p.Tc.Equals(Tc.Trim()) && p.Firma == firma.Id);
+                }
+                else
+                    throw new Exception("Gerekli veri ler tam gelmediği için sorgu yapamıyoruz.");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Personel getirilirken hata oluştu. Hata: \n" + hata.Message);
+            }
+            return result;
+        }
     }
 }

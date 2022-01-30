@@ -46,5 +46,22 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return result;
         }
+
+        public Mudur GetByBayi(int bayiId, int firmaId)
+        {
+            Mudur result = null;
+            try
+            {
+                if (bayiId > 0 && firmaId > 0)
+                    result = _entityDal.Get(p => p.Bayi == bayiId && p.Firma == firmaId);
+                else
+                    throw new Exception("Lütfen Verileri eksiksiz giriniz");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Veriler getirilirken hata oluştu. Hata: \n" + hata.Message);
+            }
+            return result;
+        }
     }
 }

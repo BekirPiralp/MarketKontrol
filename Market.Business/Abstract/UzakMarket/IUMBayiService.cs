@@ -6,5 +6,7 @@ namespace Market.Business.Abstract.UzakMarket
     public interface IUMBayiService : IBayiService,IUMBusinessRepositoryBaseService<Bayi>
     {
         List<Bayi> GetAllByFirma(Firma firma);
+
+        Bayi GetByAd(string Ad, Firma firma);
     }
 }

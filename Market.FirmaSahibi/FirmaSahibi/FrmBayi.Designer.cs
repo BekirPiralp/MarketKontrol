@@ -29,7 +29,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgwBayi = new System.Windows.Forms.DataGridView();
             this.tbxBayiAd = new System.Windows.Forms.TextBox();
             this.cbxIlce = new System.Windows.Forms.ComboBox();
             this.cbxIl = new System.Windows.Forms.ComboBox();
@@ -37,23 +37,29 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tbxAdres = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwBayi)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgwBayi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(580, 214);
-            this.dataGridView1.TabIndex = 0;
+            this.dgwBayi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgwBayi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwBayi.Location = new System.Drawing.Point(0, 0);
+            this.dgwBayi.MultiSelect = false;
+            this.dgwBayi.Name = "dgwBayi";
+            this.dgwBayi.Size = new System.Drawing.Size(580, 214);
+            this.dgwBayi.TabIndex = 0;
+            this.dgwBayi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwBayi_CellClick);
+            this.dgwBayi.SelectionChanged += new System.EventHandler(this.dgwBayi_SelectionChanged);
             // 
             // tbxBayiAd
             // 
             this.tbxBayiAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxBayiAd.Location = new System.Drawing.Point(21, 278);
+            this.tbxBayiAd.Location = new System.Drawing.Point(21, 260);
             this.tbxBayiAd.Name = "tbxBayiAd";
             this.tbxBayiAd.Size = new System.Drawing.Size(530, 20);
             this.tbxBayiAd.TabIndex = 1;
@@ -79,6 +85,8 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.cbxIl.Size = new System.Drawing.Size(121, 21);
             this.cbxIl.TabIndex = 6;
             this.cbxIl.Text = "İl";
+            this.cbxIl.SelectedIndexChanged += new System.EventHandler(this.cbxIl_SelectedIndexChanged);
+            this.cbxIl.DataSourceChanged += new System.EventHandler(this.cbxIl_DataSourceChanged);
             // 
             // cbxUlke
             // 
@@ -89,6 +97,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.cbxUlke.Size = new System.Drawing.Size(121, 21);
             this.cbxUlke.TabIndex = 7;
             this.cbxUlke.Text = "Ülke";
+            this.cbxUlke.SelectedIndexChanged += new System.EventHandler(this.cbxUlke_SelectedIndexChanged);
             // 
             // btnEkle
             // 
@@ -99,6 +108,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.btnEkle.TabIndex = 8;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnGuncelle
             // 
@@ -109,6 +119,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnTemizle
             // 
@@ -119,13 +130,25 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.btnTemizle.TabIndex = 8;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.button3_Click);
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // tbxAdres
+            // 
+            this.tbxAdres.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxAdres.Location = new System.Drawing.Point(21, 287);
+            this.tbxAdres.Multiline = true;
+            this.tbxAdres.Name = "tbxAdres";
+            this.tbxAdres.Size = new System.Drawing.Size(530, 45);
+            this.tbxAdres.TabIndex = 9;
+            this.tbxAdres.Text = "Adres Tarif";
             // 
             // FrmBayi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 428);
+            this.Controls.Add(this.tbxAdres);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnEkle);
@@ -133,12 +156,13 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.Controls.Add(this.cbxIl);
             this.Controls.Add(this.cbxUlke);
             this.Controls.Add(this.tbxBayiAd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgwBayi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(580, 428);
             this.Name = "FrmBayi";
-            this.Text = "FrmBayi";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Bayi İşlemleri";
+            this.Load += new System.EventHandler(this.FrmBayi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgwBayi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,7 +170,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgwBayi;
         private System.Windows.Forms.TextBox tbxBayiAd;
         private System.Windows.Forms.ComboBox cbxIlce;
         private System.Windows.Forms.ComboBox cbxIl;
@@ -154,5 +178,6 @@ namespace Market.FirmaSahibi.FirmaSahibi
         private System.Windows.Forms.Button btnEkle;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnTemizle;
+        private System.Windows.Forms.TextBox tbxAdres;
     }
 }

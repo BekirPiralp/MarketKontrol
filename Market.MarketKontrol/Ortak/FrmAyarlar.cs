@@ -228,7 +228,7 @@ namespace Market.MarketKontrol.Ortak
                     MessageBox.Show("Yeni şifreler bir biriyle eşleşmiyor ve boş olabilir");
             }
             else
-                MessageBox.Show("Eski şifreler bir biriyle uyuşmuyor");
+                MessageBox.Show("Eski şifreler bir biriyle uyuşmuyor veya şifre bilginiz gelmedi");
         }
 
         private void btnResimKaydet_Click(object sender, EventArgs e)

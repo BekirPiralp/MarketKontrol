@@ -381,16 +381,17 @@ namespace Market.FirmaSahibi.FirmaSahibi
                     _sil.Aciklama += ("\n Enson görevi: " + _calisan.Gorev.Trim());
 
                     // Müdür varsa silme işlemi --->
-                    Veri.Mudur geri = null;
-                    geri = _uMMudurS.GetByPersonelId(_personel.Id);
+                    
+                    Veri.Mudur mudur = null;
+                    mudur = _uMMudurS.GetByPersonelId(_personel.Id);
 
-                    if (geri != null && geri.Id > 0 && !GirisPersonelTut._firmaSahibiMi)
+                    if (mudur != null && mudur.Id > 0 && !GirisPersonelTut._firmaSahibiMi)
                         MessageBox.Show("Simek istediğiniz kişi müdür olduğu için silemezsiniz");
                     //_uMMudurS.Delete(geri);
                     // <---
-                    else if (geri != null && geri.Id > 0 && GirisPersonelTut._firmaSahibiMi)
+                    else if (mudur != null && mudur.Id > 0 && GirisPersonelTut._firmaSahibiMi)
                     {
-                        _uMMudurS.Delete(geri);
+                        _uMMudurS.Delete(mudur);
                         Sil();
                     }
                     else

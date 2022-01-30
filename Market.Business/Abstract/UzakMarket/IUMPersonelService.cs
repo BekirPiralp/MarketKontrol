@@ -6,5 +6,7 @@ namespace Market.Business.Abstract.UzakMarket
     public interface IUMPersonelService : IPersonelService,IUMBusinessRepositoryBaseService<Personel>
     {
         List<Personel> GetAllbyFirma(Firma firma);
+
+        Personel GetByTc(string Tc, Firma firma);
     }
 }

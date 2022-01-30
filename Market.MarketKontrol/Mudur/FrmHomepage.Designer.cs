@@ -29,11 +29,13 @@ namespace Market.MarketKontrol.Mudur
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartSatis = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartSatis)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +101,11 @@ namespace Market.MarketKontrol.Mudur
             title1.Text = "Bu Ayki En Çok Satan 20 Ürün";
             this.chartSatis.Titles.Add(title1);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,5 +125,6 @@ namespace Market.MarketKontrol.Mudur
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSatis;
+        private System.Windows.Forms.Timer timer1;
     }
 }

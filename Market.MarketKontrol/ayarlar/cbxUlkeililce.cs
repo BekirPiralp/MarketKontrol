@@ -119,7 +119,8 @@ namespace Market.MarketKontrol.ayarlar
         {
             cbxIlce.Items.Clear();
             cbxIl.Items.Clear();
-            cbxUlke.SelectedIndex = 0;
+            if(cbxUlke.Items.Count > 0)
+                cbxUlke.SelectedIndex = 0;
             //cbxUlke.Items.Clear();
         }
     }

@@ -51,24 +51,23 @@ namespace Market.MarketKontrol.Mudur
         {
             Olustur();
             LoadChart();
-            EkranYenileme();
-        }
-
-        private void EkranYenileme()
-        {
-            while (true)
-            {
-                Thread.Sleep(_yenileme);
-                LoadChart();
-            }
-            
+            timer1.Interval = _yenileme;
+            timer1.Start();
         }
 
         private void LoadChart()
         {
-            VerileriGetir();
-            VerileriAyarla();
-            chartYukleVeri();
+            try
+            {
+                VerileriGetir();
+                VerileriAyarla();
+                chartYukleVeri();
+                chartSatis.Update();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("İşlem sırasında hata ile karşılaşıldı.");
+            }
         }
 
         private void VerileriAyarla()
@@ -126,7 +125,8 @@ namespace Market.MarketKontrol.Mudur
         {
             if (_adetler.Count > 0)
             {
-                chartSatis.Series["VeriSerisi"].Points.Clear();
+                if(chartSatis.Series["VeriSerisi"].Points.Count > 0)
+                    chartSatis.Series["VeriSerisi"].Points.Clear();
                 for (int i = 0; i < _adetler.Count; i++)
                 {
                     chartSatis.Series["VeriSerisi"].Points.Add(_adetler[i].Adet);
@@ -169,6 +169,11 @@ namespace Market.MarketKontrol.Mudur
                 _firma = _personel.firma;
                 _bayi = _personel.bayi;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            LoadChart();
         }
     }
 }

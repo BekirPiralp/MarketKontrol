@@ -99,6 +99,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Market.Business\Market.Business.csproj">
+      <Project>{3CE96D72-E92A-4AE6-BF46-ABBCA8202DAA}</Project>
+      <Name>Market.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Market.DataAccess\Market.DataAccess.csproj">
+      <Project>{A8F6E4B2-2414-4913-B079-E8EA5DB885B8}</Project>
+      <Name>Market.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Market.MarketKontrol\Market.MarketKontrol.csproj">
       <Project>{3a80baeb-7d19-4ccc-a286-32424bc5a082}</Project>
       <Name>Market.MarketKontrol</Name>
