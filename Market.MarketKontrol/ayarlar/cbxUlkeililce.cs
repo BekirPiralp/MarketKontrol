@@ -35,6 +35,13 @@ namespace Market.MarketKontrol.ayarlar
          IUMIlService _uMIlS;
          IUMIlceService _uMIlceS;
 
+        private void Update()
+        {
+            cbxUlke.Update();
+            cbxIl.Update();
+            cbxIlce.Update();
+        }
+
         public  void UlkeSet()
         {
             if (_baglanti.KontrolEt())
@@ -42,6 +49,7 @@ namespace Market.MarketKontrol.ayarlar
                 cbxUlke.DataSource = _uMUlkeS.GetAll();
                 cbxUlke.DisplayMember = "Ad";
                 cbxUlke.ValueMember = "Id";
+                Update();
             }
             else
                 MessageBox.Show("Lütfen internet bağlantınızı kontrol ediniz.");
@@ -63,6 +71,7 @@ namespace Market.MarketKontrol.ayarlar
                 {
                     IlSet(SelectValue);
                 }
+                Update();
             }
             catch {
                 MessageBox.Show("Ülke verisinde hata oluştu.");
@@ -76,7 +85,9 @@ namespace Market.MarketKontrol.ayarlar
                 cbxIl.DataSource = _uMIlS.GetByUlkeId(selectValue);
                 cbxIl.ValueMember = "Id";
                 cbxIl.DisplayMember = "Ad";
-            }else
+                Update();
+            }
+            else
                 MessageBox.Show("Lütfen internet bağlantınızı kontrol ediniz.");
         }
 
@@ -88,6 +99,7 @@ namespace Market.MarketKontrol.ayarlar
                 if (SelectValue == 0)
                 {
                     UlkeSet();
+                    Update();
                 }
                 else
                 {
@@ -106,13 +118,16 @@ namespace Market.MarketKontrol.ayarlar
                 cbxIlce.DataSource = _uMIlceS.GetByIlId(selectValue);
                 cbxIlce.ValueMember = "Id";
                 cbxIlce.DisplayMember = "Ad";
-            }else
+                Update();
+            }
+            else
                 MessageBox.Show("Lütfen internet bağlantınızı kontrol ediniz.");
         }
 
         public  void cbxIl_DataSourceChanged(object sender, EventArgs e)
         {
             cbxIlce.Items.Clear();
+            Update();
         }
 
         public void Temizle()
@@ -122,6 +137,7 @@ namespace Market.MarketKontrol.ayarlar
             if(cbxUlke.Items.Count > 0)
                 cbxUlke.SelectedIndex = 0;
             //cbxUlke.Items.Clear();
+            Update();
         }
     }
 }

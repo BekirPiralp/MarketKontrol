@@ -107,6 +107,10 @@
       <Project>{A8F6E4B2-2414-4913-B079-E8EA5DB885B8}</Project>
       <Name>Market.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Market.Entity\Market.Entity.csproj">
+      <Project>{F28A7FB4-D798-4D55-AE81-18160C3F20CC}</Project>
+      <Name>Market.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Market.MarketKontrol\Market.MarketKontrol.csproj">
       <Project>{3a80baeb-7d19-4ccc-a286-32424bc5a082}</Project>
       <Name>Market.MarketKontrol</Name>

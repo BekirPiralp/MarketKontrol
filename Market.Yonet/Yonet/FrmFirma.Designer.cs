@@ -54,6 +54,7 @@ namespace Market.Yonet.Yonet
             this.tbxAdres = new System.Windows.Forms.TextBox();
             this.btnPrsnlTemizle = new System.Windows.Forms.Button();
             this.btnPrsnlEkle = new System.Windows.Forms.Button();
+            this.ofdUser = new System.Windows.Forms.OpenFileDialog();
             this.pnlFirmaEkle.SuspendLayout();
             this.pnlYoneticiAta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).BeginInit();
@@ -97,6 +98,7 @@ namespace Market.Yonet.Yonet
             this.tbxFirmaAd.TabIndex = 0;
             this.tbxFirmaAd.Text = "Firma Adı";
             this.tbxFirmaAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxFirmaAd.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // pnlYoneticiAta
             // 
@@ -131,6 +133,7 @@ namespace Market.Yonet.Yonet
             this.tbxAtaTc.TabIndex = 1;
             this.tbxAtaTc.Text = "Yönetici TC";
             this.tbxAtaTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxAtaTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // btnAta
             // 
@@ -165,6 +168,7 @@ namespace Market.Yonet.Yonet
             this.pbxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUser.TabIndex = 2;
             this.pbxUser.TabStop = false;
+            this.pbxUser.Click += new System.EventHandler(this.pbxUser_Click);
             // 
             // cbxPrsnlFirma
             // 
@@ -185,6 +189,7 @@ namespace Market.Yonet.Yonet
             this.tbxAd.TabIndex = 3;
             this.tbxAd.Text = "Ad";
             this.tbxAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxAd.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // tbxSoyad
             // 
@@ -195,6 +200,7 @@ namespace Market.Yonet.Yonet
             this.tbxSoyad.TabIndex = 3;
             this.tbxSoyad.Text = "Soyad";
             this.tbxSoyad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxSoyad.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // tbxPrsnlTc
             // 
@@ -205,6 +211,7 @@ namespace Market.Yonet.Yonet
             this.tbxPrsnlTc.TabIndex = 3;
             this.tbxPrsnlTc.Text = "TC";
             this.tbxPrsnlTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxPrsnlTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // tbxGorev
             // 
@@ -215,6 +222,7 @@ namespace Market.Yonet.Yonet
             this.tbxGorev.TabIndex = 3;
             this.tbxGorev.Text = "Görevi";
             this.tbxGorev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxGorev.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // gbxCinsiyet
             // 
@@ -292,6 +300,7 @@ namespace Market.Yonet.Yonet
             this.tbxEkBilgi.Size = new System.Drawing.Size(442, 45);
             this.tbxEkBilgi.TabIndex = 8;
             this.tbxEkBilgi.Text = "Ek bilgi";
+            this.tbxEkBilgi.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // tbxAdres
             // 
@@ -303,6 +312,7 @@ namespace Market.Yonet.Yonet
             this.tbxAdres.Size = new System.Drawing.Size(442, 45);
             this.tbxAdres.TabIndex = 9;
             this.tbxAdres.Text = "Adres Tarif";
+            this.tbxAdres.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // btnPrsnlTemizle
             // 
@@ -323,6 +333,11 @@ namespace Market.Yonet.Yonet
             this.btnPrsnlEkle.TabIndex = 14;
             this.btnPrsnlEkle.Text = "Ekle";
             this.btnPrsnlEkle.UseVisualStyleBackColor = true;
+            // 
+            // ofdUser
+            // 
+            this.ofdUser.FileName = "Profil Resimini Seçiniz";
+            this.ofdUser.Filter = "\"Resimler |*.png;*.jpg;*.jpeg;\"";
             // 
             // FrmFirma
             // 
@@ -389,5 +404,6 @@ namespace Market.Yonet.Yonet
         private System.Windows.Forms.TextBox tbxAdres;
         private System.Windows.Forms.Button btnPrsnlTemizle;
         private System.Windows.Forms.Button btnPrsnlEkle;
+        private System.Windows.Forms.OpenFileDialog ofdUser;
     }
 }
