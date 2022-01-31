@@ -4,5 +4,6 @@ namespace Market.Business.Abstract.UzakMarket
 {
     public interface IUMYoneticiService : IYoneticiService,IUMBusinessRepositoryBaseService<Yonetici>
     {
+        Yonetici GetByFirmaId(int FirmaId);
     }
 }

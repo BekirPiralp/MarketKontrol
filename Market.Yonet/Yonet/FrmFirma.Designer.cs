@@ -43,14 +43,12 @@ namespace Market.Yonet.Yonet
             this.tbxAd = new System.Windows.Forms.TextBox();
             this.tbxSoyad = new System.Windows.Forms.TextBox();
             this.tbxPrsnlTc = new System.Windows.Forms.TextBox();
-            this.tbxGorev = new System.Windows.Forms.TextBox();
             this.gbxCinsiyet = new System.Windows.Forms.GroupBox();
             this.rbtnKadin = new System.Windows.Forms.RadioButton();
             this.rbtnErkek = new System.Windows.Forms.RadioButton();
             this.cbxIlce = new System.Windows.Forms.ComboBox();
             this.cbxIl = new System.Windows.Forms.ComboBox();
             this.cbxUlke = new System.Windows.Forms.ComboBox();
-            this.tbxEkBilgi = new System.Windows.Forms.TextBox();
             this.tbxAdres = new System.Windows.Forms.TextBox();
             this.btnPrsnlTemizle = new System.Windows.Forms.Button();
             this.btnPrsnlEkle = new System.Windows.Forms.Button();
@@ -74,27 +72,30 @@ namespace Market.Yonet.Yonet
             // 
             // btnFirmaTemizle
             // 
-            this.btnFirmaTemizle.Location = new System.Drawing.Point(193, 57);
+            this.btnFirmaTemizle.Location = new System.Drawing.Point(193, 65);
             this.btnFirmaTemizle.Name = "btnFirmaTemizle";
             this.btnFirmaTemizle.Size = new System.Drawing.Size(76, 48);
             this.btnFirmaTemizle.TabIndex = 1;
             this.btnFirmaTemizle.Text = "Temizle";
             this.btnFirmaTemizle.UseVisualStyleBackColor = true;
+            this.btnFirmaTemizle.Click += new System.EventHandler(this.btnFirmaTemizle_Click);
             // 
             // btnFirmaEkle
             // 
-            this.btnFirmaEkle.Location = new System.Drawing.Point(13, 57);
+            this.btnFirmaEkle.Location = new System.Drawing.Point(13, 65);
             this.btnFirmaEkle.Name = "btnFirmaEkle";
             this.btnFirmaEkle.Size = new System.Drawing.Size(76, 48);
             this.btnFirmaEkle.TabIndex = 1;
             this.btnFirmaEkle.Text = "Ekle";
             this.btnFirmaEkle.UseVisualStyleBackColor = true;
+            this.btnFirmaEkle.Click += new System.EventHandler(this.btnFirmaEkle_Click);
             // 
             // tbxFirmaAd
             // 
+            this.tbxFirmaAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbxFirmaAd.Location = new System.Drawing.Point(13, 13);
             this.tbxFirmaAd.Name = "tbxFirmaAd";
-            this.tbxFirmaAd.Size = new System.Drawing.Size(256, 20);
+            this.tbxFirmaAd.Size = new System.Drawing.Size(256, 23);
             this.tbxFirmaAd.TabIndex = 0;
             this.tbxFirmaAd.Text = "Firma Adı";
             this.tbxFirmaAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -104,6 +105,7 @@ namespace Market.Yonet.Yonet
             // 
             this.pnlYoneticiAta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlYoneticiAta.BackColor = System.Drawing.Color.Sienna;
             this.pnlYoneticiAta.Controls.Add(this.btnAtaTemizle);
             this.pnlYoneticiAta.Controls.Add(this.tbxAtaTc);
             this.pnlYoneticiAta.Controls.Add(this.btnAta);
@@ -122,6 +124,7 @@ namespace Market.Yonet.Yonet
             this.btnAtaTemizle.TabIndex = 1;
             this.btnAtaTemizle.Text = "Temizle";
             this.btnAtaTemizle.UseVisualStyleBackColor = true;
+            this.btnAtaTemizle.Click += new System.EventHandler(this.btnAtaTemizle_Click);
             // 
             // tbxAtaTc
             // 
@@ -131,7 +134,7 @@ namespace Market.Yonet.Yonet
             this.tbxAtaTc.Name = "tbxAtaTc";
             this.tbxAtaTc.Size = new System.Drawing.Size(249, 20);
             this.tbxAtaTc.TabIndex = 1;
-            this.tbxAtaTc.Text = "Yönetici TC";
+            this.tbxAtaTc.Text = "Yönetici / Sahip TC";
             this.tbxAtaTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxAtaTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
@@ -143,6 +146,7 @@ namespace Market.Yonet.Yonet
             this.btnAta.TabIndex = 1;
             this.btnAta.Text = "Ata";
             this.btnAta.UseVisualStyleBackColor = true;
+            this.btnAta.Click += new System.EventHandler(this.btnAta_Click);
             // 
             // cbxAtaFirma
             // 
@@ -164,7 +168,7 @@ namespace Market.Yonet.Yonet
             this.pbxUser.Image = global::Market.Yonet.Properties.Resources.user;
             this.pbxUser.Location = new System.Drawing.Point(12, 143);
             this.pbxUser.Name = "pbxUser";
-            this.pbxUser.Size = new System.Drawing.Size(217, 142);
+            this.pbxUser.Size = new System.Drawing.Size(268, 152);
             this.pbxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUser.TabIndex = 2;
             this.pbxUser.TabStop = false;
@@ -183,7 +187,7 @@ namespace Market.Yonet.Yonet
             // tbxAd
             // 
             this.tbxAd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxAd.Location = new System.Drawing.Point(286, 199);
+            this.tbxAd.Location = new System.Drawing.Point(286, 206);
             this.tbxAd.Name = "tbxAd";
             this.tbxAd.Size = new System.Drawing.Size(244, 20);
             this.tbxAd.TabIndex = 3;
@@ -194,7 +198,7 @@ namespace Market.Yonet.Yonet
             // tbxSoyad
             // 
             this.tbxSoyad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSoyad.Location = new System.Drawing.Point(286, 225);
+            this.tbxSoyad.Location = new System.Drawing.Point(286, 236);
             this.tbxSoyad.Name = "tbxSoyad";
             this.tbxSoyad.Size = new System.Drawing.Size(244, 20);
             this.tbxSoyad.TabIndex = 3;
@@ -205,24 +209,13 @@ namespace Market.Yonet.Yonet
             // tbxPrsnlTc
             // 
             this.tbxPrsnlTc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxPrsnlTc.Location = new System.Drawing.Point(286, 173);
+            this.tbxPrsnlTc.Location = new System.Drawing.Point(286, 176);
             this.tbxPrsnlTc.Name = "tbxPrsnlTc";
             this.tbxPrsnlTc.Size = new System.Drawing.Size(244, 20);
             this.tbxPrsnlTc.TabIndex = 3;
             this.tbxPrsnlTc.Text = "TC";
             this.tbxPrsnlTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxPrsnlTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
-            // 
-            // tbxGorev
-            // 
-            this.tbxGorev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxGorev.Location = new System.Drawing.Point(286, 251);
-            this.tbxGorev.Name = "tbxGorev";
-            this.tbxGorev.Size = new System.Drawing.Size(244, 20);
-            this.tbxGorev.TabIndex = 3;
-            this.tbxGorev.Text = "Görevi";
-            this.tbxGorev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxGorev.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // gbxCinsiyet
             // 
@@ -231,7 +224,7 @@ namespace Market.Yonet.Yonet
             this.gbxCinsiyet.Controls.Add(this.rbtnKadin);
             this.gbxCinsiyet.Controls.Add(this.rbtnErkek);
             this.gbxCinsiyet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbxCinsiyet.Location = new System.Drawing.Point(286, 273);
+            this.gbxCinsiyet.Location = new System.Drawing.Point(286, 259);
             this.gbxCinsiyet.Name = "gbxCinsiyet";
             this.gbxCinsiyet.Size = new System.Drawing.Size(244, 28);
             this.gbxCinsiyet.TabIndex = 7;
@@ -279,6 +272,8 @@ namespace Market.Yonet.Yonet
             this.cbxIl.Size = new System.Drawing.Size(121, 21);
             this.cbxIl.TabIndex = 11;
             this.cbxIl.Text = "İl";
+            this.cbxIl.SelectedIndexChanged += new System.EventHandler(this.cbxIl_SelectedIndexChanged);
+            this.cbxIl.DataSourceChanged += new System.EventHandler(this.cbxIl_DataSourceChanged);
             // 
             // cbxUlke
             // 
@@ -289,18 +284,7 @@ namespace Market.Yonet.Yonet
             this.cbxUlke.Size = new System.Drawing.Size(121, 21);
             this.cbxUlke.TabIndex = 12;
             this.cbxUlke.Text = "Ülke";
-            // 
-            // tbxEkBilgi
-            // 
-            this.tbxEkBilgi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxEkBilgi.Location = new System.Drawing.Point(13, 378);
-            this.tbxEkBilgi.Multiline = true;
-            this.tbxEkBilgi.Name = "tbxEkBilgi";
-            this.tbxEkBilgi.Size = new System.Drawing.Size(442, 45);
-            this.tbxEkBilgi.TabIndex = 8;
-            this.tbxEkBilgi.Text = "Ek bilgi";
-            this.tbxEkBilgi.MouseHover += new System.EventHandler(this.tbxMouseHover);
+            this.cbxUlke.SelectedIndexChanged += new System.EventHandler(this.cbxUlke_SelectedIndexChanged);
             // 
             // tbxAdres
             // 
@@ -309,7 +293,7 @@ namespace Market.Yonet.Yonet
             this.tbxAdres.Location = new System.Drawing.Point(13, 328);
             this.tbxAdres.Multiline = true;
             this.tbxAdres.Name = "tbxAdres";
-            this.tbxAdres.Size = new System.Drawing.Size(442, 45);
+            this.tbxAdres.Size = new System.Drawing.Size(442, 88);
             this.tbxAdres.TabIndex = 9;
             this.tbxAdres.Text = "Adres Tarif";
             this.tbxAdres.MouseHover += new System.EventHandler(this.tbxMouseHover);
@@ -323,6 +307,7 @@ namespace Market.Yonet.Yonet
             this.btnPrsnlTemizle.TabIndex = 13;
             this.btnPrsnlTemizle.Text = "Temizle";
             this.btnPrsnlTemizle.UseVisualStyleBackColor = true;
+            this.btnPrsnlTemizle.Click += new System.EventHandler(this.btnPrsnlTemizle_Click);
             // 
             // btnPrsnlEkle
             // 
@@ -333,6 +318,7 @@ namespace Market.Yonet.Yonet
             this.btnPrsnlEkle.TabIndex = 14;
             this.btnPrsnlEkle.Text = "Ekle";
             this.btnPrsnlEkle.UseVisualStyleBackColor = true;
+            this.btnPrsnlEkle.Click += new System.EventHandler(this.btnPrsnlEkle_Click);
             // 
             // ofdUser
             // 
@@ -343,16 +329,15 @@ namespace Market.Yonet.Yonet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(580, 428);
             this.Controls.Add(this.btnPrsnlTemizle);
             this.Controls.Add(this.btnPrsnlEkle);
             this.Controls.Add(this.cbxIlce);
             this.Controls.Add(this.cbxIl);
             this.Controls.Add(this.cbxUlke);
-            this.Controls.Add(this.tbxEkBilgi);
             this.Controls.Add(this.tbxAdres);
             this.Controls.Add(this.gbxCinsiyet);
-            this.Controls.Add(this.tbxGorev);
             this.Controls.Add(this.tbxSoyad);
             this.Controls.Add(this.tbxPrsnlTc);
             this.Controls.Add(this.tbxAd);
@@ -363,7 +348,7 @@ namespace Market.Yonet.Yonet
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(580, 428);
             this.Name = "FrmFirma";
-            this.Text = "FrmFirma";
+            this.Text = "Firma İşlemleri";
             this.Load += new System.EventHandler(this.FrmFirma_Load);
             this.pnlFirmaEkle.ResumeLayout(false);
             this.pnlFirmaEkle.PerformLayout();
@@ -393,14 +378,12 @@ namespace Market.Yonet.Yonet
         private System.Windows.Forms.TextBox tbxAd;
         private System.Windows.Forms.TextBox tbxSoyad;
         private System.Windows.Forms.TextBox tbxPrsnlTc;
-        private System.Windows.Forms.TextBox tbxGorev;
         private System.Windows.Forms.GroupBox gbxCinsiyet;
         private System.Windows.Forms.RadioButton rbtnKadin;
         private System.Windows.Forms.RadioButton rbtnErkek;
         private System.Windows.Forms.ComboBox cbxIlce;
         private System.Windows.Forms.ComboBox cbxIl;
         private System.Windows.Forms.ComboBox cbxUlke;
-        private System.Windows.Forms.TextBox tbxEkBilgi;
         private System.Windows.Forms.TextBox tbxAdres;
         private System.Windows.Forms.Button btnPrsnlTemizle;
         private System.Windows.Forms.Button btnPrsnlEkle;

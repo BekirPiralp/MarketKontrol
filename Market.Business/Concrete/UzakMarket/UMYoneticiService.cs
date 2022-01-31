@@ -46,5 +46,26 @@ namespace Market.Business.Concrete.UzakMarket
             }
             return result;
         }
+
+        public Yonetici GetByFirmaId(int FirmaId)
+        {
+            Yonetici result = null;
+            try
+            {
+                if (FirmaId > 0)
+                {
+                    result = _entityDal.Get(p => p.Firma == FirmaId);
+                    if (result != null && result.Id <= 0)
+                        result = null;
+                }
+                else
+                    throw new Exception("Geçersiz firma ID");
+            }
+            catch (Exception hata)
+            {
+                throw new Exception("Yönetici bilgisi getirilirken hata oluştu. Hata: \n"+hata.Message);
+            }
+            return result;
+        }
     }
 }
