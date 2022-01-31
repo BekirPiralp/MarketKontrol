@@ -450,7 +450,7 @@ namespace Market.Yonet.Yonet
                         else
                         {
                             if (tbxAd.Text.Trim() != "" && tbxSoyad.Text.Trim() != "" && Convert.ToInt32(cbxPrsnlFirma.SelectedValue) > 0 &&
-                                tbxAdres.Text.Trim() != "" && Convert.ToInt32(cbxIlce.SelectedValue) > 0)
+                                tbxAdres.Text.Trim() != "" && Convert.ToInt32(cbxIlce.SelectedValue) > 0 && Convert.ToInt32(cbxIl.SelectedValue) > 0 && Convert.ToInt32(cbxUlke.SelectedValue) > 0)
                             {
                                 personel = new Personel
                                 {
