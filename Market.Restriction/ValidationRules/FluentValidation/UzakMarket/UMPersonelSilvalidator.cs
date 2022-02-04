@@ -7,7 +7,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
     {
         public UMPersonelSilValidator()
         {
-            RuleFor(p => p.Id).NotEmpty();
+            //RuleFor(p => p.Id).NotEmpty();
             RuleFor(p => p.Firma).NotEmpty();
             RuleFor(p => p.Personel).NotEmpty();
             RuleFor(p => p.Aciklama).NotEmpty();

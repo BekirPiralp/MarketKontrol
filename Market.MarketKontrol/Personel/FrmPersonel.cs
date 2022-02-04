@@ -22,8 +22,8 @@ namespace Market.MarketKontrol.Personel
         private void btnCikis_Click(object sender, EventArgs e)
         {
             //çıkış
-            _baglanti.Serbesbirak();
-            Application.Exit();
+            _baglanti.Serbestbirak();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)

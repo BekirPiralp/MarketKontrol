@@ -123,7 +123,7 @@ namespace Market.MarketKontrol.Mudur
 
         private void chartYukleVeri()
         {
-            if (_adetler.Count > 0)
+            if (_adetler != null&&_adetler.Count > 0)
             {
                 if(chartSatis.Series["VeriSerisi"].Points.Count > 0)
                     chartSatis.Series["VeriSerisi"].Points.Clear();

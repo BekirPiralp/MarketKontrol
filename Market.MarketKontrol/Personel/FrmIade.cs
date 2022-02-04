@@ -181,6 +181,8 @@ namespace Market.MarketKontrol.Personel
                         throw new Exception("Kayıtlarda böyle bir şatışa ait fiş bilgisine ulaşılamadı.");
                     }
                 }
+
+                MessageBox.Show("İşleminiz başarıyle gerçekleştirildi.");
             }catch(Exception hata)
             {
                 MessageBox.Show("İade kayıt esnasında hata ile karşılaşıldı. \n" + hata.Message);

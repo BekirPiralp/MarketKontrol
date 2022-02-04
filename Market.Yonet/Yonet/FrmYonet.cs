@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market.Business.Concrete.DigerIslemler;
 using Market.MarketKontrol.ayarlar;
 using Market.MarketKontrol.Ortak;
 
@@ -34,7 +35,9 @@ namespace Market.Yonet.Yonet
         private void btnCikis_Click(object sender, EventArgs e)
         {
             //çıkış
-            Application.Exit();
+            BaglantiKontrol baglanti = BaglantiKontrol.KontrolGet();
+            baglanti.Serbestbirak();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -107,6 +110,11 @@ namespace Market.Yonet.Yonet
         private void btnFirma_Click(object sender, EventArgs e)
         {
             OpenForm(new Yonet.FrmFirma(),sender);
+        }
+
+        private void FrmYonet_Load(object sender, EventArgs e)
+        {
+            OpenForm(new Yonet.FrmFirma(), btnFirma);
         }
     }
 }

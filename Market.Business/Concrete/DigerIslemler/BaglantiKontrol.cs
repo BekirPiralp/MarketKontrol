@@ -59,7 +59,7 @@ namespace Market.Business.Concrete.DigerIslemler
             return baglantiDurumu;
             
         }
-        public void Serbesbirak()
+        public void Serbestbirak()
         {
             baglantiKontrol = null;
         }

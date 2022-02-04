@@ -70,7 +70,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgwPersonel.Location = new System.Drawing.Point(0, 0);
             this.dgwPersonel.Name = "dgwPersonel";
-            this.dgwPersonel.Size = new System.Drawing.Size(580, 153);
+            this.dgwPersonel.Size = new System.Drawing.Size(580, 135);
             this.dgwPersonel.TabIndex = 0;
             this.dgwPersonel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwPersonel_CellClick);
             this.dgwPersonel.SelectionChanged += new System.EventHandler(this.dgwPersonel_SelectionChanged);
@@ -96,17 +96,17 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.pnlPrsnlDuzenle.Controls.Add(this.tbxSoyad);
             this.pnlPrsnlDuzenle.Controls.Add(this.tbxAd);
             this.pnlPrsnlDuzenle.Controls.Add(this.tbxTc);
-            this.pnlPrsnlDuzenle.Location = new System.Drawing.Point(0, 153);
+            this.pnlPrsnlDuzenle.Location = new System.Drawing.Point(0, 133);
             this.pnlPrsnlDuzenle.Name = "pnlPrsnlDuzenle";
-            this.pnlPrsnlDuzenle.Size = new System.Drawing.Size(412, 275);
+            this.pnlPrsnlDuzenle.Size = new System.Drawing.Size(420, 295);
             this.pnlPrsnlDuzenle.TabIndex = 1;
             // 
             // cbxBayi
             // 
             this.cbxBayi.FormattingEnabled = true;
-            this.cbxBayi.Location = new System.Drawing.Point(198, 122);
+            this.cbxBayi.Location = new System.Drawing.Point(174, 139);
             this.cbxBayi.Name = "cbxBayi";
-            this.cbxBayi.Size = new System.Drawing.Size(130, 21);
+            this.cbxBayi.Size = new System.Drawing.Size(134, 21);
             this.cbxBayi.TabIndex = 7;
             this.cbxBayi.Text = "Bayi";
             // 
@@ -118,9 +118,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.gbxCinsiyet.Controls.Add(this.rbtnKadin);
             this.gbxCinsiyet.Controls.Add(this.rbtnErkek);
             this.gbxCinsiyet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbxCinsiyet.Location = new System.Drawing.Point(198, 92);
+            this.gbxCinsiyet.Location = new System.Drawing.Point(174, 106);
             this.gbxCinsiyet.Name = "gbxCinsiyet";
-            this.gbxCinsiyet.Size = new System.Drawing.Size(130, 28);
+            this.gbxCinsiyet.Size = new System.Drawing.Size(138, 28);
             this.gbxCinsiyet.TabIndex = 6;
             this.gbxCinsiyet.TabStop = false;
             // 
@@ -128,12 +128,13 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.rbtnKadin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtnKadin.AutoSize = true;
-            this.rbtnKadin.Location = new System.Drawing.Point(74, 8);
+            this.rbtnKadin.Location = new System.Drawing.Point(82, 8);
             this.rbtnKadin.Name = "rbtnKadin";
             this.rbtnKadin.Size = new System.Drawing.Size(52, 17);
             this.rbtnKadin.TabIndex = 1;
             this.rbtnKadin.Text = "Kadın";
             this.rbtnKadin.UseVisualStyleBackColor = true;
+            this.rbtnKadin.CheckedChanged += new System.EventHandler(this.rbtnKadin_CheckedChanged);
             // 
             // rbtnErkek
             // 
@@ -146,48 +147,57 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.rbtnErkek.TabStop = true;
             this.rbtnErkek.Text = "Erkek";
             this.rbtnErkek.UseVisualStyleBackColor = true;
+            this.rbtnErkek.CheckedChanged += new System.EventHandler(this.rbtnErkek_CheckedChanged);
             // 
             // btnPrsnlSil
             // 
             this.btnPrsnlSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlSil.Location = new System.Drawing.Point(332, 108);
+            this.btnPrsnlSil.Image = global::Market.FirmaSahibi.Properties.Resources.cancel;
+            this.btnPrsnlSil.Location = new System.Drawing.Point(317, 126);
             this.btnPrsnlSil.Name = "btnPrsnlSil";
-            this.btnPrsnlSil.Size = new System.Drawing.Size(69, 31);
+            this.btnPrsnlSil.Size = new System.Drawing.Size(91, 40);
             this.btnPrsnlSil.TabIndex = 5;
             this.btnPrsnlSil.Text = "Sil";
+            this.btnPrsnlSil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrsnlSil.UseVisualStyleBackColor = true;
             this.btnPrsnlSil.Click += new System.EventHandler(this.btnPrsnlSil_Click);
             // 
             // btnPrsnlTemizle
             // 
             this.btnPrsnlTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlTemizle.Location = new System.Drawing.Point(332, 75);
+            this.btnPrsnlTemizle.Image = global::Market.FirmaSahibi.Properties.Resources.dust;
+            this.btnPrsnlTemizle.Location = new System.Drawing.Point(318, 86);
             this.btnPrsnlTemizle.Name = "btnPrsnlTemizle";
-            this.btnPrsnlTemizle.Size = new System.Drawing.Size(69, 31);
+            this.btnPrsnlTemizle.Size = new System.Drawing.Size(91, 40);
             this.btnPrsnlTemizle.TabIndex = 5;
             this.btnPrsnlTemizle.Text = "Temizle";
+            this.btnPrsnlTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrsnlTemizle.UseVisualStyleBackColor = true;
             this.btnPrsnlTemizle.Click += new System.EventHandler(this.btnPrsnlTemizle_Click);
             // 
             // btnGuncelle
             // 
             this.btnGuncelle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuncelle.Location = new System.Drawing.Point(332, 41);
+            this.btnGuncelle.Image = global::Market.FirmaSahibi.Properties.Resources.updated;
+            this.btnGuncelle.Location = new System.Drawing.Point(318, 45);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(69, 31);
+            this.btnGuncelle.Size = new System.Drawing.Size(91, 40);
             this.btnGuncelle.TabIndex = 5;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnPrsnlEkle
             // 
             this.btnPrsnlEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlEkle.Location = new System.Drawing.Point(332, 9);
+            this.btnPrsnlEkle.Image = global::Market.FirmaSahibi.Properties.Resources.plus;
+            this.btnPrsnlEkle.Location = new System.Drawing.Point(318, 3);
             this.btnPrsnlEkle.Name = "btnPrsnlEkle";
-            this.btnPrsnlEkle.Size = new System.Drawing.Size(69, 31);
+            this.btnPrsnlEkle.Size = new System.Drawing.Size(91, 40);
             this.btnPrsnlEkle.TabIndex = 5;
             this.btnPrsnlEkle.Text = "Ekle";
+            this.btnPrsnlEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrsnlEkle.UseVisualStyleBackColor = true;
             this.btnPrsnlEkle.Click += new System.EventHandler(this.btnPrsnlEkle_Click);
             // 
@@ -195,7 +205,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.cbxIlce.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxIlce.FormattingEnabled = true;
-            this.cbxIlce.Location = new System.Drawing.Point(280, 146);
+            this.cbxIlce.Location = new System.Drawing.Point(288, 168);
             this.cbxIlce.Name = "cbxIlce";
             this.cbxIlce.Size = new System.Drawing.Size(121, 21);
             this.cbxIlce.TabIndex = 4;
@@ -205,7 +215,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.cbxIl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cbxIl.FormattingEnabled = true;
-            this.cbxIl.Location = new System.Drawing.Point(140, 146);
+            this.cbxIl.Location = new System.Drawing.Point(144, 168);
             this.cbxIl.Name = "cbxIl";
             this.cbxIl.Size = new System.Drawing.Size(121, 21);
             this.cbxIl.TabIndex = 4;
@@ -217,7 +227,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.cbxUlke.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxUlke.FormattingEnabled = true;
-            this.cbxUlke.Location = new System.Drawing.Point(9, 147);
+            this.cbxUlke.Location = new System.Drawing.Point(9, 169);
             this.cbxUlke.Name = "cbxUlke";
             this.cbxUlke.Size = new System.Drawing.Size(121, 21);
             this.cbxUlke.TabIndex = 4;
@@ -228,10 +238,10 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxEkBilgi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxEkBilgi.Location = new System.Drawing.Point(9, 223);
+            this.tbxEkBilgi.Location = new System.Drawing.Point(9, 243);
             this.tbxEkBilgi.Multiline = true;
             this.tbxEkBilgi.Name = "tbxEkBilgi";
-            this.tbxEkBilgi.Size = new System.Drawing.Size(394, 45);
+            this.tbxEkBilgi.Size = new System.Drawing.Size(402, 45);
             this.tbxEkBilgi.TabIndex = 3;
             this.tbxEkBilgi.Text = "Ek bilgi";
             this.tbxEkBilgi.MouseHover += new System.EventHandler(this.tbxMouseHover);
@@ -240,10 +250,10 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxAdres.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxAdres.Location = new System.Drawing.Point(9, 173);
+            this.tbxAdres.Location = new System.Drawing.Point(9, 193);
             this.tbxAdres.Multiline = true;
             this.tbxAdres.Name = "tbxAdres";
-            this.tbxAdres.Size = new System.Drawing.Size(394, 45);
+            this.tbxAdres.Size = new System.Drawing.Size(402, 45);
             this.tbxAdres.TabIndex = 3;
             this.tbxAdres.Text = "Adres Tarif";
             this.tbxAdres.MouseHover += new System.EventHandler(this.tbxMouseHover);
@@ -254,9 +264,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.pbxFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFoto.Image = global::Market.FirmaSahibi.Properties.Resources.user;
-            this.pbxFoto.Location = new System.Drawing.Point(1, 1);
+            this.pbxFoto.Location = new System.Drawing.Point(4, 4);
             this.pbxFoto.Name = "pbxFoto";
-            this.pbxFoto.Size = new System.Drawing.Size(186, 131);
+            this.pbxFoto.Size = new System.Drawing.Size(165, 159);
             this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxFoto.TabIndex = 2;
             this.pbxFoto.TabStop = false;
@@ -266,9 +276,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxGorev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxGorev.Location = new System.Drawing.Point(198, 71);
+            this.tbxGorev.Location = new System.Drawing.Point(174, 83);
             this.tbxGorev.Name = "tbxGorev";
-            this.tbxGorev.Size = new System.Drawing.Size(130, 20);
+            this.tbxGorev.Size = new System.Drawing.Size(138, 20);
             this.tbxGorev.TabIndex = 0;
             this.tbxGorev.Text = "Görev";
             this.tbxGorev.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -278,9 +288,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxSoyad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxSoyad.Location = new System.Drawing.Point(198, 48);
+            this.tbxSoyad.Location = new System.Drawing.Point(174, 58);
             this.tbxSoyad.Name = "tbxSoyad";
-            this.tbxSoyad.Size = new System.Drawing.Size(130, 20);
+            this.tbxSoyad.Size = new System.Drawing.Size(138, 20);
             this.tbxSoyad.TabIndex = 0;
             this.tbxSoyad.Text = "Soyad";
             this.tbxSoyad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -290,9 +300,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxAd.Location = new System.Drawing.Point(198, 25);
+            this.tbxAd.Location = new System.Drawing.Point(174, 32);
             this.tbxAd.Name = "tbxAd";
-            this.tbxAd.Size = new System.Drawing.Size(130, 20);
+            this.tbxAd.Size = new System.Drawing.Size(138, 20);
             this.tbxAd.TabIndex = 0;
             this.tbxAd.Text = "Ad";
             this.tbxAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -302,9 +312,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             this.tbxTc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxTc.Location = new System.Drawing.Point(198, 3);
+            this.tbxTc.Location = new System.Drawing.Point(174, 6);
             this.tbxTc.Name = "tbxTc";
-            this.tbxTc.Size = new System.Drawing.Size(130, 20);
+            this.tbxTc.Size = new System.Drawing.Size(138, 20);
             this.tbxTc.TabIndex = 0;
             this.tbxTc.Text = "TC";
             this.tbxTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -318,36 +328,40 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.pnlPrsnlSifreAta.Controls.Add(this.btnSfreKaydet);
             this.pnlPrsnlSifreAta.Controls.Add(this.tbxYeniSifre);
             this.pnlPrsnlSifreAta.Controls.Add(this.tbxSifreTC);
-            this.pnlPrsnlSifreAta.Location = new System.Drawing.Point(407, 153);
+            this.pnlPrsnlSifreAta.Location = new System.Drawing.Point(418, 134);
             this.pnlPrsnlSifreAta.Name = "pnlPrsnlSifreAta";
-            this.pnlPrsnlSifreAta.Size = new System.Drawing.Size(173, 275);
+            this.pnlPrsnlSifreAta.Size = new System.Drawing.Size(162, 294);
             this.pnlPrsnlSifreAta.TabIndex = 1;
             // 
             // btnSfreTemizle
             // 
-            this.btnSfreTemizle.Location = new System.Drawing.Point(35, 194);
+            this.btnSfreTemizle.Image = global::Market.FirmaSahibi.Properties.Resources.dust;
+            this.btnSfreTemizle.Location = new System.Drawing.Point(34, 186);
             this.btnSfreTemizle.Name = "btnSfreTemizle";
-            this.btnSfreTemizle.Size = new System.Drawing.Size(100, 37);
+            this.btnSfreTemizle.Size = new System.Drawing.Size(100, 45);
             this.btnSfreTemizle.TabIndex = 1;
             this.btnSfreTemizle.Text = "Temizle";
+            this.btnSfreTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSfreTemizle.UseVisualStyleBackColor = true;
             this.btnSfreTemizle.Click += new System.EventHandler(this.btnSfreTemizle_Click);
             // 
             // btnSfreKaydet
             // 
-            this.btnSfreKaydet.Location = new System.Drawing.Point(35, 130);
+            this.btnSfreKaydet.Image = global::Market.FirmaSahibi.Properties.Resources.saveData;
+            this.btnSfreKaydet.Location = new System.Drawing.Point(34, 131);
             this.btnSfreKaydet.Name = "btnSfreKaydet";
-            this.btnSfreKaydet.Size = new System.Drawing.Size(100, 37);
+            this.btnSfreKaydet.Size = new System.Drawing.Size(100, 49);
             this.btnSfreKaydet.TabIndex = 1;
             this.btnSfreKaydet.Text = "Kaydet";
+            this.btnSfreKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSfreKaydet.UseVisualStyleBackColor = true;
             this.btnSfreKaydet.Click += new System.EventHandler(this.btnSfreKaydet_Click);
             // 
             // tbxYeniSifre
             // 
-            this.tbxYeniSifre.Location = new System.Drawing.Point(6, 83);
+            this.tbxYeniSifre.Location = new System.Drawing.Point(15, 81);
             this.tbxYeniSifre.Name = "tbxYeniSifre";
-            this.tbxYeniSifre.Size = new System.Drawing.Size(150, 20);
+            this.tbxYeniSifre.Size = new System.Drawing.Size(133, 20);
             this.tbxYeniSifre.TabIndex = 0;
             this.tbxYeniSifre.Text = "Yeni Şifre";
             this.tbxYeniSifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -355,10 +369,10 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             // tbxSifreTC
             // 
-            this.tbxSifreTC.Location = new System.Drawing.Point(6, 44);
+            this.tbxSifreTC.Location = new System.Drawing.Point(15, 47);
             this.tbxSifreTC.MaxLength = 11;
             this.tbxSifreTC.Name = "tbxSifreTC";
-            this.tbxSifreTC.Size = new System.Drawing.Size(150, 20);
+            this.tbxSifreTC.Size = new System.Drawing.Size(133, 20);
             this.tbxSifreTC.TabIndex = 0;
             this.tbxSifreTC.Text = "TC";
             this.tbxSifreTC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

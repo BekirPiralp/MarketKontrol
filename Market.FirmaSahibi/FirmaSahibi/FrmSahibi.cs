@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market.Business.Concrete.DigerIslemler;
 using Market.MarketKontrol.ayarlar;
 using Market.MarketKontrol.Ortak;
 
@@ -17,6 +18,10 @@ namespace Market.FirmaSahibi.FirmaSahibi
         public FrmSahibi()
         {
             InitializeComponent();
+        }
+        private void FrmSahibi_Load(object sender, EventArgs e)
+        {
+            OpenForm(new Homepage(), btnAnaEkran);
         }
         private void mouseUp(object sender, MouseEventArgs e)
         {
@@ -34,7 +39,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
         private void btnCikis_Click(object sender, EventArgs e)
         {
             //çıkış
-            Application.Exit();
+            BaglantiKontrol baglanti = BaglantiKontrol.KontrolGet();
+            baglanti.Serbestbirak();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -133,5 +140,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
         {
             OpenForm(new FirmaSahibi.FrmMudur(), sender);
         }
+
+        
     }
 }

@@ -125,6 +125,7 @@ namespace Market.MarketKontrol.Personel
                         _lMUrunService.Update(_urun);
                     }
                 }
+                MessageBox.Show("İşleminiz başarıyla gerçekleştirildi."); // hata olursa zaten buraya gelmez ;)
             }
             catch (Exception hata)
             {

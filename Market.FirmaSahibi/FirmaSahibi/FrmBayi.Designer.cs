@@ -102,33 +102,39 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // btnEkle
             // 
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEkle.Image = global::Market.FirmaSahibi.Properties.Resources.plus;
             this.btnEkle.Location = new System.Drawing.Point(21, 338);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(121, 43);
             this.btnEkle.TabIndex = 8;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEkle.UseVisualStyleBackColor = true;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnGuncelle
             // 
             this.btnGuncelle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGuncelle.Image = global::Market.FirmaSahibi.Properties.Resources.updated;
             this.btnGuncelle.Location = new System.Drawing.Point(233, 338);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(121, 43);
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnTemizle
             // 
             this.btnTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTemizle.Image = global::Market.FirmaSahibi.Properties.Resources.dust;
             this.btnTemizle.Location = new System.Drawing.Point(430, 338);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(121, 43);
             this.btnTemizle.TabIndex = 8;
             this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 

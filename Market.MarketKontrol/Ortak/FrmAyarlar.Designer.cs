@@ -29,6 +29,7 @@ namespace Market.MarketKontrol.Ortak
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAyarlar));
             this.pnlSifre = new System.Windows.Forms.Panel();
             this.btnGizle = new System.Windows.Forms.Button();
             this.tbxYenisSifre2 = new System.Windows.Forms.TextBox();
@@ -114,21 +115,25 @@ namespace Market.MarketKontrol.Ortak
             // 
             // btnSifreIptal
             // 
+            this.btnSifreIptal.Image = ((System.Drawing.Image)(resources.GetObject("btnSifreIptal.Image")));
             this.btnSifreIptal.Location = new System.Drawing.Point(301, 152);
             this.btnSifreIptal.Name = "btnSifreIptal";
-            this.btnSifreIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnSifreIptal.Size = new System.Drawing.Size(80, 40);
             this.btnSifreIptal.TabIndex = 0;
             this.btnSifreIptal.Text = "iptal";
+            this.btnSifreIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSifreIptal.UseVisualStyleBackColor = true;
             this.btnSifreIptal.Click += new System.EventHandler(this.btnSifreIptal_Click);
             // 
             // btnSifreKaydet
             // 
+            this.btnSifreKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnSifreKaydet.Image")));
             this.btnSifreKaydet.Location = new System.Drawing.Point(208, 152);
             this.btnSifreKaydet.Name = "btnSifreKaydet";
-            this.btnSifreKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnSifreKaydet.Size = new System.Drawing.Size(80, 40);
             this.btnSifreKaydet.TabIndex = 0;
             this.btnSifreKaydet.Text = "Kaydet";
+            this.btnSifreKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSifreKaydet.UseVisualStyleBackColor = true;
             this.btnSifreKaydet.Click += new System.EventHandler(this.btnSifreKaydet_Click);
             // 
@@ -209,22 +214,26 @@ namespace Market.MarketKontrol.Ortak
             // btnAdresIptal
             // 
             this.btnAdresIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdresIptal.Image = ((System.Drawing.Image)(resources.GetObject("btnAdresIptal.Image")));
             this.btnAdresIptal.Location = new System.Drawing.Point(315, 167);
             this.btnAdresIptal.Name = "btnAdresIptal";
-            this.btnAdresIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnAdresIptal.Size = new System.Drawing.Size(80, 40);
             this.btnAdresIptal.TabIndex = 0;
             this.btnAdresIptal.Text = "iptal";
+            this.btnAdresIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdresIptal.UseVisualStyleBackColor = true;
             this.btnAdresIptal.Click += new System.EventHandler(this.btnAdresIptal_Click);
             // 
             // btnAdresKaydet
             // 
             this.btnAdresKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdresKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnAdresKaydet.Image")));
             this.btnAdresKaydet.Location = new System.Drawing.Point(222, 167);
             this.btnAdresKaydet.Name = "btnAdresKaydet";
-            this.btnAdresKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnAdresKaydet.Size = new System.Drawing.Size(80, 40);
             this.btnAdresKaydet.TabIndex = 0;
             this.btnAdresKaydet.Text = "Kaydet";
+            this.btnAdresKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdresKaydet.UseVisualStyleBackColor = true;
             this.btnAdresKaydet.Click += new System.EventHandler(this.btnAdresKaydet_Click);
             // 
@@ -261,22 +270,26 @@ namespace Market.MarketKontrol.Ortak
             // btnResimIptal
             // 
             this.btnResimIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResimIptal.Image = ((System.Drawing.Image)(resources.GetObject("btnResimIptal.Image")));
             this.btnResimIptal.Location = new System.Drawing.Point(96, 296);
             this.btnResimIptal.Name = "btnResimIptal";
-            this.btnResimIptal.Size = new System.Drawing.Size(75, 38);
+            this.btnResimIptal.Size = new System.Drawing.Size(80, 40);
             this.btnResimIptal.TabIndex = 0;
             this.btnResimIptal.Text = "iptal";
+            this.btnResimIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResimIptal.UseVisualStyleBackColor = true;
             this.btnResimIptal.Click += new System.EventHandler(this.btnResimIptal_Click);
             // 
             // btnResimKaydet
             // 
             this.btnResimKaydet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResimKaydet.Image = ((System.Drawing.Image)(resources.GetObject("btnResimKaydet.Image")));
             this.btnResimKaydet.Location = new System.Drawing.Point(8, 296);
             this.btnResimKaydet.Name = "btnResimKaydet";
-            this.btnResimKaydet.Size = new System.Drawing.Size(75, 38);
+            this.btnResimKaydet.Size = new System.Drawing.Size(80, 40);
             this.btnResimKaydet.TabIndex = 0;
             this.btnResimKaydet.Text = "Kaydet";
+            this.btnResimKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnResimKaydet.UseVisualStyleBackColor = true;
             this.btnResimKaydet.Click += new System.EventHandler(this.btnResimKaydet_Click);
             // 

@@ -68,33 +68,39 @@ namespace Market.FirmaSahibi.FirmaSahibi
             // 
             // bntAta
             // 
+            this.bntAta.Image = global::Market.FirmaSahibi.Properties.Resources.userAdd1;
             this.bntAta.Location = new System.Drawing.Point(23, 272);
             this.bntAta.Name = "bntAta";
             this.bntAta.Size = new System.Drawing.Size(140, 103);
             this.bntAta.TabIndex = 2;
             this.bntAta.Text = "Ata";
+            this.bntAta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bntAta.UseVisualStyleBackColor = true;
             this.bntAta.Click += new System.EventHandler(this.bntAta_Click);
             // 
             // btnSil
             // 
             this.btnSil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSil.Image = global::Market.FirmaSahibi.Properties.Resources.cancel1;
             this.btnSil.Location = new System.Drawing.Point(211, 272);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(140, 103);
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
+            this.btnSil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnTemizle
             // 
             this.btnTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTemizle.Image = global::Market.FirmaSahibi.Properties.Resources.dust;
             this.btnTemizle.Location = new System.Drawing.Point(428, 272);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(140, 103);
             this.btnTemizle.TabIndex = 2;
             this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 

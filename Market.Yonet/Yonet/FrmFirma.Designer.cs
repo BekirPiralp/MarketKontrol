@@ -72,21 +72,25 @@ namespace Market.Yonet.Yonet
             // 
             // btnFirmaTemizle
             // 
-            this.btnFirmaTemizle.Location = new System.Drawing.Point(193, 65);
+            this.btnFirmaTemizle.Image = global::Market.Yonet.Properties.Resources.dust;
+            this.btnFirmaTemizle.Location = new System.Drawing.Point(183, 65);
             this.btnFirmaTemizle.Name = "btnFirmaTemizle";
-            this.btnFirmaTemizle.Size = new System.Drawing.Size(76, 48);
+            this.btnFirmaTemizle.Size = new System.Drawing.Size(86, 48);
             this.btnFirmaTemizle.TabIndex = 1;
             this.btnFirmaTemizle.Text = "Temizle";
+            this.btnFirmaTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFirmaTemizle.UseVisualStyleBackColor = true;
             this.btnFirmaTemizle.Click += new System.EventHandler(this.btnFirmaTemizle_Click);
             // 
             // btnFirmaEkle
             // 
+            this.btnFirmaEkle.Image = global::Market.Yonet.Properties.Resources.plus;
             this.btnFirmaEkle.Location = new System.Drawing.Point(13, 65);
             this.btnFirmaEkle.Name = "btnFirmaEkle";
             this.btnFirmaEkle.Size = new System.Drawing.Size(76, 48);
             this.btnFirmaEkle.TabIndex = 1;
             this.btnFirmaEkle.Text = "Ekle";
+            this.btnFirmaEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFirmaEkle.UseVisualStyleBackColor = true;
             this.btnFirmaEkle.Click += new System.EventHandler(this.btnFirmaEkle_Click);
             // 
@@ -118,11 +122,13 @@ namespace Market.Yonet.Yonet
             // btnAtaTemizle
             // 
             this.btnAtaTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtaTemizle.Location = new System.Drawing.Point(197, 66);
+            this.btnAtaTemizle.Image = global::Market.Yonet.Properties.Resources.dust;
+            this.btnAtaTemizle.Location = new System.Drawing.Point(173, 66);
             this.btnAtaTemizle.Name = "btnAtaTemizle";
-            this.btnAtaTemizle.Size = new System.Drawing.Size(76, 48);
+            this.btnAtaTemizle.Size = new System.Drawing.Size(100, 48);
             this.btnAtaTemizle.TabIndex = 1;
             this.btnAtaTemizle.Text = "Temizle";
+            this.btnAtaTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAtaTemizle.UseVisualStyleBackColor = true;
             this.btnAtaTemizle.Click += new System.EventHandler(this.btnAtaTemizle_Click);
             // 
@@ -140,11 +146,13 @@ namespace Market.Yonet.Yonet
             // 
             // btnAta
             // 
+            this.btnAta.Image = global::Market.Yonet.Properties.Resources.manager1;
             this.btnAta.Location = new System.Drawing.Point(24, 66);
             this.btnAta.Name = "btnAta";
             this.btnAta.Size = new System.Drawing.Size(76, 48);
             this.btnAta.TabIndex = 1;
             this.btnAta.Text = "Ata";
+            this.btnAta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAta.UseVisualStyleBackColor = true;
             this.btnAta.Click += new System.EventHandler(this.btnAta_Click);
             // 
@@ -240,6 +248,7 @@ namespace Market.Yonet.Yonet
             this.rbtnKadin.TabIndex = 1;
             this.rbtnKadin.Text = "Kadın";
             this.rbtnKadin.UseVisualStyleBackColor = true;
+            this.rbtnKadin.CheckedChanged += new System.EventHandler(this.rbtnKadin_CheckedChanged);
             // 
             // rbtnErkek
             // 
@@ -252,6 +261,7 @@ namespace Market.Yonet.Yonet
             this.rbtnErkek.TabStop = true;
             this.rbtnErkek.Text = "Erkek";
             this.rbtnErkek.UseVisualStyleBackColor = true;
+            this.rbtnErkek.CheckedChanged += new System.EventHandler(this.rbtnErkek_CheckedChanged);
             // 
             // cbxIlce
             // 
@@ -301,22 +311,26 @@ namespace Market.Yonet.Yonet
             // btnPrsnlTemizle
             // 
             this.btnPrsnlTemizle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlTemizle.Location = new System.Drawing.Point(479, 385);
+            this.btnPrsnlTemizle.Image = global::Market.Yonet.Properties.Resources.dust;
+            this.btnPrsnlTemizle.Location = new System.Drawing.Point(474, 374);
             this.btnPrsnlTemizle.Name = "btnPrsnlTemizle";
-            this.btnPrsnlTemizle.Size = new System.Drawing.Size(69, 31);
+            this.btnPrsnlTemizle.Size = new System.Drawing.Size(93, 42);
             this.btnPrsnlTemizle.TabIndex = 13;
             this.btnPrsnlTemizle.Text = "Temizle";
+            this.btnPrsnlTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrsnlTemizle.UseVisualStyleBackColor = true;
             this.btnPrsnlTemizle.Click += new System.EventHandler(this.btnPrsnlTemizle_Click);
             // 
             // btnPrsnlEkle
             // 
             this.btnPrsnlEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrsnlEkle.Location = new System.Drawing.Point(479, 334);
+            this.btnPrsnlEkle.Image = global::Market.Yonet.Properties.Resources.userAdd;
+            this.btnPrsnlEkle.Location = new System.Drawing.Point(474, 323);
             this.btnPrsnlEkle.Name = "btnPrsnlEkle";
-            this.btnPrsnlEkle.Size = new System.Drawing.Size(69, 31);
+            this.btnPrsnlEkle.Size = new System.Drawing.Size(93, 45);
             this.btnPrsnlEkle.TabIndex = 14;
             this.btnPrsnlEkle.Text = "Ekle";
+            this.btnPrsnlEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrsnlEkle.UseVisualStyleBackColor = true;
             this.btnPrsnlEkle.Click += new System.EventHandler(this.btnPrsnlEkle_Click);
             // 

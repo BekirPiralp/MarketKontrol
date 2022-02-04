@@ -39,7 +39,7 @@ namespace Market.Business.Concrete.UzakMarket
             {
                 if (Ad.Trim() != "" && firma != null && firma.Id > 0)
                 {
-                    result = _entityDal.Get(p => p.BayiAd.Trim().ToLower().Equals(Ad.ToLower().Trim()));
+                    result = _entityDal.Get(p => p.BayiAd.ToLower().Trim().Equals(Ad.ToLower().Trim()) && p.Firma == firma.Id);
                 }
                 else
                     throw new Exception("Lütfen gerekli bilgileri tam veriniz.");

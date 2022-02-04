@@ -63,9 +63,21 @@ namespace Market.MarketKontrol.Personel
         private void LoadUruns()
         {
             if (baglantiKontrol.KontrolEt())
-                dgwUrun.DataSource = _uMUrunService.GetByAll(personel.bayi, personel.firma);
+            {
+                List<Urun> uruns = null;
+                uruns = _uMUrunService.GetByAll(personel.bayi, personel.firma);
+                if (uruns != null && uruns.Count > 0)
+                    dgwUrun.DataSource = uruns;
+            }
+                
             else
-                dgwUrun.DataSource = _lMUrunService.GetByAll(personel.bayi, personel.firma);
+            {
+                List<Urun> uruns = null;
+                uruns = _lMUrunService.GetByAll(personel.bayi, personel.firma);
+                if (uruns != null && uruns.Count > 0)
+                    dgwUrun.DataSource = uruns;
+            }
+            dgwUrun.Update();
             Temizle();
         }
 
@@ -111,13 +123,14 @@ namespace Market.MarketKontrol.Personel
                             Barkod = tbxBarkod.Text.Trim(),
                             Bayi = personel.bayi.Id,
                             Firma = personel.firma.Id,
-                            Fiyat = (float)numFiyat.Value,
+                            Fiyat = double.Parse(numFiyat.Value.ToString()),
                             Marka = tbxMarka.Text.Trim(),
                             UretimYeri = tbxUretimYeri.Text.Trim()
 
                         };
                         yeni.ResimSet(pbxUrun.Image);
                         _uMUrunService.Add(yeni);
+                        MessageBox.Show("İşleminiz başarıyla gerçekleşti.");
                     }
                     else
                     {
@@ -165,8 +178,8 @@ namespace Market.MarketKontrol.Personel
                 _SecUrun.Ad = dgwUrun.CurrentRow.Cells[3].Value.ToString();
                 _SecUrun.Marka = dgwUrun.CurrentRow.Cells[4].Value.ToString();
                 _SecUrun.UretimYeri = dgwUrun.CurrentRow.Cells[5].Value.ToString();
-                _SecUrun.Fiyat = float.Parse(dgwUrun.CurrentRow.Cells[6].Value.ToString());
-                _SecUrun.Indirim = float.Parse(dgwUrun.CurrentRow.Cells[7].Value.ToString());
+                _SecUrun.Fiyat = double.Parse(dgwUrun.CurrentRow.Cells[6].Value.ToString());
+                _SecUrun.Indirim = double.Parse(dgwUrun.CurrentRow.Cells[7].Value.ToString());
                 _SecUrun.Adet = int.Parse(dgwUrun.CurrentRow.Cells[8].Value.ToString());
                 _SecUrun.Aciklama = dgwUrun.CurrentRow.Cells[9].Value.ToString();
                 _SecUrun.Resim = (byte[])(dgwUrun.CurrentRow.Cells[10].Value);
@@ -191,22 +204,29 @@ namespace Market.MarketKontrol.Personel
             urun.Ad = tbxAd.Text;
             urun.Adet = (int)numAdet.Value;
             urun.Barkod = tbxBarkod.Text;
-            urun.Fiyat = (float)numFiyat.Value;
+            urun.Fiyat = (double)numFiyat.Value;
             urun.Marka = tbxMarka.Text;
             urun.UretimYeri = tbxUretimYeri.Text;
+            urun.Aciklama = tbxAciklama.Text;
             urun.ResimSet(pbxUrun.Image);
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            
+            
+            
             try
             {
                 if (baglantiKontrol.KontrolEt())
                 {
                     if (_SecUrun != null)
                     {
+                        
                         EkrandanAl(_SecUrun);
                         _uMUrunService.Update(_SecUrun);
+                        LoadUruns();
+                        MessageBox.Show("İşleminiz başarıyla gerçekleşti.");
                     }
                     else
                     {
@@ -222,10 +242,6 @@ namespace Market.MarketKontrol.Personel
             catch(Exception hata)
             {
                 MessageBox.Show(hata.Message);
-            }
-            finally
-            {
-                LoadUruns();
             }
         }
 
@@ -256,6 +272,7 @@ namespace Market.MarketKontrol.Personel
                             _lMUrunService.Update(urun);
                             _depoEkleUrunService.Add(depoEkle);
                         }
+                        MessageBox.Show("İşleminiz başarıyla gerçekleşti.");
                     }
                     else
                     {
@@ -277,18 +294,18 @@ namespace Market.MarketKontrol.Personel
         {
             try
             {
-                if (baglantiKontrol.KontrolEt())
-                {
-                    dgwUrun.DataSource = tbxBarkod.Text.Trim() == "" ?
-                        _uMUrunService.GetByAll(personel.bayi, personel.firma)
-                        : _uMUrunService.GetByAllBarkod(tbxBarkod.Text, personel.bayi, personel.firma);
-                }
-                else
-                {
-                    dgwUrun.DataSource = tbxBarkod.Text.Trim() == "" ?
-                        _lMUrunService.GetByAll(personel.bayi, personel.firma)
-                        : _lMUrunService.GetByAllBarkod(tbxBarkod.Text, personel.bayi, personel.firma);
-                }
+                //if (baglantiKontrol.KontrolEt())
+                //{
+                //    dgwUrun.DataSource = tbxBarkod.Text.Trim() == "" ?
+                //        _uMUrunService.GetByAll(personel.bayi, personel.firma)
+                //        : _uMUrunService.GetByAllBarkod(tbxBarkod.Text, personel.bayi, personel.firma);
+                //}
+                //else
+                //{
+                //    dgwUrun.DataSource = tbxBarkod.Text.Trim() == "" ?
+                //        _lMUrunService.GetByAll(personel.bayi, personel.firma)
+                //        : _lMUrunService.GetByAllBarkod(tbxBarkod.Text, personel.bayi, personel.firma);
+                //}
             }
             catch (Exception hata)
             {

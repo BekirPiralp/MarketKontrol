@@ -1,5 +1,10 @@
-﻿namespace Market.Entity.Concrete
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Market.Entity.Concrete
 {
+    [Serializable]
+    [Table("PersonelSifre")]
     public class PersonelSifre : EntityBase
     {        
         public int Firma { get; set; }

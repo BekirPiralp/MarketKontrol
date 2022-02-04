@@ -102,6 +102,8 @@ namespace Market.FirmaSahibi.FirmaSahibi
                 Tc = tbxTc.Text,
                 YeniSifre = tbxYeniSifre.Text
             };
+
+            _cbx.UlkeSet();
         }
 
         private void LoadBayiler()
@@ -143,6 +145,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             {
                 if (_baglanti.KontrolEt() && _girenPersonel.firma != null)
                 {
+                    _calisanlar = null;
                     _calisanlar = _uMCalisanS.GetAllByFirma(_girenPersonel.firma);
                     _personeller = null;
                     if (_calisanlar != null && _calisanlar.Count > 0)
@@ -191,6 +194,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             _ekBilgi = null;
             _sil = null;
             _sifre = null;
+            cinsiyet = true;
 
             _cbx.Temizle();
             cbxBayiTemizle();
@@ -201,7 +205,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
         {
             try
             {
-                if (cbxBayi.Items.Count > 0)
+                if (cbxBayi.Items != null &&cbxBayi.Items.Count > 0)
                     cbxBayi.SelectedIndex = 0;
             }
             catch { }
@@ -264,7 +268,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
                         Ad = dgwPersonel.CurrentRow.Cells[1].Value.ToString(),
                         Soyad = dgwPersonel.CurrentRow.Cells[2].Value.ToString(),
                         Tc = dgwPersonel.CurrentRow.Cells[3].Value.ToString(),
-                        Cinsiyet = dgwPersonel.CurrentRow.Cells[4].Value.ToString()[0],
+                        Cinsiyet = dgwPersonel.CurrentRow.Cells[4].Value.ToString(),
                         Firma = Convert.ToInt32(dgwPersonel.CurrentRow.Cells[0].Value)
                     };
 
@@ -284,7 +288,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
 
         private void SeciliPersoneliEkranaBas()
         {
-            if (_personel != null && _personel.Id > 0)
+            if (_personel != null && _personel.Id > 0 && _calisan != null)
             {
                 try
                 {
@@ -292,7 +296,8 @@ namespace Market.FirmaSahibi.FirmaSahibi
                     tbxSoyad.Text = _personel.Soyad;
                     tbxTc.Text = _personel.Tc;
                     tbxGorev.Text = _calisan.Gorev;
-                    rbtnErkek.Checked = _personel.Cinsiyet == 'E' ? true : false;
+                    rbtnErkek.Checked = _personel.Cinsiyet.Trim().Equals("Erkek") ? true : false;
+                    rbtnKadin.Checked = _personel.Cinsiyet.Trim().Equals("Kadın") ? true : false;
 
                     pbxFoto.Image = _foto.FotoGet() != null ? _foto.FotoGet() : _ilkhal.foto;
 
@@ -300,8 +305,12 @@ namespace Market.FirmaSahibi.FirmaSahibi
                     tbxEkBilgi.Text = _ekBilgi.Aciklama;
 
                     //Normalde olması lazım lakin şuan nedense bir soru işreti oluştu?
+                    _cbx.UlkeSet();
                     cbxUlke.SelectedValue = _adres.Ulke;
+                    _cbx.cbxUlke_SelectedIndexChanged();
                     cbxIl.SelectedValue = _adres.Il;
+                    _cbx.cbxIl_DataSourceChanged();
+                    _cbx.cbxIl_SelectedIndexChanged();
                     cbxIlce.SelectedValue = _adres.Ilce;
 
                     cbxBayi.SelectedValue = _calisan.Bayi;
@@ -324,10 +333,12 @@ namespace Market.FirmaSahibi.FirmaSahibi
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (_baglanti.KontrolEt() && _personel != null && _foto != null && _calisan != null &&
-                    _adres != null && _ekBilgi != null)
+                    _adres != null && _ekBilgi != null &&
+                    cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null && cbxUlke.SelectedValue != null && cbxBayi.SelectedValue != null)
                 {
                     //Tc Ve cinsiyet güncellenemez.
                     _personel.Ad = tbxAd.Text.Trim();
@@ -357,6 +368,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             {
                 MessageBox.Show("Personel Güncellemede hata ile karşılaşıldı.");
             }
+            LoadPersonel();
             Temizle();
         }
 
@@ -414,7 +426,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             {
                 MessageBox.Show("Personel silme işlemi sırasında hata ile karşılaşıldı.");
             }
-
+            LoadPersonel();
             Temizle();
         }
 
@@ -422,12 +434,15 @@ namespace Market.FirmaSahibi.FirmaSahibi
         {
             try
             {
-                if (_baglanti.KontrolEt() && tbxTc.Text.Trim().Length == 11 && cbxBayi.SelectedIndex > 0) // kesinlikle bayi seçilmiş olacak
+                if (_baglanti.KontrolEt() && tbxTc.Text.Trim().Length == 11 &&
+                    cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null && cbxUlke.SelectedValue != null && cbxBayi.SelectedValue != null
+                    && Convert.ToInt32(cbxBayi.SelectedValue) > 0) // kesinlikle bayi seçilmiş olacak
                 {
                     _personel = personelGetir();
 
                     _foto = new Veri.Fotograf();
                     _calisan = new Veri.Calisan();
+                    _ekBilgi = new Veri.EkBilgi();
                     _adres = new Veri.PersonelAdres();
                     _sifre = new Veri.PersonelSifre();
 
@@ -436,7 +451,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
                     {
                         _personel = new Veri.Personel();
                         _personel.Tc = tbxTc.Text.Trim();
-                        _personel.Cinsiyet = rbtnErkek.Checked == true ? 'E' : 'K';
+                        _personel.Cinsiyet = cinsiyet ? "Erkek" : "Kadın";
                         _personel.Firma = _girenPersonel.firma.Id;
                         _personel.Ad = tbxAd.Text.Trim();
                         _personel.Soyad = tbxSoyad.Text.Trim();
@@ -469,7 +484,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
                     void bilgiOlustur()
                     {
                         _foto.FotoSet(pbxFoto.Image);
-                        _foto.Id = _personel.Id;
+                        _foto.Personel = _personel.Id;
                         _foto.Firma = _personel.Firma;
                         _foto.TarihSaat = DateTime.Now;
 
@@ -483,7 +498,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
                         _uMCalisanS.Add(_calisan);
 
                         _ekBilgi.Firma = _personel.Firma;
-                        _ekBilgi.Bayi = _girenPersonel.bayi.Id;
+                        _ekBilgi.Bayi = Convert.ToInt32(cbxBayi.SelectedValue);
                         _ekBilgi.Personel = _personel.Id;
                         _ekBilgi.Aciklama = tbxEkBilgi.Text;
                         _ekBilgi.TarihSaat = DateTime.Now;
@@ -595,6 +610,23 @@ namespace Market.FirmaSahibi.FirmaSahibi
         private void IslemBasariylaGerceklesti()
         {
             MessageBox.Show("İşleminiz başarıyla gerçekleşti.");
+        }
+
+        bool cinsiyet = true;
+        private void rbtnErkek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnErkek.Checked)
+                cinsiyet = true;
+            else
+                cinsiyet = false;
+        }
+
+        private void rbtnKadin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnKadin.Checked)
+                cinsiyet = false;
+            else
+                cinsiyet = true;
         }
     }
 }

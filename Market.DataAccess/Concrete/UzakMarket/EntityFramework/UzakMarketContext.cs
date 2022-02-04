@@ -10,25 +10,25 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
 {
     public class UzakMarketContext : DbContext
     {
-        public DbSet<Bayi> Bayiler { get; set; }
-        public DbSet<BayiAdres> BayiAdresler { get; set; }
-        public DbSet<Calisan> Calisanlar { get; set; }
-        public DbSet<Defo> Defolar { get; set; }
-        public DbSet<EkBilgi> EkBilgiler { get; set; }
-        public DbSet<Firma> Firmalar { get; set; }
-        public DbSet<Fis> Fisler { get; set; }
-        public DbSet<Fotograf> Fotograflar { get; set; }
-        public DbSet<Iade> Iadeler { get; set; }
-        public DbSet<Il> Iller { get; set; }
-        public DbSet<Ilce> Ilceler { get; set; }
-        public DbSet<Mudur> Mudurler { get; set; }
-        public DbSet<Personel> Personeller { get; set; }
-        public DbSet<PersonelAdres> PersonelAdresler { get; set; }
-        public DbSet<PersonelSifre> PersonelSifreler { get; set; }
-        public DbSet<PersonelSil> PersonelSiller { get; set; }
-        public DbSet<Satis> Satislar { get; set; }
-        public DbSet<Ulke> Ulkeler { get; set; }
-        public DbSet<Urun> Urunler { get; set; }
-        public DbSet<Yonetici> Yoneticiler { get; set; }
+        public DbSet<Bayi> Bayi { get; set; }
+        public DbSet<BayiAdres> BayiAdres { get; set; }
+        public DbSet<Calisan> Calisan { get; set; }
+        public DbSet<Defo> Defo { get; set; }
+        public DbSet<EkBilgi> EkBilgi { get; set; }
+        public DbSet<Firma> Firma { get; set; }
+        public DbSet<Fis> Fis { get; set; }
+        public DbSet<Fotograf> Fotograf { get; set; }
+        public DbSet<Iade> Iade { get; set; }
+        public DbSet<Il> Il { get; set; }
+        public DbSet<Ilce> Ilce { get; set; }
+        public DbSet<Mudur> Mudur { get; set; }
+        public DbSet<Personel> Personel { get; set; }
+        public DbSet<PersonelAdres> PersonelAdres { get; set; }
+        public DbSet<PersonelSifre> PersonelSifre { get; set; }
+        public DbSet<PersonelSil> PersonelSil { get; set; }
+        public DbSet<Satis> Satis { get; set; }
+        public DbSet<Ulke> Ulke { get; set; }
+        public DbSet<Urun> Urun { get; set; }
+        public DbSet<Yonetici> Yonetici { get; set; }
     }
 }

@@ -7,15 +7,11 @@ namespace Market.Restriction.ValidationRules.FluentValidation
     {
         private const int _uzunlukTc = 11;
 
-        public static bool Cinsiyet(char arg)
+        public static bool Cinsiyet(string arg)
         {
 
-            string kontrol = "KkEe";
-            foreach (var k in kontrol)
-            {
-                if (k == arg)
-                    return true;
-            }
+            if (arg.Trim().ToLower().Equals("Erkek".ToLower()) || arg.Trim().ToLower().Equals("Kadın".ToLower()))
+                return true;
             return false;
         }
         public static bool Tc(string arg)
@@ -40,7 +36,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation
             }
             return true;
         }
-        public static bool Indirim(float arg)
+        public static bool Indirim(double arg)
         {
             return arg >= 0 && arg <= 100 ? true : false;
         }

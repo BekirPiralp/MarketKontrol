@@ -58,7 +58,7 @@ namespace Market.MarketKontrol.Ortak
 
         private void BaglantiKontrolEt()
         {
-            if (!_baglanti.KontrolEt())
+            if (!(_baglanti.KontrolEt()))
             {
                 MessageBox.Show("Lütfen internet bağkantınız kontrol edip uygulamaya tekrar giriş yapınız.");
             }
@@ -167,13 +167,15 @@ namespace Market.MarketKontrol.Ortak
             if (_baglanti.KontrolEt() && _girisPersonel.adres != null && _girisPersonel.adres.Id > 0)
             {
                 PersonelAdres adres = DerinKopyala<PersonelAdres>.Kopyala(_girisPersonel.adres);
-                if (Convert.ToInt32(cbxIlce.SelectedValue) != 0) // ilçe seçilmiş ise zaten ulke ve diğerleri seçilmiştir.
+                if (cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null && cbxUlke.SelectedValue != null 
+                    && Convert.ToInt32(cbxIlce.SelectedValue) != 0 && tbxTarif.Text.Trim() != "") // ilçe seçilmiş ise zaten ulke ve diğerleri seçilmiştir.
                 {
                     try
                     {
                         adres.Ulke = Convert.ToInt32(cbxUlke.SelectedValue);
                         adres.Il = Convert.ToInt32(cbxIl.SelectedValue);
                         adres.Ilce = Convert.ToInt32(cbxIlce.SelectedValue);
+                        adres.Tarif = tbxTarif.Text.Trim();
                         _uMPersonelAdresS.Update(adres);
                         _girisPersonel.adres = adres;
                         Tamamlandi();
@@ -200,7 +202,7 @@ namespace Market.MarketKontrol.Ortak
 
         private void btnSifreKaydet_Click(object sender, EventArgs e)
         {
-            if (_girisPersonel.sifre != null && tbxEskiSifre.Text.Equals(_girisPersonel.sifre))
+            if (_girisPersonel.sifre != null && tbxEskiSifre.Text.Equals(_girisPersonel.sifre.Sifre))
             {
                 if (tbxYeniSifre.Text.Equals(tbxYenisSifre2.Text) && tbxYeniSifre.Text.Trim() != "")
                 {

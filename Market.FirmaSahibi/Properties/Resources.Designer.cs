@@ -123,6 +123,16 @@ namespace Market.FirmaSahibi.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel1 {
+            get {
+                object obj = ResourceManager.GetObject("cancel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap defectiveProduct {
             get {
                 object obj = ResourceManager.GetObject("defectiveProduct", resourceCulture);
@@ -136,6 +146,16 @@ namespace Market.FirmaSahibi.Properties {
         internal static System.Drawing.Bitmap DefoVeIade {
             get {
                 object obj = ResourceManager.GetObject("DefoVeIade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap dust {
+            get {
+                object obj = ResourceManager.GetObject("dust", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +263,16 @@ namespace Market.FirmaSahibi.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap manager1 {
+            get {
+                object obj = ResourceManager.GetObject("manager1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap maximizing {
             get {
                 object obj = ResourceManager.GetObject("maximizing", resourceCulture);
@@ -296,6 +326,16 @@ namespace Market.FirmaSahibi.Properties {
         internal static System.Drawing.Bitmap pasword {
             get {
                 object obj = ResourceManager.GetObject("pasword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +443,16 @@ namespace Market.FirmaSahibi.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap updated {
+            get {
+                object obj = ResourceManager.GetObject("updated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap urun {
             get {
                 object obj = ResourceManager.GetObject("urun", resourceCulture);
@@ -426,6 +476,16 @@ namespace Market.FirmaSahibi.Properties {
         internal static System.Drawing.Bitmap userAdd {
             get {
                 object obj = ResourceManager.GetObject("userAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap userAdd1 {
+            get {
+                object obj = ResourceManager.GetObject("userAdd1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

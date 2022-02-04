@@ -344,6 +344,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             this.Text = "Müdür";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Gray;
+            this.Load += new System.EventHandler(this.FrmSahibi_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUp);

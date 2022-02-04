@@ -28,13 +28,16 @@ namespace Market.MarketKontrol.Ortak
 
         private void EkranaBas()
         {
-            if(_personel.ekBilgi != null && _personel.adres != null && _personel.personel != null && _personel.fotograf != null)
+            if(_personel.adres != null && _personel.personel != null && _personel.fotograf != null)
             {
                 lblTc.Text = _personel.personel.Tc;
                 lblAd.Text = _personel.personel.Ad;
                 lblSoyad.Text = _personel.personel.Soyad;
                 lblCinsiyet.Text = _personel.personel.Cinsiyet.ToString();
-                lblEkBilgi.Text = _personel.ekBilgi.Aciklama;
+                if (_personel.ekBilgi != null)
+                    lblEkBilgi.Text = _personel.ekBilgi.Aciklama;
+                else
+                    lblEkBilgi.Text = "Ek bilginiz bulunamadı.";
                 
                 pbxUser.Image = _personel.fotograf.FotoGet();
 
@@ -43,9 +46,21 @@ namespace Market.MarketKontrol.Ortak
                 {
                     if (_baglanti.KontrolEt())
                     {
-                        Adres += " " + _uMIlceService.GetById(_personel.adres.Il).Ad;
-                        Adres += "/" + _uMIlService.GetById(_personel.adres.Ilce).Ad;
+                        Adres += " " + _uMIlceService.GetById(_personel.adres.Ilce).Ad;
+                        Adres += "/" + _uMIlService.GetById(_personel.adres.Il).Ad;
                         Adres += "/" + _uMUlkeService.GetById(_personel.adres.Ulke).Ad.ToUpper();
+                    }
+
+                    if (GirisPersonelTut._firmaSahibiMi)
+                    {
+                        lblYetki.Text = "Firma Sahibi";
+                    }else if (GirisPersonelTut._mudur)
+                    {
+                        lblYetki.Text = "Müdür";
+                    }
+                    else
+                    {
+                        lblYetki.Text = "Personel";
                     }
                 }
                 catch

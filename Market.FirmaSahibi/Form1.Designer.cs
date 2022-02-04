@@ -29,6 +29,7 @@ namespace Market.FirmaSahibi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.tbxTc = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@ namespace Market.FirmaSahibi
             this.btnGithub = new System.Windows.Forms.Button();
             this.btnGiris = new System.Windows.Forms.Button();
             this.pbxGiris = new System.Windows.Forms.PictureBox();
-            this.cbxFirma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxGiris)).BeginInit();
@@ -92,20 +92,22 @@ namespace Market.FirmaSahibi
             this.tbxTc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxTc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxTc.Font = new System.Drawing.Font("Monotype Corsiva", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbxTc.Location = new System.Drawing.Point(230, 167);
+            this.tbxTc.Location = new System.Drawing.Point(230, 155);
             this.tbxTc.MaxLength = 11;
             this.tbxTc.Name = "tbxTc";
             this.tbxTc.Size = new System.Drawing.Size(208, 45);
             this.tbxTc.TabIndex = 2;
             this.tbxTc.Text = "TC Kimlik";
             this.tbxTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxTc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTc_KeyPress);
+            this.tbxTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // pbxTc
             // 
             this.pbxTc.BackColor = System.Drawing.Color.White;
             this.pbxTc.BackgroundImage = global::Market.FirmaSahibi.Properties.Resources.user;
             this.pbxTc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxTc.Location = new System.Drawing.Point(185, 167);
+            this.pbxTc.Location = new System.Drawing.Point(185, 155);
             this.pbxTc.Name = "pbxTc";
             this.pbxTc.Size = new System.Drawing.Size(45, 45);
             this.pbxTc.TabIndex = 3;
@@ -116,20 +118,21 @@ namespace Market.FirmaSahibi
             this.tbxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbxPassword.Font = new System.Drawing.Font("Monotype Corsiva", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbxPassword.Location = new System.Drawing.Point(230, 258);
+            this.tbxPassword.Location = new System.Drawing.Point(230, 246);
             this.tbxPassword.MaxLength = 100;
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(208, 45);
             this.tbxPassword.TabIndex = 2;
             this.tbxPassword.Text = "Password";
             this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxPassword.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // pbxPassword
             // 
             this.pbxPassword.BackColor = System.Drawing.Color.White;
             this.pbxPassword.BackgroundImage = global::Market.FirmaSahibi.Properties.Resources.pasword;
             this.pbxPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxPassword.Location = new System.Drawing.Point(185, 258);
+            this.pbxPassword.Location = new System.Drawing.Point(185, 246);
             this.pbxPassword.Name = "pbxPassword";
             this.pbxPassword.Size = new System.Drawing.Size(45, 45);
             this.pbxPassword.TabIndex = 3;
@@ -144,7 +147,7 @@ namespace Market.FirmaSahibi
             this.btnPassword.FlatAppearance.BorderSize = 0;
             this.btnPassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPassword.Location = new System.Drawing.Point(457, 258);
+            this.btnPassword.Location = new System.Drawing.Point(457, 246);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(45, 45);
             this.btnPassword.TabIndex = 9;
@@ -226,7 +229,7 @@ namespace Market.FirmaSahibi
             this.btnGiris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiris.Font = new System.Drawing.Font("Monotype Corsiva", 23F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGiris.ForeColor = System.Drawing.Color.Lime;
-            this.btnGiris.Location = new System.Drawing.Point(280, 373);
+            this.btnGiris.Location = new System.Drawing.Point(280, 376);
             this.btnGiris.Margin = new System.Windows.Forms.Padding(0);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(87, 45);
@@ -234,25 +237,17 @@ namespace Market.FirmaSahibi
             this.btnGiris.Text = "Giriş";
             this.btnGiris.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnGiris.UseVisualStyleBackColor = false;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // pbxGiris
             // 
             this.pbxGiris.BackgroundImage = global::Market.FirmaSahibi.Properties.Resources.KapiTiklatma;
             this.pbxGiris.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbxGiris.Location = new System.Drawing.Point(235, 373);
+            this.pbxGiris.Location = new System.Drawing.Point(235, 376);
             this.pbxGiris.Name = "pbxGiris";
             this.pbxGiris.Size = new System.Drawing.Size(45, 45);
             this.pbxGiris.TabIndex = 12;
             this.pbxGiris.TabStop = false;
-            // 
-            // cbxFirma
-            // 
-            this.cbxFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbxFirma.FormattingEnabled = true;
-            this.cbxFirma.Location = new System.Drawing.Point(185, 102);
-            this.cbxFirma.Name = "cbxFirma";
-            this.cbxFirma.Size = new System.Drawing.Size(253, 33);
-            this.cbxFirma.TabIndex = 13;
             // 
             // Form1
             // 
@@ -262,7 +257,6 @@ namespace Market.FirmaSahibi
             this.BackgroundImage = global::Market.FirmaSahibi.Properties.Resources.AmblemVeEkran_600x600;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 600);
-            this.Controls.Add(this.cbxFirma);
             this.Controls.Add(this.pbxGiris);
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.btnPassword);
@@ -278,6 +272,7 @@ namespace Market.FirmaSahibi
             this.Controls.Add(this.btnQuit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "Form1";
             this.ShowIcon = false;
@@ -285,6 +280,7 @@ namespace Market.FirmaSahibi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Kontrol";
             this.TransparencyKey = System.Drawing.Color.Gray;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
@@ -311,7 +307,6 @@ namespace Market.FirmaSahibi
         private System.Windows.Forms.Button btnGithub;
         private System.Windows.Forms.Button btnGiris;
         private System.Windows.Forms.PictureBox pbxGiris;
-        private System.Windows.Forms.ComboBox cbxFirma;
     }
 }
 

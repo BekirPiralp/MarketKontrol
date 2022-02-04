@@ -13,13 +13,13 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
         where TEntity : EntityBase, IEntity, new()
         where TContext : DbContext, new()
     {
-        public async void Add(TEntity entity)
+        public void Add(TEntity entity)
         {
             using (TContext context = new TContext())
             {
                 var result = context.Entry(entity);
                 result.State = EntityState.Added;
-                await context.SaveChangesAsync();
+                context.SaveChanges();
             }
         }
 
@@ -37,7 +37,7 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
             using (TContext context = new TContext())
             {
                 TEntity result;
-                result = context.Set<TEntity>().Where(filter).LastOrDefault(); // son olanı veya varsayılan veri gelecek
+                result = context.Set<TEntity>().Where(filter).FirstOrDefault(); // son olanı veya varsayılan veri gelecek
                 return result;
             }
         }
@@ -45,8 +45,8 @@ namespace Market.DataAccess.Concrete.UzakMarket.EntityFramework
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
             using (TContext context = new TContext()) {
-                return filter == null ? context.Set<TEntity>().ToList()
-                    : context.Set<TEntity>().Where(filter).ToList(); 
+                return filter == null ? context.Set<TEntity>().ToList<TEntity>()
+                    : context.Set<TEntity>().Where(filter).ToList<TEntity>(); 
             }
         }
 

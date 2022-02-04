@@ -16,7 +16,7 @@ namespace Market.FirmaSahibi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FirmaSahibi.FrmSahibi());//Form1());
+            Application.Run(new Form1());
         }
     }
 }

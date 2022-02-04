@@ -104,7 +104,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             _calisan = null;
             _mudur = null;
 
-            if (cbxBayi.Items.Count > 0)
+            if (cbxBayi.Items != null && cbxBayi.Items.Count > 0)
                 cbxBayi.SelectedIndex = 0;
         }
 
@@ -145,6 +145,9 @@ namespace Market.FirmaSahibi.FirmaSahibi
                         {
                             _mudur = _uMMudurS.GetByPersonelId(_personel.Id, _personel.Firma);
                             lblAdSoyad.Text = _personel.Ad + " " + _personel.Soyad.ToUpper();
+                            if(_mudur != null && _mudur.Id > 0)
+                                cbxBayi.SelectedValue = _calisan.Bayi;
+                            cbxBayi.Update();
                         }
                         else
                         {
@@ -178,7 +181,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
                 else
                 {
                     int bayi = 0;
-                    if (cbxBayi.Items.Count > 0)
+                    if (cbxBayi.SelectedValue != null && cbxBayi.Items.Count > 0)
                         bayi = Convert.ToInt32(cbxBayi.SelectedValue);
                     else
                     {
@@ -199,7 +202,8 @@ namespace Market.FirmaSahibi.FirmaSahibi
                                     Firma = _calisan.Firma,
                                     Bayi = bayi
                                 };
-                                _calisan.Gorev = cbxBayi.SelectedText+" bayisin de Müdür";
+                                _calisan.Gorev = cbxBayi.Text+" bayisin de Müdür";
+                                _calisan.Bayi = bayi;
 
                                 _uMMudurS.Add(_mudur);
                                 _uMCalisanS.Update(_calisan);

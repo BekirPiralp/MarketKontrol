@@ -1,5 +1,10 @@
-﻿namespace Market.Entity.Concrete
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Market.Entity.Concrete
 {
+    [Serializable]
+    [Table("Il")]
     public class Il : EntityBase
     {
         public int Ulke { get; set; }

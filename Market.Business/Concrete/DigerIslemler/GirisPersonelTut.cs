@@ -56,14 +56,17 @@ namespace Market.Business.Concrete.DigerIslemler
         }
         public void SetPersonel(entity.Personel personel,bool FirmaSahibimi = false)
         {
+            SetPersonel(personel, FirmaSahibimi, false);
+        }
+        public void SetPersonel(entity.Personel personel, bool FirmaSahibimi = false,bool YoneticiSayfasiGiris = false)
+        {
             sifirla();
-            this.personel= personel;
+            this.personel = personel;
             _firmaSahibiMi = FirmaSahibimi;
             if (personel != null && personel.Id > 0)
-                getir();
+                getir(YoneticiSayfasiGiris);
         }
-
-        private void getir()
+        private void getir(bool YoneticiSayfasiGiris = false)
         { 
             //Servisleri atama
             if (_pSifreS == null)
@@ -81,21 +84,29 @@ namespace Market.Business.Concrete.DigerIslemler
 
             //Verileri Çekme
 
-            if (_LMbayiS.GetAll().Count>0)
+            if (YoneticiSayfasiGiris)
             {
-                try
-                {
-                    BayiFirmaAl();
-                }
-                catch 
-                {
-                    BayiFirmaAta(); //Lochalde kayıtlı bayi yoksa
-                }
-                
+                firma = _UMfirmaS.GetById(personel.Firma);
+                bayi = null;
             }
             else
             {
-                BayiFirmaAta(true); //Lochalde kayıtlı bayi varsa
+                if (_LMbayiS.GetAll().Count > 0)
+                {
+                    try
+                    {
+                        BayiFirmaAl();
+                    }
+                    catch
+                    {
+                        BayiFirmaAta(); //Lochalde kayıtlı bayi yoksa
+                    }
+
+                }
+                else
+                {
+                    BayiFirmaAta(true); //Lochalde kayıtlı bayi varsa
+                } 
             }
 
             this.sifre = _pSifreS.GetByPersonelId(personel.Id, firma.Id);
@@ -142,7 +153,7 @@ namespace Market.Business.Concrete.DigerIslemler
                 bayi = _LMbayiS.GetAll()[0];
             }
         }
-        private void sifirla()
+        public void sifirla()
         {
             this.sifre = null;
             this.adres = null;
@@ -150,6 +161,7 @@ namespace Market.Business.Concrete.DigerIslemler
             this.fotograf = null;
             this.bayi = null;
             this.firma = null;
+            this.personel = null;
             _mudur = false;
             _firmaSahibiMi = false;
         }

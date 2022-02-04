@@ -18,7 +18,7 @@ namespace Market.Business.Concrete.UzakMarket
         {
             List<Urun> uruns = null;
             if ( bayi != null && firma != null && bayi.Id > 0 && firma.Id > 0)
-                uruns = _entityDal.GetAll(p => (p.Firma == firma.Id && p.Bayi == bayi.Id));
+                uruns = _entityDal.GetAll(p => p.Firma == firma.Id && p.Bayi == bayi.Id );
             return uruns;
         }
 

@@ -298,12 +298,14 @@ namespace Market.MarketKontrol.Personel
             // 
             this.btnEkle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEkle.Font = new System.Drawing.Font("Monotype Corsiva", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnEkle.Location = new System.Drawing.Point(12, 156);
+            this.btnEkle.Image = global::Market.MarketKontrol.Properties.Resources.fiseEkle;
+            this.btnEkle.Location = new System.Drawing.Point(12, 153);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(112, 32);
+            this.btnEkle.Size = new System.Drawing.Size(107, 40);
             this.btnEkle.TabIndex = 13;
-            this.btnEkle.Text = "Fişe Ekle";
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEkle.UseVisualStyleBackColor = true;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
@@ -311,12 +313,14 @@ namespace Market.MarketKontrol.Personel
             // 
             this.btnCikar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCikar.Font = new System.Drawing.Font("Monotype Corsiva", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnCikar.Location = new System.Drawing.Point(163, 156);
+            this.btnCikar.Image = global::Market.MarketKontrol.Properties.Resources.fistenCikar;
+            this.btnCikar.Location = new System.Drawing.Point(171, 152);
             this.btnCikar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCikar.Name = "btnCikar";
-            this.btnCikar.Size = new System.Drawing.Size(112, 32);
+            this.btnCikar.Size = new System.Drawing.Size(107, 40);
             this.btnCikar.TabIndex = 14;
-            this.btnCikar.Text = "Fişten Çikar";
+            this.btnCikar.Text = "Çıkar";
+            this.btnCikar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCikar.UseVisualStyleBackColor = true;
             this.btnCikar.Click += new System.EventHandler(this.btnCikar_Click);
             // 
@@ -325,12 +329,14 @@ namespace Market.MarketKontrol.Personel
             this.btnSat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSat.Font = new System.Drawing.Font("Monotype Corsiva", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnSat.Image = global::Market.MarketKontrol.Properties.Resources.sat;
             this.btnSat.Location = new System.Drawing.Point(169, 68);
             this.btnSat.Margin = new System.Windows.Forms.Padding(4);
             this.btnSat.Name = "btnSat";
-            this.btnSat.Size = new System.Drawing.Size(107, 32);
+            this.btnSat.Size = new System.Drawing.Size(107, 40);
             this.btnSat.TabIndex = 15;
             this.btnSat.Text = "Satış";
+            this.btnSat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSat.UseVisualStyleBackColor = true;
             this.btnSat.Click += new System.EventHandler(this.buttonSat_Click);
             // 
@@ -339,12 +345,14 @@ namespace Market.MarketKontrol.Personel
             this.btniptal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btniptal.Font = new System.Drawing.Font("Monotype Corsiva", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btniptal.Location = new System.Drawing.Point(30, 68);
+            this.btniptal.Image = global::Market.MarketKontrol.Properties.Resources.SatisIptal;
+            this.btniptal.Location = new System.Drawing.Point(35, 68);
             this.btniptal.Margin = new System.Windows.Forms.Padding(4);
             this.btniptal.Name = "btniptal";
-            this.btniptal.Size = new System.Drawing.Size(112, 32);
+            this.btniptal.Size = new System.Drawing.Size(107, 40);
             this.btniptal.TabIndex = 16;
-            this.btniptal.Text = "Satış iptal";
+            this.btniptal.Text = "İptal";
+            this.btniptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btniptal.UseVisualStyleBackColor = true;
             this.btniptal.Click += new System.EventHandler(this.buttoniptal_Click);
             // 

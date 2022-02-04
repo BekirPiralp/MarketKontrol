@@ -1,7 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Market.Entity.Concrete
 {
+    [Serializable]
+    [Table("Defo")]
     public class Defo : EntityBase
     {
         public int Firma { get; set; }

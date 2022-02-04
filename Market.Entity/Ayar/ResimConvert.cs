@@ -23,6 +23,7 @@ namespace Market.Entity.Ayar
             {
                 resim = Image.FromStream(ms);
                 ms.Dispose();
+                ms.Close();
             }
             return resim;
         }
@@ -37,8 +38,9 @@ namespace Market.Entity.Ayar
             byte[] result;
             using (var ms = new MemoryStream())
             {
-                resim.Save(ms, ImageFormat.Jpeg);
+                resim.Save(ms, ImageFormat.Png);
                 result = ms.ToArray();
+                ms.Close();
             }
             return result;
         }

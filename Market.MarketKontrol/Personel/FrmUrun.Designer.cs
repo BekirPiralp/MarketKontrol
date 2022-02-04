@@ -29,8 +29,8 @@ namespace Market.MarketKontrol.Personel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlUrun = new System.Windows.Forms.Panel();
             this.dgwUrun = new System.Windows.Forms.DataGridView();
             this.pnlAlt = new System.Windows.Forms.Panel();
@@ -81,25 +81,25 @@ namespace Market.MarketKontrol.Personel
             this.dgwUrun.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwUrun.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgwUrun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwUrun.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwUrun.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgwUrun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwUrun.Location = new System.Drawing.Point(0, 0);
             this.dgwUrun.Name = "dgwUrun";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwUrun.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwUrun.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgwUrun.Size = new System.Drawing.Size(580, 224);
             this.dgwUrun.TabIndex = 0;
             this.dgwUrun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwUrun_CellClick);
@@ -229,7 +229,7 @@ namespace Market.MarketKontrol.Personel
             this.tbxAciklama.Size = new System.Drawing.Size(200, 42);
             this.tbxAciklama.TabIndex = 4;
             this.tbxAciklama.Text = "Açıklama";
-            this.tbxAciklama.MouseHover += new System.EventHandler(this.tbxs_MouseHover);
+            this.tbxAciklama.Click += new System.EventHandler(this.tbxs_MouseHover);
             // 
             // label1
             // 
@@ -317,7 +317,7 @@ namespace Market.MarketKontrol.Personel
             this.tbxUretimYeri.TabIndex = 0;
             this.tbxUretimYeri.Text = "Üretim Yeri";
             this.tbxUretimYeri.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxUretimYeri.MouseHover += new System.EventHandler(this.tbxs_MouseHover);
+            this.tbxUretimYeri.Click += new System.EventHandler(this.tbxs_MouseHover);
             // 
             // tbxMarka
             // 
@@ -330,7 +330,7 @@ namespace Market.MarketKontrol.Personel
             this.tbxMarka.TabIndex = 0;
             this.tbxMarka.Text = "Marka";
             this.tbxMarka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxMarka.MouseHover += new System.EventHandler(this.tbxs_MouseHover);
+            this.tbxMarka.Click += new System.EventHandler(this.tbxs_MouseHover);
             // 
             // tbxAd
             // 
@@ -343,7 +343,7 @@ namespace Market.MarketKontrol.Personel
             this.tbxAd.TabIndex = 0;
             this.tbxAd.Text = "Ad";
             this.tbxAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbxAd.MouseHover += new System.EventHandler(this.tbxs_MouseHover);
+            this.tbxAd.Click += new System.EventHandler(this.tbxs_MouseHover);
             // 
             // tbxBarkod
             // 
@@ -356,8 +356,8 @@ namespace Market.MarketKontrol.Personel
             this.tbxBarkod.TabIndex = 0;
             this.tbxBarkod.Text = "Barkod";
             this.tbxBarkod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxBarkod.Click += new System.EventHandler(this.tbxs_MouseHover);
             this.tbxBarkod.TextChanged += new System.EventHandler(this.tbxBarkod_TextChanged);
-            this.tbxBarkod.MouseHover += new System.EventHandler(this.tbxs_MouseHover);
             // 
             // pbxUrun
             // 

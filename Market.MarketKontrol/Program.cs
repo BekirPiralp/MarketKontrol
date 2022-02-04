@@ -22,7 +22,7 @@ namespace Market.MarketKontrol
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Mudur.FrmMudur());//Personel.FrmPersonel());//frmGiris()); //Mudur.FrmMudur());
+                Application.Run(new frmGiris());             
             }
             else
             {

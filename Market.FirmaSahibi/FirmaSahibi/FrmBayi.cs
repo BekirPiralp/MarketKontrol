@@ -187,13 +187,30 @@ namespace Market.FirmaSahibi.FirmaSahibi
 
             try
             {
+                _cbx.UlkeSet();
                 cbxUlke.SelectedValue = _adres.Ulke;
+                _cbx.cbxUlke_SelectedIndexChanged();
                 cbxIl.SelectedValue = _adres.Il;
+                _cbx.cbxIl_DataSourceChanged();
+                _cbx.cbxIl_SelectedIndexChanged();
                 cbxIlce.SelectedValue = _adres.Ilce;
+
+                cbxAdresUpdate();
             }
             catch
             {
             }
+        }
+
+        private void cbxAdresUpdate()
+        {
+            cbxUlke.Update();
+            cbxIl.Update();
+            cbxIlce.Update();
+
+            cbxUlke.Show();
+            cbxIl.Show();
+            cbxIlce.Show();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -235,14 +252,15 @@ namespace Market.FirmaSahibi.FirmaSahibi
             {
                 Temizle();
             }
+            GetirBayiler();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             try
             {
-                if (tbxBayiAd.Text.Trim() != "" && tbxAdres.Text.Trim() != "" &&
-                        cbxIlce.Items.Count > 0 && Convert.ToInt32(cbxIlce.SelectedValue) != 0
+                if (tbxBayiAd.Text.Trim() != "" && tbxAdres.Text.Trim() != "" &&cbxIlce.Items != null &&
+                        cbxIlce.Items.Count > 0 && cbxIlce.SelectedValue != null &&Convert.ToInt32(cbxIlce.SelectedValue) != 0
                         && _bayi != null && _adres != null && _bayi.Id > 0 && _adres.Id > 0)
                 {
                     if (_baglanti.KontrolEt()) // internet kontrolü
@@ -270,6 +288,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             {
                 Temizle();
             }
+            GetirBayiler();
         }
 
         private void VeriEkrandanAl()
@@ -304,7 +323,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
             
 
 
-            if (_bayi == null && _adres == null || _bayi.Id > 0 && _adres.Id > 0)
+            if (_bayi == null && _adres == null || _bayi.Id <= 0 && _adres.Id <= 0)
             {
                 
                 _bayi = new Bayi
@@ -321,9 +340,16 @@ namespace Market.FirmaSahibi.FirmaSahibi
             _bayi.BayiAd = tbxBayiAd.Text.Trim();
             _adres.Tarif = tbxAdres.Text.Trim();
 
-            _adres.Ulke = short.Parse(Convert.ToInt32(cbxUlke.SelectedValue).ToString());
-            _adres.Il = short.Parse(Convert.ToInt32(cbxIl.SelectedValue).ToString());
-            _adres.Ilce = short.Parse(Convert.ToInt32(cbxIlce.SelectedValue).ToString());
+            if (cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null && cbxUlke.SelectedValue != null &&
+                Convert.ToInt32(cbxIl.SelectedValue) > 0 && Convert.ToInt32(cbxIlce.SelectedValue) > 0
+                && Convert.ToInt32(cbxUlke.SelectedValue) > 0)
+            {
+                _adres.Ulke = Convert.ToInt32(cbxUlke.SelectedValue);
+                _adres.Il = Convert.ToInt32(cbxIl.SelectedValue);
+                _adres.Ilce = Convert.ToInt32(cbxIlce.SelectedValue);
+            }
+            else
+                MessageBox.Show("Lütfen bilgileri tam olarak ayarlayınız.");
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)

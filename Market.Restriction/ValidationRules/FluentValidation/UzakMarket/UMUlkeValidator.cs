@@ -7,7 +7,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.UzakMarket
     {
         public UMUlkeValidator()
         {
-            RuleFor(p => p.Id).NotEmpty();
+            //RuleFor(p => p.Id).NotEmpty();
             RuleFor(p => p.Kod).NotEmpty();
             RuleFor(p => p.Ad).NotEmpty();
         }

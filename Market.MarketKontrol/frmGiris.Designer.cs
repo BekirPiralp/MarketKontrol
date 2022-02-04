@@ -29,6 +29,7 @@ namespace Market.MarketKontrol
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiris));
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.tbxTc = new System.Windows.Forms.TextBox();
@@ -101,6 +102,8 @@ namespace Market.MarketKontrol
             this.tbxTc.TabIndex = 2;
             this.tbxTc.Text = "TC Kimlik";
             this.tbxTc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxTc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxTc_KeyPress);
+            this.tbxTc.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // pbxTc
             // 
@@ -125,6 +128,7 @@ namespace Market.MarketKontrol
             this.tbxPassword.TabIndex = 2;
             this.tbxPassword.Text = "Password";
             this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxPassword.MouseHover += new System.EventHandler(this.tbxMouseHover);
             // 
             // pbxPassword
             // 
@@ -287,6 +291,7 @@ namespace Market.MarketKontrol
             this.btnGiris.Text = "Giriş";
             this.btnGiris.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnGiris.UseVisualStyleBackColor = false;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // pbxGiris
             // 
@@ -324,6 +329,7 @@ namespace Market.MarketKontrol
             this.Controls.Add(this.btnQuit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "frmGiris";
             this.ShowIcon = false;
@@ -331,6 +337,7 @@ namespace Market.MarketKontrol
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Kontrol";
             this.TransparencyKey = System.Drawing.Color.Gray;
+            this.Load += new System.EventHandler(this.frmGiris_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);

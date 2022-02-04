@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Market.MarketKontrol.ayarlar;
+using Market.Yonet.Yonet;
 
 namespace Market.Yonet
 {
@@ -18,7 +19,21 @@ namespace Market.Yonet
         {
             InitializeComponent();
         }
-        
+
+        private string Tc, Sifre;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Tc = tbxTc.Text;
+            Sifre = tbxPassword.Text;
+        }
+
+        private void Temizle()
+        {
+            tbxTc.Text=Tc;
+            tbxPassword.Text = Sifre;
+        }
+
         private void btnQuit_Click(object sender, EventArgs e)
         {
             //exit
@@ -78,6 +93,37 @@ namespace Market.Yonet
         private void btnGithub_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/BekirPiralp");
-        }        
+        }
+
+        private void btnGiris_Click(object sender, EventArgs e)
+        {
+            /*Sabit şifre ve tc ile*/
+            if (tbxPassword.Text.Trim() != "" && tbxTc.Text.Trim().Length == 11)
+            {
+                if (tbxTc.Text.Trim().Equals("12345678910") && tbxPassword.Text.Equals("Kızılelma"))
+                {
+                    this.WindowState = FormWindowState.Minimized;
+                    (new FrmYonet()).ShowDialog();
+                    this.WindowState = FormWindowState.Normal;
+                }
+                else
+                    MessageBox.Show("Geçersiz giriş denemesi. Bİlgilerin doğruluğunu kontrol  ediniz.");
+            }
+            else
+                MessageBox.Show("Lütfen bilgileri eksiksiz giriniz.","Eksik bilgi",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            Temizle();
+        }
+
+        private void tbx_MouseHover(object sender, EventArgs e)
+        {
+            MouseOlay.tbxMouseHover(sender);
+        }
+
+        
+
+        private void tbxTc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KlavyeOlay.NumKeyPress(e);
+        }
     }
 }

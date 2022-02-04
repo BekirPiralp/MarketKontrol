@@ -55,17 +55,21 @@ namespace Market.MarketKontrol.ayarlar
                 MessageBox.Show("Lütfen internet bağlantınızı kontrol ediniz.");
         }
 
-        public  void cbxUlke_SelectedIndexChanged(object sender, EventArgs e)
+        public  void cbxUlke_SelectedIndexChanged()
         {
             try
             {
-                int SelectValue = Convert.ToInt32(cbxUlke.SelectedValue);
+                int SelectValue = 0;
+                if(cbxUlke.SelectedValue != null)
+                    SelectValue = Convert.ToInt32(cbxUlke.SelectedValue);
 
                 if (SelectValue == 0)
                 {
                     UlkeSet();
-                    cbxIl.Items.Clear();
-                    cbxIlce.Items.Clear();
+                    cbxIlce.DataSource = null;
+                    cbxIlce.Text = "İlçe";
+                    cbxIl.DataSource = null;
+                    cbxIl.Text = "İl";
                 }
                 else
                 {
@@ -74,8 +78,13 @@ namespace Market.MarketKontrol.ayarlar
                 Update();
             }
             catch {
-                MessageBox.Show("Ülke verisinde hata oluştu.");
+                
             }
+        }
+
+        public void cbxUlke_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxUlke_SelectedIndexChanged();
         }
 
         private  void IlSet(int selectValue)
@@ -93,9 +102,16 @@ namespace Market.MarketKontrol.ayarlar
 
         public  void cbxIl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbxIl_SelectedIndexChanged();
+        }
+
+        public void cbxIl_SelectedIndexChanged()
+        {
             try
             {
-                int SelectValue = Convert.ToInt32(cbxIl.SelectedValue);
+                int SelectValue = 0;
+                if (cbxIl.SelectedValue != null)
+                    SelectValue = Convert.ToInt32(cbxIl.SelectedValue);
                 if (SelectValue == 0)
                 {
                     UlkeSet();
@@ -106,8 +122,9 @@ namespace Market.MarketKontrol.ayarlar
                     IlceSet(SelectValue);
                 }
             }
-            catch {
-                MessageBox.Show("İl verisinde hata oluştu.");
+            catch
+            {
+
             }
         }
 
@@ -126,16 +143,26 @@ namespace Market.MarketKontrol.ayarlar
 
         public  void cbxIl_DataSourceChanged(object sender, EventArgs e)
         {
-            cbxIlce.Items.Clear();
+            cbxIl_DataSourceChanged();
+        }
+
+        public void cbxIl_DataSourceChanged()
+        {
+            cbxIlce.DataSource = null;
+            cbxIlce.Text = "İlçe";
             Update();
         }
 
         public void Temizle()
         {
-            cbxIlce.Items.Clear();
-            cbxIl.Items.Clear();
-            if(cbxUlke.Items.Count > 0)
+
+            cbxIlce.DataSource = null;
+            cbxIlce.Text = "İlçe";
+            cbxIl.DataSource = null;
+            cbxIl.Text = "İl";
+            if(cbxUlke.Items != null && cbxUlke.Items.Count > 0)
                 cbxUlke.SelectedIndex = 0;
+            cbxUlke.Text = "Ülke";
             //cbxUlke.Items.Clear();
             Update();
         }

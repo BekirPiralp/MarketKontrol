@@ -63,6 +63,16 @@ namespace Market.MarketKontrol.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap _1497 {
+            get {
+                object obj = ResourceManager.GetObject("1497", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap about {
             get {
                 object obj = ResourceManager.GetObject("about", resourceCulture);
@@ -406,6 +416,16 @@ namespace Market.MarketKontrol.Properties {
         internal static System.Drawing.Bitmap shop {
             get {
                 object obj = ResourceManager.GetObject("shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinning_arrows {
+            get {
+                object obj = ResourceManager.GetObject("Spinning arrows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

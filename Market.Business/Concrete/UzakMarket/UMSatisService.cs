@@ -27,7 +27,7 @@ namespace Market.Business.Concrete.UzakMarket
                         result.AddRange(_entityDal.GetAll(p => p.Fis == fis.Id));
                     }
                 }
-                if (result.Count <= 0)
+                if ( result != null&& result.Count <= 0)
                     result = null;
             }
             catch (Exception hata)

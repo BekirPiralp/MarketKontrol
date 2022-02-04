@@ -52,6 +52,7 @@ namespace Market.Business.Concrete.UzakMarket
             return fis;
         }
 
+
         public Fis GetByFisKod(string FisKod)
         {
             Fis fis = null;

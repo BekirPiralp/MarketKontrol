@@ -62,14 +62,19 @@ namespace Market.Yonet.Yonet
         private void cbxLoad()
         {
             _cbx.UlkeSet();
+            cbxFirmalarLoad();
+        }
+
+        private void cbxFirmalarLoad()
+        {
             cbxFirmaLoad(cbxAtaFirma);
             cbxFirmaLoad(cbxPrsnlFirma);
         }
 
         private void cbxFirmaLoad(ComboBox cbxFirma)
         {
-            if (cbxFirma.Items.Count > 0)
-                cbxFirma.Items.Clear();
+            cbxFirma.DataSource = null;
+
             if (firmalar != null && firmalar.Count > 0)
             {
                 cbxFirma.DataSource = firmalar;
@@ -123,6 +128,8 @@ namespace Market.Yonet.Yonet
                 firmalar = firmalarAl();
                 if (firmalar == null || firmalar.Count <= 0)
                     MessageBox.Show("Firmaların bilgisi alınamadı.");
+                else
+                    cbxFirmalarLoad();
             }
             catch
             {
@@ -199,7 +206,7 @@ namespace Market.Yonet.Yonet
                     {
                         Firma firma = null;
                         firma = _uMFirmaS.GetByName(tbxFirmaAd.Text.Trim());
-                        if (firma == null && firma.Id > 0)
+                        if (firma == null || firma.Id <= 0)
                         {
                             firma = new Firma
                             {
@@ -256,7 +263,9 @@ namespace Market.Yonet.Yonet
                 personel = personelGetir(tbxAtaTc.Text.Trim());
                 if (personel != null && personel.Id > 0)
                 {
-                    if (cbxAtaFirma.Items.Count > 0 && Convert.ToInt32(cbxAtaFirma.SelectedValue) > 0)
+                    int value = 0;
+                    try { value = Convert.ToInt32(cbxAtaFirma.SelectedValue); } catch { }
+                    if (cbxAtaFirma.Items.Count > 0 && value > 0)
                     { 
                         yonetici = yoneticiGetir(Convert.ToInt32(cbxAtaFirma.SelectedValue));
                         if (yonetici == null) // Firmanın yönetici yoksa
@@ -270,11 +279,28 @@ namespace Market.Yonet.Yonet
                                     Firma = Convert.ToInt32(cbxAtaFirma.SelectedValue),
                                     Personel = personel.Id
                                 };
+                                
+                                PersonelAdres adres = null;
+                                adres = _uMPersonelAdresS.GetByPersonelId(personel.Id, personel.Firma);
+                                Fotograf foto = null;
+                                foto = _uMFotografS.GetByPersonelId(personel.Id, personel.Firma);
 
                                 personel.Firma = yonetici.Firma; //Başka firmada çalışıp yönetici olmuş olabilir.
 
-                                calisan = calisanGetir(personel.Id);
+                                adres.Firma = personel.Firma;
+                                foto.Firma = personel.Firma;
 
+                                calisan = calisanGetir(personel.Id);
+                                PersonelSifre sifre = _uMPersonelSifreS.GetByPersonelId(personel.Id, personel.Firma);
+                                if (sifre != null && sifre.Id > 0) 
+                                    _uMPersonelSifreS.Delete(sifre);
+
+                                sifre = new PersonelSifre
+                                {
+                                    Firma = personel.Firma,
+                                    Personel = personel.Id,
+                                    Sifre = personel.Tc
+                                };
                                 try
                                 {
                                     if (calisan != null && calisan.Id > 0)
@@ -282,6 +308,22 @@ namespace Market.Yonet.Yonet
                                         _uMCalisanS.Delete(calisan); // yönetici çalışan olamaz
                                     }
 
+                                    if (adres != null && adres.Id > 0)
+                                    {
+                                        PersonelAdres a = DerinKopyala<PersonelAdres>.Kopyala(adres);
+                                        a.Id = 0;
+                                        _uMPersonelAdresS.Add(a);
+                                    }
+                                        
+                                    if(foto != null && foto.Id > 0)
+                                    {
+                                        Fotograf f = DerinKopyala<Fotograf>.Kopyala(foto);
+                                        f.Id = 0;
+                                        _uMFotografS.Add(f);
+                                    }
+
+
+                                    _uMPersonelSifreS.Add(sifre);
                                     _uMPersonelS.Update(personel);
                                     _uMYoneticiS.Add(yonetici);
 
@@ -313,7 +355,7 @@ namespace Market.Yonet.Yonet
 
         private void btnAtaTemizle_Click(object sender, EventArgs e)
         {
-            if (cbxAtaFirma.Items.Count > 0){ 
+            if (cbxAtaFirma.Items != null && cbxAtaFirma.Items.Count > 0){ 
                 cbxAtaFirma.SelectedIndex = 0;
                 cbxPrsnlFirma.Update();
             }
@@ -449,15 +491,16 @@ namespace Market.Yonet.Yonet
                         }
                         else
                         {
-                            if (tbxAd.Text.Trim() != "" && tbxSoyad.Text.Trim() != "" && Convert.ToInt32(cbxPrsnlFirma.SelectedValue) > 0 &&
-                                tbxAdres.Text.Trim() != "" && Convert.ToInt32(cbxIlce.SelectedValue) > 0 && Convert.ToInt32(cbxIl.SelectedValue) > 0 && Convert.ToInt32(cbxUlke.SelectedValue) > 0)
+                            if (tbxAd.Text.Trim() != "" && tbxSoyad.Text.Trim() != "" && cbxPrsnlFirma.SelectedValue != null && Convert.ToInt32(cbxPrsnlFirma.SelectedValue) > 0 &&
+                                tbxAdres.Text.Trim() != "" && cbxIlce.SelectedValue != null && Convert.ToInt32(cbxIlce.SelectedValue) > 0 &&
+                                cbxIl.SelectedValue !=null && Convert.ToInt32(cbxIl.SelectedValue) > 0 && cbxUlke.SelectedValue != null&& Convert.ToInt32(cbxUlke.SelectedValue) > 0)
                             {
                                 personel = new Personel
                                 {
                                     Tc = tbxPrsnlTc.Text.Trim(),
                                     Ad = tbxAd.Text.Trim(),
                                     Soyad = tbxSoyad.Text.Trim(),
-                                    Cinsiyet = rbtnErkek.Checked == true ? 'E' : 'K',
+                                    Cinsiyet = cinsiyet ? "Erkek" : "Kadın",
                                     Firma = Convert.ToInt32(cbxPrsnlFirma.SelectedValue)
                                 };
 
@@ -526,7 +569,7 @@ namespace Market.Yonet.Yonet
 
         private void btnPrsnlTemizle_Click(object sender, EventArgs e)
         {
-            if (cbxPrsnlFirma.Items.Count > 0){
+            if (cbxPrsnlFirma.Items != null && cbxPrsnlFirma.Items.Count > 0){
                 cbxPrsnlFirma.SelectedValue = 0;
                 cbxPrsnlFirma.Update();
             }
@@ -535,6 +578,8 @@ namespace Market.Yonet.Yonet
             tbxAd.Text = _ilkHal.tbxPrsnlAd;
             tbxSoyad.Text = _ilkHal.tbxPrsnlSoyad;
             tbxAdres.Text = _ilkHal.tbxPrsnlAdres;
+
+            cinsiyet = true;
 
             rbtnErkek.Checked = _ilkHal.cinsiyet;
             rbtnKadin.Checked = !_ilkHal.cinsiyet;
@@ -546,5 +591,21 @@ namespace Market.Yonet.Yonet
 
         #endregion
 
+        bool cinsiyet = true;
+        private void rbtnErkek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnErkek.Checked)
+                cinsiyet = true;
+            else
+                cinsiyet = false;
+        }
+
+        private void rbtnKadin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnKadin.Checked)
+                cinsiyet = false;
+            else
+                cinsiyet = true;
+        }
     }
 }

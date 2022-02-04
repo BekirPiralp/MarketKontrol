@@ -26,11 +26,14 @@ namespace Market.Restriction.ValidationRules.FluentValidation
             where EntityValidator : AbstractValidator<TEntity>, new()
         {
 
-            if (entities.Count == 0)
+            if (  entities == null && entities.Count == 0)
                 throw new Exception(Message);
             else
             {
-                ValidationTool.Validate<EntityValidator>(entities);
+                foreach (var entity in entities)
+                {
+                    ValidationTool.Validate<EntityValidator>(entity);
+                }
                 return entities;
             }
 

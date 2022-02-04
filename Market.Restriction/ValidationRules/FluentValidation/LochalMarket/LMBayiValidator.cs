@@ -10,7 +10,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
         {
             RuleFor(p => p.BayiAd).NotEmpty();
             RuleFor(p => p.Firma).NotEmpty();
-            RuleFor(p => p.Id).NotEmpty(); // Ana sistemden gelecek
+            //RuleFor(p => p.Id).NotEmpty(); // Ana sistemden gelecek
         }
     }
 }

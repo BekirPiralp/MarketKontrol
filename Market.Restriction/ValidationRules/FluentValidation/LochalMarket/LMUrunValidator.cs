@@ -8,7 +8,7 @@ namespace Market.Restriction.ValidationRules.FluentValidation.LochalMarket
     {
         public LMUrunValidator()
         {
-            RuleFor(p => p.Id).NotEmpty();//uzak serverdan gelecek
+            //RuleFor(p => p.Id).NotEmpty();//uzak serverdan gelecek
             RuleFor(p => p.Firma).NotEmpty();
             RuleFor(p => p.Bayi).NotEmpty();
             RuleFor(p => p.Ad).NotEmpty();

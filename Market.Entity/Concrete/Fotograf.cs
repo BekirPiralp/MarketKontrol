@@ -2,9 +2,12 @@
 using System;
 using System.Data.Linq;
 using System.Drawing;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Market.Entity.Concrete
 {
+    [Serializable]
+    [Table("Fotograf")]
     public class Fotograf : EntityBase
     {
         public int Firma { get; set; }

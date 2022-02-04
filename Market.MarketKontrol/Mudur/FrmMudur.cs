@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market.Business.Concrete.DigerIslemler;
 using Market.MarketKontrol.ayarlar;
 using Market.MarketKontrol.Ortak;
 
@@ -34,7 +35,9 @@ namespace Market.MarketKontrol.Mudur
         private void btnCikis_Click(object sender, EventArgs e)
         {
             //çıkış
-            Application.Exit();
+            BaglantiKontrol baglanti = BaglantiKontrol.KontrolGet();
+            baglanti.Serbestbirak();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -122,6 +125,11 @@ namespace Market.MarketKontrol.Mudur
         private void btnPrsnlAyarlari_Click(object sender, EventArgs e)
         {
             OpenForm(new FrmPersonelIslemleri(), sender);
+        }
+
+        private void FrmMudur_Load(object sender, EventArgs e)
+        {
+            OpenForm(new FrmHomepage(), btnAnaEkran);
         }
     }
 }

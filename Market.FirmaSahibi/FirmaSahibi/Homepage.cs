@@ -37,7 +37,7 @@ namespace Market.FirmaSahibi.FirmaSahibi
         List<BayiyeGoreKazanc> _bayilerKazanc = null;
         
         int _ilkSec = 20;
-        int _yenileme = 600;
+        int _yenileme = 6000;
 
         IUMFisService _uMFisS;
         IUMBayiService _uMBayiS;
@@ -59,6 +59,8 @@ namespace Market.FirmaSahibi.FirmaSahibi
 
         private void Yenile()
         {
+            if(_bayilerKazanc != null && _bayilerKazanc.Count>0)
+                _bayilerKazanc.Clear();
             try
             {
                         chartIslem();
@@ -158,29 +160,42 @@ namespace Market.FirmaSahibi.FirmaSahibi
             }
         }
 
+        bool kontrol = true; //kazanç varmı
         private void KazancAl()
         {
             _fisLer = null;
-            if (_baglanti.KontrolEt() && _bayilerKazanc != null)
+            if (_baglanti.KontrolEt())
             {
-                double toplam = 0;
-                foreach (var bayi in _bayiler)
+                if (_bayilerKazanc != null)
                 {
-                    toplam = 0;
-                    _fisLer = _uMFisS.GetAllByMonth(_girenPersonel.firma, bayi);
-                    if( _fisLer != null && _fisLer.Count > 0)
+                    kontrol = true;
+                    double toplam = 0;
+                    foreach (var bayi in _bayiler)
                     {
-                        foreach (var fis in _fisLer)
+                        toplam = 0;
+                        _fisLer = _uMFisS.GetAllByMonth(_girenPersonel.firma, bayi);
+                        if (_fisLer != null && _fisLer.Count > 0)
                         {
-                            toplam += fis.ToplamFiyat;
+                            foreach (var fis in _fisLer)
+                            {
+                                toplam += fis.ToplamFiyat;
+                            }
                         }
-                    }
 
-                    _bayilerKazanc.Add(new BayiyeGoreKazanc
+                        _bayilerKazanc.Add(new BayiyeGoreKazanc
+                        {
+                            bayi = bayi,
+                            kazanc = toplam
+                        });
+                    }
+                }
+                else
+                {
+                    if (kontrol)
                     {
-                        bayi = bayi,
-                        kazanc = toplam
-                    });
+                        kontrol = false;
+                        MessageBox.Show("Bayilerin satış bilgileri gelmedi.");
+                    }
                 }
             }
             else

@@ -10,6 +10,6 @@ namespace Market.Business.Abstract.DigerIslemler
     public interface IBaglantiKontrol
     {
         bool KontrolEt();
-        void Serbesbirak();
+        void Serbestbirak();
     }
 }

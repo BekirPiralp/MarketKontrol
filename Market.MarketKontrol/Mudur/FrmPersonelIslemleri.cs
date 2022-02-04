@@ -79,6 +79,7 @@ namespace Market.MarketKontrol.Mudur
             _ekBilgi = null;
             _sil = null;
             _sifre = null;
+            cinsiyet = true;
 
             _cbx.Temizle();
             EkranTemizle();
@@ -127,6 +128,7 @@ namespace Market.MarketKontrol.Mudur
                 Tc = tbxTc.Text,
                 YeniSifre = tbxYeniSifre.Text
             };
+            _cbx.UlkeSet();
         }
 
         private void LoadPersonel()
@@ -135,6 +137,7 @@ namespace Market.MarketKontrol.Mudur
             {
                 if (_baglanti.KontrolEt() && _girenPersonel.firma != null)
                 {
+                    _calisanlar = null;
                     _calisanlar = _uMCalisanS.GetAllByFirmaBayi(_girenPersonel.firma, _girenPersonel.bayi);
                     _personeller = null;
                     if(_calisanlar != null && _calisanlar.Count > 0)
@@ -212,7 +215,7 @@ namespace Market.MarketKontrol.Mudur
                         Ad = dgwPersonel.CurrentRow.Cells[1].Value.ToString(),
                         Soyad = dgwPersonel.CurrentRow.Cells[2].Value.ToString(),
                         Tc = dgwPersonel.CurrentRow.Cells[3].Value.ToString(),
-                        Cinsiyet = dgwPersonel.CurrentRow.Cells[4].Value.ToString()[0],
+                        Cinsiyet = dgwPersonel.CurrentRow.Cells[4].Value.ToString(),
                         Firma = Convert.ToInt32(dgwPersonel.CurrentRow.Cells[0].Value)
                     };
 
@@ -232,7 +235,7 @@ namespace Market.MarketKontrol.Mudur
 
         private void SeciliPersoneliEkranaBas()
         {
-            if (_personel != null && _personel.Id > 0)
+            if (_personel != null && _personel.Id > 0 && _calisan != null)
             {
                 try
                 {
@@ -240,15 +243,20 @@ namespace Market.MarketKontrol.Mudur
                     tbxSoyad.Text = _personel.Soyad;
                     tbxTc.Text = _personel.Tc;
                     tbxGorev.Text = _calisan.Gorev;
-                    rbtnErkek.Checked = _personel.Cinsiyet == 'E' ? true : false;
+                    rbtnErkek.Checked = _personel.Cinsiyet.Trim().Equals("Erkek") ? true : false;
+                    rbtnKadin.Checked = _personel.Cinsiyet.Trim().Equals("Kadın") ? true : false;
 
                     pbxFoto.Image = _foto.FotoGet() != null ? _foto.FotoGet() : _ilkhal.foto;
 
                     tbxAdres.Text = _adres.Tarif;
                     tbxEkBilgi.Text = _ekBilgi.Aciklama;
 
+                    _cbx.UlkeSet();
                     cbxUlke.SelectedValue = _adres.Ulke;
+                    _cbx.cbxUlke_SelectedIndexChanged();
                     cbxIl.SelectedValue = _adres.Il;
+                    _cbx.cbxIl_DataSourceChanged();
+                    _cbx.cbxIl_SelectedIndexChanged();
                     cbxIlce.SelectedValue = _adres.Ilce;
                 }
                 catch {}
@@ -272,7 +280,8 @@ namespace Market.MarketKontrol.Mudur
             try
             {
                 if (_baglanti.KontrolEt()&& _personel != null && _foto != null && _calisan != null &&
-                    _adres != null && _ekBilgi != null)
+                    _adres != null && _ekBilgi != null && cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null 
+                    && cbxUlke.SelectedValue != null)
                 {
                     //Tc Ve cinsiyet güncellenemez.
                     _personel.Ad = tbxAd.Text.Trim();
@@ -298,8 +307,9 @@ namespace Market.MarketKontrol.Mudur
                     baglantiHata();
             }
             catch{
-                MessageBox.Show("PErsonel Güncellemede hata ile karşılaşıldı.");
+                MessageBox.Show("Personel Güncellemede hata ile karşılaşıldı.");
             }
+            LoadPersonel();
             Temizle();
         }
 
@@ -356,7 +366,7 @@ namespace Market.MarketKontrol.Mudur
             {
                 MessageBox.Show("Personel silme işlemi sırasında hata ile karşılaşıldı.");
             }
-
+            LoadPersonel();
             Temizle();
         }
 
@@ -366,89 +376,96 @@ namespace Market.MarketKontrol.Mudur
             {
                 if (_baglanti.KontrolEt() && tbxTc.Text.Trim().Length == 11)
                 {
-                    _personel = personelGetir();
-
-                    _foto = new Veri.Fotograf();
-                    _calisan = new Veri.Calisan();
-                    _adres = new Veri.PersonelAdres();
-                    _sifre = new Veri.PersonelSifre();
-
-                    //personel veri tabanında hiç kayıtlı değilse
-                    if (_personel == null)
+                    if (cbxIl.SelectedValue != null && cbxIlce.SelectedValue != null && cbxUlke.SelectedValue != null)
                     {
-                        _personel = new Veri.Personel();
-                        _personel.Tc = tbxTc.Text.Trim();
-                        _personel.Cinsiyet = rbtnErkek.Checked == true ? 'E' : 'K';
-                        _personel.Firma = _girenPersonel.firma.Id;
-                        _personel.Ad = tbxAd.Text.Trim();
-                        _personel.Soyad = tbxSoyad.Text.Trim();
+                        _personel = personelGetir();
 
-                        _uMPersonelS.Add(_personel);
+                        _foto = new Veri.Fotograf();
+                        _calisan = new Veri.Calisan();
+                        _ekBilgi = new Veri.EkBilgi();
+                        _adres = new Veri.PersonelAdres();
+                        _sifre = new Veri.PersonelSifre();
 
-                        _personel = _uMPersonelS.GetByTc(_personel.Tc);
+                        //personel veri tabanında hiç kayıtlı değilse
+                        if (_personel == null)
+                        {
+                            _personel = new Veri.Personel();
+                            _personel.Tc = tbxTc.Text.Trim();
+                            _personel.Cinsiyet = cinsiyet ? "Erkek" : "Kadın";
+                            _personel.Firma = _girenPersonel.firma.Id;
+                            _personel.Ad = tbxAd.Text.Trim();
+                            _personel.Soyad = tbxSoyad.Text.Trim();
 
-                        bilgiOlustur();
+                            _uMPersonelS.Add(_personel);
 
+                            _personel = _uMPersonelS.GetByTc(_personel.Tc);
+
+                            bilgiOlustur();
+
+                        }
+
+                        //personel başka firmada çalışmış olabilir
+                        else if (_personel.Id > 0 && _uMPersonelSilS.GetByPersonelId(_personel.Id) != null
+                            && _uMPersonelSilS.GetByPersonelId(_personel.Id).Firma != _girenPersonel.firma.Id)
+                        {
+                            //_personel = _uMPersonelS.GetByTc(tbxTc.Text.Trim());
+                            _personel.Firma = _girenPersonel.firma.Id;
+                            _uMPersonelS.Update(_personel);
+
+                            bilgiOlustur();
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Silmiş olduğunuz veya şu anda başka firmada çalışıyor olarak gözüken" +
+                                "bir personeli ekleyemezsiniz.", "Geçersiz işlem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                        void bilgiOlustur()
+                        {
+                            _foto.FotoSet(pbxFoto.Image);
+                            _foto.Personel = _personel.Id;
+                            _foto.Firma = _personel.Firma;
+                            _foto.TarihSaat = DateTime.Now;
+
+                            _uMFotografS.Add(_foto);
+
+                            _calisan.Bayi = _girenPersonel.bayi.Id;
+                            _calisan.Firma = _personel.Firma;
+                            _calisan.Personel = _personel.Id;
+                            _calisan.Gorev = tbxGorev.Text;
+
+                            _uMCalisanS.Add(_calisan);
+
+                            _ekBilgi.Firma = _personel.Firma;
+                            _ekBilgi.Bayi = _girenPersonel.bayi.Id;
+                            _ekBilgi.Personel = _personel.Id;
+                            _ekBilgi.Aciklama = tbxEkBilgi.Text;
+                            _ekBilgi.TarihSaat = DateTime.Now;
+
+                            _uMEkBilgiS.Add(_ekBilgi);
+
+                            _adres.Personel = _personel.Id;
+                            _adres.Firma = _personel.Firma;
+                            _adres.Tarif = tbxAdres.Text;
+                            _adres.Ulke = Convert.ToInt32(cbxUlke.SelectedValue);
+                            _adres.Il = Convert.ToInt32(cbxIl.SelectedValue);
+                            _adres.Ilce = Convert.ToInt32(cbxIlce.SelectedValue);
+
+                            _uMPersonelAdresS.Add(_adres);
+
+                            _sifre.Firma = _personel.Firma;
+                            _sifre.Personel = _personel.Id;
+                            _sifre.Sifre = _personel.Tc;
+
+                            _uMPersonelSifreS.Add(_sifre);
+
+                            IslemBasariylaGerceklesti();
+                            MessageBox.Show("Personelin şifresi varsayılan olarak TC kimlik numarasıdır.");
+                        }
                     }
-                    
-                    //personel başka firmada çalışmış olabilir
-                    else if (_personel.Id > 0 && _uMPersonelSilS.GetByPersonelId(_personel.Id) != null
-                        && _uMPersonelSilS.GetByPersonelId(_personel.Id).Firma != _girenPersonel.firma.Id)
-                    {
-                        //_personel = _uMPersonelS.GetByTc(tbxTc.Text.Trim());
-                        _personel.Firma = _girenPersonel.firma.Id;
-                        _uMPersonelS.Update(_personel);
-
-                        bilgiOlustur();
-                    }
-
                     else
-                    {
-                        MessageBox.Show("Silmiş olduğunuz veya şu anda başka firmada çalışıyor olarak gözüken" +
-                            "bir personeli ekleyemezsiniz.","Geçersiz işlem",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    }
-
-                    void bilgiOlustur(){
-                        _foto.FotoSet(pbxFoto.Image);
-                        _foto.Id = _personel.Id;
-                        _foto.Firma = _personel.Firma;
-                        _foto.TarihSaat = DateTime.Now;
-
-                        _uMFotografS.Add(_foto);
-
-                        _calisan.Bayi = _girenPersonel.bayi.Id;
-                        _calisan.Firma = _personel.Firma;
-                        _calisan.Personel = _personel.Id;
-                        _calisan.Gorev = tbxGorev.Text;
-
-                        _uMCalisanS.Add(_calisan);
-
-                        _ekBilgi.Firma = _personel.Firma;
-                        _ekBilgi.Bayi = _girenPersonel.bayi.Id;
-                        _ekBilgi.Personel = _personel.Id;
-                        _ekBilgi.Aciklama = tbxEkBilgi.Text;
-                        _ekBilgi.TarihSaat = DateTime.Now;
-
-                        _uMEkBilgiS.Add(_ekBilgi);
-
-                        _adres.Personel = _personel.Id;
-                        _adres.Firma = _personel.Firma;
-                        _adres.Tarif = tbxAdres.Text;
-                        _adres.Ulke = Convert.ToInt32(cbxUlke.SelectedValue);
-                        _adres.Il = Convert.ToInt32(cbxIl.SelectedValue);
-                        _adres.Ilce = Convert.ToInt32(cbxIlce.SelectedValue);
-
-                        _uMPersonelAdresS.Add(_adres);
-
-                        _sifre.Firma = _personel.Firma;
-                        _sifre.Personel = _personel.Id;
-                        _sifre.Sifre = _personel.Tc;
-
-                        _uMPersonelSifreS.Add(_sifre);
-
-                        IslemBasariylaGerceklesti();
-                        MessageBox.Show("Personelin şifresi varsayılan olarak TC kimlik numarasıdır.");
-                    }
+                        secimHata();
                 }
                 else
                 {
@@ -460,6 +477,11 @@ namespace Market.MarketKontrol.Mudur
             }
             LoadPersonel();
             Temizle();
+        }
+
+        private void secimHata()
+        {
+            MessageBox.Show("Lütfen gerekli seçimleri yapınız.");
         }
 
         private Veri.Personel personelGetir()
@@ -542,6 +564,23 @@ namespace Market.MarketKontrol.Mudur
         private void IslemBasariylaGerceklesti()
         {
             MessageBox.Show("İşleminiz başarıyla gerçekleşti.");
+        }
+
+        bool cinsiyet = true;
+        private void rbtnErkek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnErkek.Checked)
+                cinsiyet = true;
+            else
+                cinsiyet = false;
+        }
+
+        private void rbtnKadin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnKadin.Checked)
+                cinsiyet = false;
+            else
+                cinsiyet = true;
         }
     }
 }

@@ -58,6 +58,9 @@ namespace Market.MarketKontrol.Personel
 
             ilkHalAl();
             _baglanti.KontrolEt();
+
+            if (_personel.personel != null)
+                lblPersonelisim.Text = _personel.personel.Ad + " " + _personel.personel.Soyad.ToUpper();
         }
 
         private void Olustur()
@@ -80,8 +83,8 @@ namespace Market.MarketKontrol.Personel
             _ilkhal.urun = new Urun {
                 Barkod = tbxBarkod.Text,
                 Adet = (int)numAdet.Value,
-                Fiyat = float.Parse(lblFiyat.Text),
-                Indirim = float.Parse(lblindirim.Text)
+                Fiyat = double.Parse(lblFiyat.Text),
+                Indirim = double.Parse(lblindirim.Text)
             };
             _ilkhal.urun.ResimSet(pbxUrun.Image);
             _ilkhal.lbxSatis = lbxSatis.Text;
@@ -111,7 +114,7 @@ namespace Market.MarketKontrol.Personel
                 {
                     if(_satisListesi[i].urun.Id == urun.Id)
                     {
-                        index = i;
+                        index=i+1;
                         break;
                     } 
                 }
@@ -157,14 +160,15 @@ namespace Market.MarketKontrol.Personel
         {
             if(_satisListesi != null && _satisListesi.Count > 0)
             {
-                float ToplamFiyat = 0;
+                double ToplamFiyat = 0;
                 lbxSatis.Items.Clear();
                 foreach (var item in _satisListesi)
                 {
                     lbxSatis.Items.Add(item.urun.Ad + " " + item.urun.Marka + " X " + item.Adet.ToString());
                     ToplamFiyat += (item.urun.Fiyat * item.Adet);
                 }
-                lblFiyat.Text = ToplamFiyat.ToString();
+                lblToplamFiyat.Text = ToplamFiyat.ToString();
+                lbxSatis.Update();
             }
             else
             {
@@ -211,14 +215,14 @@ namespace Market.MarketKontrol.Personel
                 {
                     _satisListesi = new List<SatisListesi>();
                 }
-
-                if (SatisIndexBul(_urun) > 0 && 
-                    _urun.Adet >= 
-                    (_satisListesi[SatisIndexBul(_urun)].Adet + (int)numAdet.Value))
+                int index = SatisIndexBul(_urun);
+                if (index > 0 && 
+                    _urun.Adet >= (_satisListesi[index-1].Adet + (int)numAdet.Value))
                 {
-                    _satisListesi[SatisIndexBul(_urun)].Adet += (int)numAdet.Value;
+                    index = index - 1;
+                    _satisListesi[index].Adet += (int)numAdet.Value;
                 }
-                else
+                else if(index == 0)
                 {
                     if (_urun.Adet >= (int)numAdet.Value )
                     {
@@ -240,15 +244,17 @@ namespace Market.MarketKontrol.Personel
                 }
                 else
                 {
-                    if (SatisIndexBul(_urun) > 0)
+                    int index = SatisIndexBul(_urun);
+                    if ( index > 0)
                     {
-                        if (_satisListesi[SatisIndexBul(_urun)].Adet <= (int)numAdet.Value)
+                        if (_satisListesi[index-1].Adet <= (int)numAdet.Value)
                         {
-                            _satisListesi.RemoveAt(SatisIndexBul(_urun));
+
+                            _satisListesi.RemoveAt(index-1);
                         }
                         else
                         {
-                            _satisListesi[SatisIndexBul(_urun)].Adet -= (int)numAdet.Value;
+                            _satisListesi[index-1].Adet -= (int)numAdet.Value;
                         }
                         LbxSatisUpdate();
                     }
@@ -270,9 +276,9 @@ namespace Market.MarketKontrol.Personel
                     if (_personel != null && _personel.bayi != null && _personel.firma != null && _personel.personel != null &&
                             _personel.personel.Id > 0 && _personel.bayi.Id > 0 && _personel.firma.Id > 0)
                     {
-                        float tFiyatHesapla()
+                        double tFiyatHesapla()
                         {
-                            float toplam = 0;
+                            double toplam = 0;
                             foreach (var item in _satisListesi)
                             {
                                 toplam += item.Adet * (item.urun.Fiyat - (item.urun.Fiyat * item.urun.Indirim / 100));
@@ -294,7 +300,7 @@ namespace Market.MarketKontrol.Personel
                         if (_baglanti.KontrolEt())
                         {
                             _uMFisService.Add(fis);
-                            fis = _uMFisService.GetByDateTime(_personel.firma, _personel.bayi, _personel.personel, tarihSaat);
+                            fis = _uMFisService.GetByFisKod(fis.Kod);
                             if (fis == null)
                                 throw new Exception("Fis olusturma sırasında bir hata ile karşılaşıldı.");
                             foreach (var item in _satisListesi)
@@ -319,7 +325,7 @@ namespace Market.MarketKontrol.Personel
                         else
                         {
                             _lMFisService.Add(fis);
-                            fis = _lMFisService.GetByDateTime(_personel.firma, _personel.bayi, _personel.personel, tarihSaat);
+                            fis = _lMFisService.GetByFisKod(fis.Kod);
                             if (fis == null)
                                 throw new Exception("Fis olusturma sırasında bir hata ile karşılaşıldı.");
                             foreach (var item in _satisListesi)
@@ -341,6 +347,7 @@ namespace Market.MarketKontrol.Personel
                                 _lMUrunService.Update(_satisListesi[i].urun);
                             }
                         }
+                        MessageBox.Show("Satış başarıyla gerçekleşti");
                     }
                 }
                 catch (Exception hata)
